@@ -55,14 +55,14 @@
     "contactCtaTitle": "Transfer Rezervasyonu Yapmak İster Misiniz?"
   },
   "vipTransfer": {
-    "title": "Kapadokya VIP Transfer - Lüks Araç ile Konforlu Yolculuk",
-    "description": "Kayseri ve Nevşehir havalimanlarından Ürgüp, Göreme ve Kapadokya'ya özel VIP transfer hizmeti. Mercedes Vito ile konforlu, güvenli ulaşım.",
+    "title": "Kapadokya VIP Transfer - Konforlu Araçlarla Özel Hizmet",
+    "description": "Kayseri ve Nevşehir havalimanlarından Ürgüp, Göreme ve Kapadokya'ya özel transfer hizmeti. Konforlu araçlar, güvenli ulaşım.",
     "heroTitle": "Kapadokya VIP Transfer Hizmeti",
-    "heroSubtitle": "Havalimanından otelinize kapıdan kapıya lüks transfer deneyimi",
-    "luxuryVehicles": "Lüks Araçlar",
-    "luxuryVehiclesDesc": "Mercedes Vito ve premium araçlarla konforlu yolculuk",
-    "professionalDrivers": "Profesyonel Şoförler",
-    "professionalDriversDesc": "Deneyimli, güler yüzlü ve İngilizce bilen şoförler",
+    "heroSubtitle": "Havalimanından otelinize kapıdan kapıya konforlu transfer deneyimi",
+    "luxuryVehicles": "Konforlu Araçlar",
+    "luxuryVehiclesDesc": "Bagaj kapasiteli, klimalı ve temiz transfer araçları",
+    "professionalDrivers": "Deneyimli Şoförler",
+    "professionalDriversDesc": "Güvenilir ve güler yüzlü şoförler. WhatsApp ile kolay iletişim",
     "service247": "7/24 Hizmet",
     "service247Desc": "Gece gündüz her saat transfer hizmeti",
     "flexibleBooking": "Esnek Rezervasyon",
@@ -79,11 +79,33 @@
     "step2Title": "Sizi Karşılayalım",
     "step2Desc": "Şoförümüz havalimanında isminizin yazılı olduğu tabelayla bekler",
     "step3Title": "Konforla Ulaşın",
-    "step3Desc": "Klimalı lüks aracımızla otelinize veya istediğiniz noktaya ulaşın"
+    "step3Desc": "Klimalı aracımızla otelinize veya istediğiniz noktaya ulaşın"
   },
   "airportTransfer": {
-    "title": "Kapadokya Havalimanı Transferi - Kayseri ve Nevşehir",
-    "description": "Kayseri Erkilet Havalimanı ve Nevşehir Kapadokya Havalimanı'ndan Ürgüp, Göreme, Uçhisar ve tüm Kapadokya bölgesine güvenilir transfer hizmeti."
+    "title": "Kapadokya'dan Havalimanına Transfer - Otel ve Bölge Çıkışlı",
+    "description": "Ürgüp, Göreme, Avanos ve Mustafapaşa'dan Kayseri (ASR) ve Nevşehir (NAV) havalimanlarına güvenli transfer. Uçuşunuza zamanında yetişin.",
+    "heroTitle": "Otelinizden Havalimanına Transfer",
+    "heroSubtitle": "Kapadokya'dan Kayseri ve Nevşehir havalimanlarına konforlu, zamanında ulaşım. Bagajınıza uygun araçlar.",
+    "toNavTitle": "Nevşehir Havalimanı (NAV) Transferleri",
+    "toNavSubtitle": "Kapadokya'ya en yakın havalimanı - kısa mesafe, hızlı ulaşım",
+    "toAsrTitle": "Kayseri Havalimanı (ASR) Transferleri",
+    "toAsrSubtitle": "Daha fazla uçuş seçeneği - iç ve dış hat bağlantıları",
+    "whyChooseTitle": "Neden Bizimle?",
+    "whyChoose1": "Uçuş saatinize göre esnek alım",
+    "whyChoose2": "Bagajınıza uygun araç kapasitesi",
+    "whyChoose3": "Gece veya sabah erken saatlerde bile hizmet",
+    "whyChoose4": "WhatsApp ile kolay iletişim",
+    "faqTitle": "Sık Sorulan Sorular",
+    "faq1Q": "Havalimanına ne kadar önceden çıkmalıyım?",
+    "faq1A": "İç hat uçuşları için 2 saat, dış hat için 3 saat önceden otelden ayrılmanızı öneririz. Yolculuk süresini de hesaba katın.",
+    "faq2Q": "Sabah erken uçuşlar için transfer var mı?",
+    "faq2A": "Evet, 7/24 hizmet veriyoruz. Sabah 04:00-05:00 alımlar için bir gece önceden bilgi vermeniz yeterli.",
+    "faq3Q": "Kaç valiz alabiliyor araçlarınız?",
+    "faq3A": "Standart araçlarımız 2-3 büyük valiz + el bagajları alabilir. Fazla bagaj için önceden bilgi verin, uygun araç ayarlayalım.",
+    "faq4Q": "Ödemeyi nasıl yapabilirim?",
+    "faq4A": "Nakit (TL, EUR, USD) veya kredi kartı ile ödeme yapabilirsiniz. Ödeme yolculuk başında veya sonunda alınır.",
+    "faq5Q": "Rezervasyonu nasıl yapabilirim?",
+    "faq5A": "WhatsApp veya telefon ile bize ulaşın. Uçuş bilginizi, otel adresinizi ve yolcu sayısını paylaşın, hemen onay verelim."
   },
   "pricing": {
     "title": "Kapadokya Transfer Fiyatları",
@@ -147,6 +169,11 @@
     "a7": "Evet, ücretsiz bebek koltuğu sağlıyoruz. Rezervasyon sırasında belirtmeniz yeterli.",
     "q8": "Gece uçuşları için transfer var mı?",
     "a8": "Evet, 7/24 hizmet veriyoruz. Gece 03:00'te inen uçuş için bile şoförümüz hazır bekler."
+  },
+  "whatsapp": {
+    "getQuote": "WhatsApp ile Teklif Al",
+    "selectLanguage": "Dil Seçin",
+    "cancel": "İptal"
   },
   "hubPages": {
     "whatsappMessage": "Merhaba, transfer rezervasyonu yapmak istiyorum. Tarih: / Kalkış: / Varış: / Yolcu: / Bagaj:",

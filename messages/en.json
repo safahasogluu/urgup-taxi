@@ -55,14 +55,14 @@
     "contactCtaTitle": "Ready to Book Your Transfer?"
   },
   "vipTransfer": {
-    "title": "Cappadocia VIP Transfer - Luxury Vehicle Comfort",
-    "description": "Private VIP transfer service from Kayseri and Nevşehir airports to Ürgüp, Göreme and Cappadocia. Comfortable, safe travel with Mercedes Vito.",
+    "title": "Cappadocia VIP Transfer - Comfortable Private Service",
+    "description": "Private transfer service from Kayseri and Nevşehir airports to Ürgüp, Göreme and Cappadocia. Comfortable vehicles, safe travel.",
     "heroTitle": "Cappadocia VIP Transfer Service",
-    "heroSubtitle": "Door-to-door luxury transfer experience from airport to your hotel",
-    "luxuryVehicles": "Luxury Vehicles",
-    "luxuryVehiclesDesc": "Comfortable journeys with Mercedes Vito and premium vehicles",
-    "professionalDrivers": "Professional Drivers",
-    "professionalDriversDesc": "Experienced, friendly, English-speaking drivers",
+    "heroSubtitle": "Door-to-door comfortable transfer experience from airport to your hotel",
+    "luxuryVehicles": "Comfortable Vehicles",
+    "luxuryVehiclesDesc": "Air-conditioned, clean vehicles with ample luggage space",
+    "professionalDrivers": "Experienced Drivers",
+    "professionalDriversDesc": "Reliable and friendly drivers. Easy communication via WhatsApp",
     "service247": "24/7 Service",
     "service247Desc": "Transfer service available day and night",
     "flexibleBooking": "Flexible Booking",
@@ -82,8 +82,30 @@
     "step3Desc": "Reach your hotel or destination in our air-conditioned luxury vehicle"
   },
   "airportTransfer": {
-    "title": "Cappadocia Airport Transfer - Kayseri & Nevşehir",
-    "description": "Reliable transfer service from Kayseri Erkilet Airport and Nevşehir Cappadocia Airport to Ürgüp, Göreme, Uçhisar and all Cappadocia region."
+    "title": "Cappadocia to Airport Transfer - Hotel Pickup",
+    "description": "Safe transfers from Ürgüp, Göreme, Avanos and Mustafapaşa to Kayseri (ASR) and Nevşehir (NAV) airports. Arrive on time for your flight.",
+    "heroTitle": "Hotel to Airport Transfer",
+    "heroSubtitle": "Comfortable, on-time transportation from Cappadocia to Kayseri and Nevşehir airports. Luggage-friendly vehicles.",
+    "toNavTitle": "Nevşehir Airport (NAV) Transfers",
+    "toNavSubtitle": "Closest airport to Cappadocia - short distance, quick journey",
+    "toAsrTitle": "Kayseri Airport (ASR) Transfers",
+    "toAsrSubtitle": "More flight options - domestic and international connections",
+    "whyChooseTitle": "Why Choose Us?",
+    "whyChoose1": "Flexible pickup based on your flight time",
+    "whyChoose2": "Vehicles with ample luggage capacity",
+    "whyChoose3": "Service available for night or early morning flights",
+    "whyChoose4": "Easy communication via WhatsApp",
+    "faqTitle": "Frequently Asked Questions",
+    "faq1Q": "How early should I leave for the airport?",
+    "faq1A": "We recommend leaving your hotel 2 hours before domestic flights, 3 hours before international flights. Factor in travel time.",
+    "faq2Q": "Do you have transfers for early morning flights?",
+    "faq2A": "Yes, we operate 24/7. For pickups at 04:00-05:00 AM, just let us know the night before.",
+    "faq3Q": "How much luggage can your vehicles carry?",
+    "faq3A": "Standard vehicles can fit 2-3 large suitcases plus carry-ons. For extra luggage, let us know in advance so we can arrange a suitable vehicle.",
+    "faq4Q": "How can I pay?",
+    "faq4A": "You can pay by cash (TRY, EUR, USD) or credit card. Payment is collected at the start or end of the journey.",
+    "faq5Q": "How do I make a reservation?",
+    "faq5A": "Contact us via WhatsApp or phone. Share your flight info, hotel address, and number of passengers, and we'll confirm right away."
   },
   "pricing": {
     "title": "Cappadocia Transfer Prices",
@@ -147,6 +169,11 @@
     "a7": "Yes, we provide free child seats. Just mention it when booking.",
     "q8": "Do you have transfers for night flights?",
     "a8": "Yes, we operate 24/7. Our driver will be ready even for flights arriving at 3:00 AM."
+  },
+  "whatsapp": {
+    "getQuote": "Get Quote via WhatsApp",
+    "selectLanguage": "Select Your Language",
+    "cancel": "Cancel"
   },
   "hubPages": {
     "whatsappMessage": "Hello, I'd like to book a transfer. Date: / Pickup: / Dropoff: / Passengers: / Luggage:",

@@ -124,6 +124,11 @@
     "description": "关于卡帕多西亚出租车服务的常见问题和答案。",
     "faqTitle": "常见问题"
   },
+  "whatsapp": {
+    "getQuote": "通过WhatsApp获取报价",
+    "selectLanguage": "选择语言",
+    "cancel": "取消"
+  },
   "hubPages": {
     "whatsappMessage": "您好，我想预订接送服务。日期: / 接送地点: / 目的地: / 乘客: / 行李:",
     "howItWorksTitle": "使用方法",

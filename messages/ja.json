@@ -124,6 +124,11 @@
     "description": "カッパドキアタクシーサービスに関するよくある質問と回答。",
     "faqTitle": "よくある質問"
   },
+  "whatsapp": {
+    "getQuote": "WhatsAppで見積もりを取得",
+    "selectLanguage": "言語を選択",
+    "cancel": "キャンセル"
+  },
   "hubPages": {
     "whatsappMessage": "こんにちは、送迎の予約をしたいです。日付: / ピックアップ: / 行き先: / 乗客: / 荷物:",
     "howItWorksTitle": "ご利用方法",
