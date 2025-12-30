@@ -154,7 +154,9 @@
   },
   "whatsapp": {
     "getQuote": "通过WhatsApp获取报价",
-    "selectLanguage": "选择语言",
+    "selectLanguage": "消息语言",
+    "selectLanguageTitle": "选择消息语言",
+    "selectLanguageSubtitle": "选择WhatsApp消息的语言",
     "cancel": "取消",
     "formTitle": "接送信息",
     "pickup": "接送地点",

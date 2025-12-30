@@ -154,7 +154,9 @@
   },
   "whatsapp": {
     "getQuote": "WhatsAppで見積もりを取得",
-    "selectLanguage": "言語を選択",
+    "selectLanguage": "メッセージ言語",
+    "selectLanguageTitle": "メッセージ言語を選択",
+    "selectLanguageSubtitle": "WhatsAppメッセージの言語を選んでください",
     "cancel": "キャンセル",
     "formTitle": "送迎情報",
     "pickup": "ピックアップ場所",

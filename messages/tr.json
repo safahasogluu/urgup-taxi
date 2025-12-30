@@ -172,7 +172,9 @@
   },
   "whatsapp": {
     "getQuote": "WhatsApp ile Teklif Al",
-    "selectLanguage": "Dil Seçin",
+    "selectLanguage": "Mesaj Dili",
+    "selectLanguageTitle": "Mesaj Dilinizi Seçin",
+    "selectLanguageSubtitle": "WhatsApp mesajı hangi dilde gönderilsin?",
     "cancel": "İptal",
     "formTitle": "Transfer Bilgileri",
     "pickup": "Alınacak Yer",

@@ -172,7 +172,9 @@
   },
   "whatsapp": {
     "getQuote": "Get Quote via WhatsApp",
-    "selectLanguage": "Select Your Language",
+    "selectLanguage": "Message Language",
+    "selectLanguageTitle": "Select Message Language",
+    "selectLanguageSubtitle": "Choose the language for your WhatsApp message",
     "cancel": "Cancel",
     "formTitle": "Transfer Details",
     "pickup": "Pickup Location",

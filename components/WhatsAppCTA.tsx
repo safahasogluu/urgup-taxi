@@ -1,8 +1,20 @@
 'use client';
 
-import { useState, useCallback, FormEvent } from 'react';
+import { useState, useCallback, useEffect, FormEvent } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import { trackWhatsApp } from '@/lib/analytics';
+import {
+  WHATSAPP_NUMBER,
+  MessageLanguage,
+  LANGUAGE_LABELS,
+  TransferFormData,
+  buildWhatsAppUrl,
+  buildAirportTransferMessage,
+  buildVipTransferMessage,
+  buildTaxiMessage,
+  getStoredLanguage,
+  storeLanguage,
+} from '@/lib/whatsapp';
 
 interface WhatsAppCTAProps {
   routeFrom?: string;
@@ -10,118 +22,6 @@ interface WhatsAppCTAProps {
   routeType?: 'airport' | 'vip' | 'taxi';
   className?: string;
   buttonText?: string;
-}
-
-interface FormData {
-  pickup: string;
-  dropoff: string;
-  date: string;
-  time: string;
-  passengers: string;
-  luggage: string;
-  hotel: string;
-  flightNo: string;
-}
-
-// Build message for WhatsApp - bilingual format
-function buildMessage(
-  locale: string,
-  routeType: 'airport' | 'vip' | 'taxi',
-  formData: FormData
-): string {
-  const isTurkish = locale === 'tr';
-  
-  // Format the message based on route type and locale
-  if (isTurkish) {
-    // Turkish pages: Turkish only
-    if (routeType === 'airport') {
-      return `\u{1F697} Havalimanı Transfer Talebi
-
-\u{1F4CD} Kalkış: ${formData.pickup}
-\u{2708}\u{FE0F} Varış: ${formData.dropoff}
-\u{1F4C5} Tarih: ${formData.date}
-\u{23F0} Saat: ${formData.time}
-\u{1F465} Yolcu: ${formData.passengers}
-\u{1F9F3} Bagaj: ${formData.luggage}
-\u{1F3E8} Otel/Adres: ${formData.hotel}${formData.flightNo ? `\n\u{2708}\u{FE0F} Uçuş No: ${formData.flightNo}` : ''}
-
-Lütfen fiyat ve müsaitlik bilgisi verir misiniz?`;
-    } else if (routeType === 'vip') {
-      return `\u{1F697} VIP Transfer Talebi
-
-\u{1F4CD} Kalkış: ${formData.pickup}
-\u{1F4CD} Varış: ${formData.dropoff}
-\u{1F4C5} Tarih: ${formData.date}
-\u{23F0} Saat: ${formData.time}
-\u{1F465} Yolcu: ${formData.passengers}
-\u{1F9F3} Bagaj: ${formData.luggage}
-\u{1F3E8} Otel/Adres: ${formData.hotel}
-
-Konforlu araç talep ediyorum. Fiyat bilgisi alabilir miyim?`;
-    } else {
-      return `\u{1F695} Kapadokya Taksi Talebi
-
-\u{1F4CD} Alınacak yer: ${formData.pickup}
-\u{1F4CD} Bırakılacak yer: ${formData.dropoff}
-\u{1F4C5} Tarih: ${formData.date}
-\u{23F0} Saat: ${formData.time}
-\u{1F465} Kişi sayısı: ${formData.passengers}
-
-Fiyat bilgisi alabilir miyim?`;
-    }
-  } else {
-    // Non-Turkish pages: English first + Turkish summary for driver
-    if (routeType === 'airport') {
-      return `\u{1F697} Airport Transfer Request
-
-\u{1F4CD} Pickup: ${formData.pickup}
-\u{2708}\u{FE0F} Dropoff: ${formData.dropoff}
-\u{1F4C5} Date: ${formData.date}
-\u{23F0} Time: ${formData.time}
-\u{1F465} Passengers: ${formData.passengers}
-\u{1F9F3} Luggage: ${formData.luggage}
-\u{1F3E8} Hotel/Address: ${formData.hotel}${formData.flightNo ? `\n\u{2708}\u{FE0F} Flight No: ${formData.flightNo}` : ''}
-
----
-\u{1F1F9}\u{1F1F7} Şoför için / For driver:
-Kalkış: ${formData.pickup}
-Varış: ${formData.dropoff}
-Tarih: ${formData.date} / Saat: ${formData.time}
-Yolcu: ${formData.passengers} / Bagaj: ${formData.luggage}`;
-    } else if (routeType === 'vip') {
-      return `\u{1F697} VIP Transfer Request
-
-\u{1F4CD} Pickup: ${formData.pickup}
-\u{1F4CD} Dropoff: ${formData.dropoff}
-\u{1F4C5} Date: ${formData.date}
-\u{23F0} Time: ${formData.time}
-\u{1F465} Passengers: ${formData.passengers}
-\u{1F9F3} Luggage: ${formData.luggage}
-\u{1F3E8} Hotel/Address: ${formData.hotel}
-
-I would like a comfortable vehicle.
-
----
-\u{1F1F9}\u{1F1F7} Şoför için / For driver:
-VIP transfer talebi
-Kalkış: ${formData.pickup} / Varış: ${formData.dropoff}
-Tarih: ${formData.date} / Saat: ${formData.time}`;
-    } else {
-      return `\u{1F695} Cappadocia Taxi Request
-
-\u{1F4CD} Pickup: ${formData.pickup}
-\u{1F4CD} Dropoff: ${formData.dropoff}
-\u{1F4C5} Date: ${formData.date}
-\u{23F0} Time: ${formData.time}
-\u{1F465} Passengers: ${formData.passengers}
-
----
-\u{1F1F9}\u{1F1F7} Şoför için / For driver:
-Taksi talebi
-Alınacak: ${formData.pickup} / Bırakılacak: ${formData.dropoff}
-Tarih: ${formData.date} / Saat: ${formData.time}`;
-    }
-  }
 }
 
 export default function WhatsAppCTA({ 
@@ -132,14 +32,18 @@ export default function WhatsAppCTA({
   buttonText,
 }: WhatsAppCTAProps) {
   const [showModal, setShowModal] = useState(false);
+  const [messageLang, setMessageLang] = useState<MessageLanguage>('tr');
   const locale = useLocale();
   const t = useTranslations('common');
   const tWa = useTranslations('whatsapp');
   
-  const whatsappNumber = t('whatsapp').replace(/[^0-9]/g, '');
+  // Initialize language from localStorage on mount
+  useEffect(() => {
+    setMessageLang(getStoredLanguage(locale));
+  }, [locale]);
 
   // Form state with defaults from route
-  const [formData, setFormData] = useState<FormData>({
+  const [formData, setFormData] = useState<TransferFormData>({
     pickup: routeFrom,
     dropoff: routeTo,
     date: '',
@@ -151,7 +55,6 @@ export default function WhatsAppCTA({
   });
 
   const handleOpenModal = useCallback(() => {
-    // Reset form with route defaults
     setFormData({
       pickup: routeFrom,
       dropoff: routeTo,
@@ -170,15 +73,31 @@ export default function WhatsAppCTA({
     setFormData(prev => ({ ...prev, [name]: value }));
   }, []);
 
+  const handleLanguageChange = useCallback((lang: MessageLanguage) => {
+    setMessageLang(lang);
+    storeLanguage(lang);
+  }, []);
+
   const handleSubmit = useCallback((e: FormEvent) => {
     e.preventDefault();
     trackWhatsApp();
     
-    const message = buildMessage(locale, routeType, formData);
-    const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    let message: string;
+    switch (routeType) {
+      case 'vip':
+        message = buildVipTransferMessage(formData, messageLang);
+        break;
+      case 'taxi':
+        message = buildTaxiMessage(formData, messageLang);
+        break;
+      default:
+        message = buildAirportTransferMessage(formData, messageLang);
+    }
+    
+    const url = buildWhatsAppUrl(WHATSAPP_NUMBER, message);
     window.open(url, '_blank');
     setShowModal(false);
-  }, [locale, routeType, formData, whatsappNumber]);
+  }, [routeType, formData, messageLang]);
 
   const handleCloseModal = useCallback(() => {
     setShowModal(false);
@@ -211,9 +130,32 @@ export default function WhatsAppCTA({
             className="bg-white rounded-2xl p-6 max-w-md w-full shadow-xl max-h-[90vh] overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
-            <h3 className="text-xl font-semibold mb-6 text-center text-basalt-900">
+            <h3 className="text-xl font-semibold mb-4 text-center text-basalt-900">
               {tWa('formTitle')}
             </h3>
+            
+            {/* Language Selector */}
+            <div className="mb-6">
+              <label className="block text-sm font-medium text-basalt-700 mb-2">
+                {tWa('selectLanguage')}
+              </label>
+              <div className="flex flex-wrap gap-2">
+                {(Object.keys(LANGUAGE_LABELS) as MessageLanguage[]).map((lang) => (
+                  <button
+                    key={lang}
+                    type="button"
+                    onClick={() => handleLanguageChange(lang)}
+                    className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${
+                      messageLang === lang
+                        ? 'bg-primary-600 text-white'
+                        : 'bg-sand-100 text-basalt-700 hover:bg-sand-200'
+                    }`}
+                  >
+                    {LANGUAGE_LABELS[lang]}
+                  </button>
+                ))}
+              </div>
+            </div>
             
             <form onSubmit={handleSubmit} className="space-y-4">
               {/* Pickup */}
@@ -229,7 +171,7 @@ export default function WhatsAppCTA({
                   onChange={handleInputChange}
                   required
                   className="w-full px-4 py-2 border border-sand-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
-                  placeholder={routeFrom || 'Ürgüp, Göreme...'}
+                  placeholder={routeFrom || 'Urgup, Goreme...'}
                 />
               </div>
 
