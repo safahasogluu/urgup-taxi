@@ -99,13 +99,13 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                 <svg className="w-5 h-5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                <span className="font-medium">Fast Response</span>
+                <span className="font-medium">{t('trustFastResponse')}</span>
               </div>
               <div className="flex items-center gap-2">
                 <svg className="w-5 h-5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
                 </svg>
-                <span className="font-medium">Best Prices</span>
+                <span className="font-medium">{t('trustBestPrices')}</span>
               </div>
             </div>
           </div>
@@ -131,7 +131,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                 </svg>
               </div>
               <h3 className="text-xl font-bold mb-2 text-gray-900">{tNav('vipTransfer')}</h3>
-              <p className="text-gray-600">Luxury vehicles, professional drivers</p>
+              <p className="text-gray-600">{t('vipCardDescription')}</p>
             </Link>
             
             <Link
@@ -144,7 +144,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                 </svg>
               </div>
               <h3 className="text-xl font-bold mb-2 text-gray-900">{tNav('airportTransfer')}</h3>
-              <p className="text-gray-600">Nevşehir & Kayseri airports</p>
+              <p className="text-gray-600">{t('airportCardDescription')}</p>
             </Link>
 
             {transferRoutes.slice(0, 4).map((route) => (
@@ -172,8 +172,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       <section className="py-16 md:py-20 bg-warm-gradient">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Premium Airport Transfers</h2>
-            <p className="text-lg text-gray-600">Direct transfers from Cappadocia airports</p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">{t('premiumTitle')}</h2>
+            <p className="text-lg text-gray-600">{t('premiumSubtitle')}</p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
@@ -222,7 +222,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">{tNav('locations')}</h2>
-            <p className="text-lg text-gray-600">Serving all major Cappadocia locations</p>
+            <p className="text-lg text-gray-600">{t('locationsSubtitle')}</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {locations.map((location) => (
@@ -285,7 +285,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       <section className="py-16 md:py-20 bg-primary-700 text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Book Your Transfer?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('contactCtaTitle')}</h2>
             <p className="text-xl mb-8 text-primary-100">
               {tCommon('address')}
             </p>
