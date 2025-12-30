@@ -1,7 +1,7 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { generateMetadata as genMeta } from '@/lib/seo';
 import { generateServiceSchema, generateBreadcrumbSchema, generateFAQPageSchema } from '@/lib/schema';
-import { transferRoutes, toNavRoutes, toAsrRoutes } from '@/data/transfers';
+import { taxiRoutes, getAllTaxiRoutes } from '@/data/transfers';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { Locale } from '@/i18n';
@@ -13,7 +13,7 @@ import FAQAccordion from '@/components/FAQAccordion';
 export async function generateStaticParams() {
   const params: Array<{ locale: string; slug: string }> = [];
   for (const locale of locales) {
-    for (const route of transferRoutes) {
+    for (const route of taxiRoutes) {
       params.push({ locale, slug: route.slug });
     }
   }
@@ -23,55 +23,48 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }) {
   const { locale, slug } = await params;
   setRequestLocale(locale);
-  const route = transferRoutes.find((r) => r.slug === slug);
-  const tNav = await getTranslations({ locale, namespace: 'nav' });
+  const route = taxiRoutes.find((r) => r.slug === slug);
+  const tPage = await getTranslations({ locale, namespace: 'taxiPage' });
   
   if (!route) {
     return genMeta({
       locale: locale as Locale,
-      title: tNav('airportTransfer'),
-      description: tNav('airportTransfer'),
-      path: `/transfer/${slug}`,
+      title: tPage('pageTitle'),
+      description: tPage('pageDesc'),
+      path: `/taksi/${slug}`,
     });
   }
 
-  // Create a more SEO-friendly title
   const title = locale === 'tr' 
-    ? `${route.from[locale as Locale]} - ${route.to[locale as Locale]} Transfer | ${route.duration}`
-    : `${route.from[locale as Locale]} to ${route.to[locale as Locale]} Transfer | ${route.duration}`;
+    ? `${route.from[locale as Locale]} - ${route.to[locale as Locale]} Taksi | ${route.duration}`
+    : `${route.from[locale as Locale]} to ${route.to[locale as Locale]} Taxi | ${route.duration}`;
 
   return genMeta({
     locale: locale as Locale,
     title,
     description: route.description[locale as Locale],
-    path: `/transfer/${slug}`,
+    path: `/taksi/${slug}`,
   });
 }
 
-export default async function TransferRoutePage({ params }: { params: Promise<{ locale: string; slug: string }> }) {
+export default async function TaxiRoutePage({ params }: { params: Promise<{ locale: string; slug: string }> }) {
   const { locale, slug } = await params;
   setRequestLocale(locale);
-  const route = transferRoutes.find((r) => r.slug === slug);
+  const route = taxiRoutes.find((r) => r.slug === slug);
   const tCommon = await getTranslations({ locale, namespace: 'common' });
   const tNav = await getTranslations({ locale, namespace: 'nav' });
-  const tPage = await getTranslations({ locale, namespace: 'transferPage' });
-  const tAirport = await getTranslations({ locale, namespace: 'airportTransfer' });
+  const tPage = await getTranslations({ locale, namespace: 'taxiPage' });
+  const tTransfer = await getTranslations({ locale, namespace: 'transferPage' });
   
   if (!route) {
     notFound();
   }
 
-  // Generate FAQs - use route-specific FAQs or fallback to airport transfer FAQs
+  // Generate FAQs
   const faqs = route.faqs?.map((faq) => ({
     question: faq.question[locale as Locale],
     answer: faq.answer[locale as Locale],
-  })) || [
-    { question: tAirport('faq1Q'), answer: tAirport('faq1A') },
-    { question: tAirport('faq2Q'), answer: tAirport('faq2A') },
-    { question: tAirport('faq3Q'), answer: tAirport('faq3A') },
-    { question: tAirport('faq4Q'), answer: tAirport('faq4A') },
-    { question: tAirport('faq5Q'), answer: tAirport('faq5A') },
-  ];
+  })) || [];
 
   const serviceSchema = generateServiceSchema(
     `${route.from[locale as Locale]} \u2192 ${route.to[locale as Locale]}`,
@@ -80,15 +73,13 @@ export default async function TransferRoutePage({ params }: { params: Promise<{ 
   );
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: tCommon('home'), url: buildLocaleUrl(locale, '/') },
-    { name: tNav('airportTransfer'), url: buildLocaleUrl(locale, '/havalimani-transferi') },
-    { name: `${route.from[locale as Locale]} \u2192 ${route.to[locale as Locale]}`, url: buildLocaleUrl(locale, `/transfer/${slug}`) },
+    { name: tPage('pageTitle'), url: buildLocaleUrl(locale, '/kapadokya-taksi') },
+    { name: `${route.from[locale as Locale]} \u2192 ${route.to[locale as Locale]}`, url: buildLocaleUrl(locale, `/taksi/${slug}`) },
   ]);
-  const faqSchema = generateFAQPageSchema(faqs);
+  const faqSchema = faqs.length > 0 ? generateFAQPageSchema(faqs) : null;
 
-  // Get related routes (other routes from the same airport)
-  const relatedRoutes = route.airport === 'NAV' 
-    ? toNavRoutes.filter(r => r.id !== route.id).slice(0, 3)
-    : toAsrRoutes.filter(r => r.id !== route.id).slice(0, 3);
+  // Get related taxi routes
+  const relatedRoutes = getAllTaxiRoutes().filter(r => r.id !== route.id).slice(0, 3);
 
   return (
     <>
@@ -100,10 +91,12 @@ export default async function TransferRoutePage({ params }: { params: Promise<{ 
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
 
       {/* Hero Section */}
       <section className="bg-hero-gradient section-padding">
@@ -157,7 +150,7 @@ export default async function TransferRoutePage({ params }: { params: Promise<{ 
               <WhatsAppCTA 
                 routeFrom={route.from[locale as Locale]} 
                 routeTo={route.to[locale as Locale]} 
-                routeType="airport"
+                routeType="taxi"
               />
             </div>
           </div>
@@ -202,7 +195,7 @@ export default async function TransferRoutePage({ params }: { params: Promise<{ 
       {/* Info Sections */}
       <section className="section-padding bg-sand-200">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {/* Pickup Points */}
             <div className="card-premium p-6">
               <div className="flex items-center gap-3 mb-4">
@@ -217,24 +210,11 @@ export default async function TransferRoutePage({ params }: { params: Promise<{ 
               <p className="text-basalt-600">{tPage('pickupDesc')}</p>
             </div>
 
-            {/* Timing */}
+            {/* Pricing */}
             <div className="card-premium p-6">
               <div className="flex items-center gap-3 mb-4">
                 <div className="bg-sage-100 w-10 h-10 rounded-xl flex items-center justify-center">
                   <svg className="w-5 h-5 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <h3 className="font-display text-lg text-basalt-900">{tPage('timingTitle')}</h3>
-              </div>
-              <p className="text-basalt-600">{tPage('timingDesc')}</p>
-            </div>
-
-            {/* Pricing */}
-            <div className="card-premium p-6">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="bg-terracotta-100 w-10 h-10 rounded-xl flex items-center justify-center">
-                  <svg className="w-5 h-5 text-terracotta-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
                   </svg>
                 </div>
@@ -246,8 +226,8 @@ export default async function TransferRoutePage({ params }: { params: Promise<{ 
             {/* Safety */}
             <div className="card-premium p-6">
               <div className="flex items-center gap-3 mb-4">
-                <div className="bg-primary-100 w-10 h-10 rounded-xl flex items-center justify-center">
-                  <svg className="w-5 h-5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <div className="bg-terracotta-100 w-10 h-10 rounded-xl flex items-center justify-center">
+                  <svg className="w-5 h-5 text-terracotta-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                   </svg>
                 </div>
@@ -260,25 +240,27 @@ export default async function TransferRoutePage({ params }: { params: Promise<{ 
       </section>
 
       {/* FAQ Section */}
-      <section className="section-padding bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="font-display text-3xl mb-8 text-center text-basalt-900">{tAirport('faqTitle')}</h2>
-            <FAQAccordion faqs={faqs} />
+      {faqs.length > 0 && (
+        <section className="section-padding bg-white">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto">
+              <h2 className="font-display text-3xl mb-8 text-center text-basalt-900">{tNav('faq')}</h2>
+              <FAQAccordion faqs={faqs} />
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Related Routes */}
       {relatedRoutes.length > 0 && (
         <section className="section-padding bg-sand-200">
           <div className="container mx-auto px-4">
-            <h2 className="font-display text-2xl mb-8 text-center text-basalt-900">{tPage('relatedRoutesTitle')}</h2>
+            <h2 className="font-display text-2xl mb-8 text-center text-basalt-900">{tTransfer('relatedRoutesTitle')}</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
               {relatedRoutes.map((relRoute) => (
                 <Link
                   key={relRoute.id}
-                  href={`/${locale}/transfer/${relRoute.slug}`}
+                  href={`/${locale}/taksi/${relRoute.slug}`}
                   className="card-premium p-6 group"
                 >
                   <h3 className="font-display text-lg mb-2 text-basalt-900 group-hover:text-primary-700 transition-colors">
@@ -300,13 +282,22 @@ export default async function TransferRoutePage({ params }: { params: Promise<{ 
         <div className="container mx-auto px-4">
           <div className="text-center flex flex-wrap justify-center gap-4">
             <Link
-              href={`/${locale}/havalimani-transferi`}
+              href={`/${locale}/kapadokya-taksi`}
               className="inline-flex items-center gap-2 text-primary-700 hover:text-primary-800 font-medium"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
               </svg>
-              {tPage('backToAirport')}
+              {tTransfer('backToTaxi')}
+            </Link>
+            <Link
+              href={`/${locale}/havalimani-transferi`}
+              className="inline-flex items-center gap-2 text-primary-700 hover:text-primary-800 font-medium"
+            >
+              {tNav('airportTransfer')}
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
             </Link>
             <Link
               href={`/${locale}/vip-transfer`}
@@ -342,7 +333,7 @@ export default async function TransferRoutePage({ params }: { params: Promise<{ 
               <WhatsAppCTA 
                 routeFrom={route.from[locale as Locale]} 
                 routeTo={route.to[locale as Locale]} 
-                routeType="airport"
+                routeType="taxi"
                 className="bg-terracotta-800 hover:bg-terracotta-900 border-2 border-white/20"
               />
             </div>
@@ -352,3 +343,4 @@ export default async function TransferRoutePage({ params }: { params: Promise<{ 
     </>
   );
 }
+
