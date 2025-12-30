@@ -2,6 +2,7 @@ import { MetadataRoute } from 'next';
 import { locales } from '@/i18n';
 import { locations } from '@/data/locations';
 import { transferRoutes } from '@/data/transfers';
+import { hubPages } from '@/data/hubs';
 import { buildLocaleUrl } from '@/lib/url';
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -38,7 +39,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
   });
 
-  // Location pages
+  // Hub pages (airport hubs, taxi hubs, hotel transfer)
+  hubPages.forEach((hub) => {
+    locales.forEach((locale) => {
+      routes.push({
+        url: buildLocaleUrl(locale, `/${hub.slug}`),
+        lastModified: new Date(),
+        changeFrequency: 'weekly',
+        priority: 0.9, // High priority for hub pages
+      });
+    });
+  });
+
+  // Location pages (local taxi)
   locations.forEach((location) => {
     locales.forEach((locale) => {
       routes.push({
@@ -64,4 +77,3 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return routes;
 }
-

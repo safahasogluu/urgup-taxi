@@ -123,5 +123,31 @@
     "title": "常见问题",
     "description": "关于卡帕多西亚出租车服务的常见问题和答案。",
     "faqTitle": "常见问题"
+  },
+  "hubPages": {
+    "whatsappMessage": "您好，我想预订接送服务。日期: / 接送地点: / 目的地: / 乘客: / 行李:",
+    "howItWorksTitle": "使用方法",
+    "howItWorksSubtitle": "3个简单步骤完成预订",
+    "step1Title": "预订",
+    "step1Desc": "通过WhatsApp或电话分享您的信息",
+    "step2Title": "获得确认",
+    "step2Desc": "立即获得确认和司机信息",
+    "step3Title": "安全到达",
+    "step3Desc": "准时舒适地到达目的地",
+    "whyChooseTitle": "为什么选择我们？",
+    "whyChooseSubtitle": "卡帕多西亚最值得信赖的接送服务",
+    "benefit1Title": "24小时服务",
+    "benefit1Desc": "全天候提供服务",
+    "benefit2Title": "航班追踪",
+    "benefit2Desc": "追踪航班，延误时等候",
+    "benefit3Title": "固定价格",
+    "benefit3Desc": "无额外费用，只收约定价格",
+    "benefit4Title": "VIP车辆",
+    "benefit4Desc": "空调、清洁、舒适",
+    "popularRoutesTitle": "热门路线",
+    "popularRoutesSubtitle": "最受欢迎的接送目的地",
+    "faqTitle": "常见问题",
+    "ctaTitle": "立即预订",
+    "ctaSubtitle": "24小时可用，可靠的接送服务"
   }
 }

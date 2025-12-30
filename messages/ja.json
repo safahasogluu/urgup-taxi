@@ -123,5 +123,31 @@
     "title": "よくある質問",
     "description": "カッパドキアタクシーサービスに関するよくある質問と回答。",
     "faqTitle": "よくある質問"
+  },
+  "hubPages": {
+    "whatsappMessage": "こんにちは、送迎の予約をしたいです。日付: / ピックアップ: / 行き先: / 乗客: / 荷物:",
+    "howItWorksTitle": "ご利用方法",
+    "howItWorksSubtitle": "3つの簡単なステップで予約",
+    "step1Title": "予約する",
+    "step1Desc": "WhatsAppまたは電話で情報を共有",
+    "step2Title": "確認を受け取る",
+    "step2Desc": "即時確認とドライバー情報を受け取る",
+    "step3Title": "安全に到着",
+    "step3Desc": "時間通りに快適に目的地に到着",
+    "whyChooseTitle": "なぜ私たちを選ぶのですか？",
+    "whyChooseSubtitle": "カッパドキアで最も信頼される送迎サービス",
+    "benefit1Title": "24時間サービス",
+    "benefit1Desc": "毎日昼夜を問わず対応",
+    "benefit2Title": "フライト追跡",
+    "benefit2Desc": "フライトを追跡し、遅延時も待機",
+    "benefit3Title": "固定料金",
+    "benefit3Desc": "追加料金なし、合意した料金のみ",
+    "benefit4Title": "VIP車両",
+    "benefit4Desc": "エアコン完備、清潔で快適",
+    "popularRoutesTitle": "人気ルート",
+    "popularRoutesSubtitle": "最もリクエストの多い送迎先",
+    "faqTitle": "よくある質問",
+    "ctaTitle": "今すぐ予約",
+    "ctaSubtitle": "24時間対応、信頼できる送迎サービス"
   }
 }

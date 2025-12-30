@@ -147,5 +147,31 @@
     "a7": "Yes, we provide free child seats. Just mention it when booking.",
     "q8": "Do you have transfers for night flights?",
     "a8": "Yes, we operate 24/7. Our driver will be ready even for flights arriving at 3:00 AM."
+  },
+  "hubPages": {
+    "whatsappMessage": "Hello, I'd like to book a transfer. Date: / Pickup: / Dropoff: / Passengers: / Luggage:",
+    "howItWorksTitle": "How It Works",
+    "howItWorksSubtitle": "Book your transfer in 3 easy steps",
+    "step1Title": "Book Your Transfer",
+    "step1Desc": "Share your details via WhatsApp or phone",
+    "step2Title": "Get Confirmation",
+    "step2Desc": "Receive instant confirmation and driver info",
+    "step3Title": "Arrive Safely",
+    "step3Desc": "Reach your destination on time and in comfort",
+    "whyChooseTitle": "Why Choose Us?",
+    "whyChooseSubtitle": "Cappadocia's most trusted transfer service",
+    "benefit1Title": "24/7 Service",
+    "benefit1Desc": "Available day and night, every day",
+    "benefit2Title": "Flight Tracking",
+    "benefit2Desc": "We track flights and wait for delays",
+    "benefit3Title": "Fixed Prices",
+    "benefit3Desc": "No surprise fees, agreed price only",
+    "benefit4Title": "VIP Vehicles",
+    "benefit4Desc": "Air-conditioned, clean, comfortable",
+    "popularRoutesTitle": "Popular Routes",
+    "popularRoutesSubtitle": "Most requested transfer destinations",
+    "faqTitle": "Frequently Asked Questions",
+    "ctaTitle": "Book Your Transfer Now",
+    "ctaSubtitle": "24/7 available, reliable transfer service"
   }
 }

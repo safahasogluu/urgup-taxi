@@ -123,5 +123,31 @@
     "title": "자주 묻는 질문",
     "description": "카파도키아 택시 서비스에 대한 자주 묻는 질문과 답변.",
     "faqTitle": "자주 묻는 질문"
+  },
+  "hubPages": {
+    "whatsappMessage": "안녕하세요, 픽업 예약을 하고 싶습니다. 날짜: / 픽업: / 도착지: / 승객: / 수하물:",
+    "howItWorksTitle": "이용 방법",
+    "howItWorksSubtitle": "3단계로 간편하게 예약하세요",
+    "step1Title": "예약하기",
+    "step1Desc": "WhatsApp 또는 전화로 정보를 공유하세요",
+    "step2Title": "확인 받기",
+    "step2Desc": "즉시 확인 및 운전사 정보를 받으세요",
+    "step3Title": "안전하게 도착",
+    "step3Desc": "시간에 맞춰 편안하게 목적지에 도착하세요",
+    "whyChooseTitle": "왜 저희를 선택해야 하나요?",
+    "whyChooseSubtitle": "카파도키아에서 가장 신뢰받는 픽업 서비스",
+    "benefit1Title": "24시간 서비스",
+    "benefit1Desc": "매일 밤낮으로 이용 가능",
+    "benefit2Title": "항공편 추적",
+    "benefit2Desc": "항공편을 추적하고 지연 시 대기",
+    "benefit3Title": "고정 가격",
+    "benefit3Desc": "추가 요금 없이 합의된 가격만",
+    "benefit4Title": "VIP 차량",
+    "benefit4Desc": "에어컨, 깨끗하고 편안한 차량",
+    "popularRoutesTitle": "인기 노선",
+    "popularRoutesSubtitle": "가장 인기 있는 픽업 목적지",
+    "faqTitle": "자주 묻는 질문",
+    "ctaTitle": "지금 예약하세요",
+    "ctaSubtitle": "24시간 이용 가능, 신뢰할 수 있는 픽업 서비스"
   }
 }

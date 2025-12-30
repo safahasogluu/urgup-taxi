@@ -147,5 +147,31 @@
     "a7": "Evet, ücretsiz bebek koltuğu sağlıyoruz. Rezervasyon sırasında belirtmeniz yeterli.",
     "q8": "Gece uçuşları için transfer var mı?",
     "a8": "Evet, 7/24 hizmet veriyoruz. Gece 03:00'te inen uçuş için bile şoförümüz hazır bekler."
+  },
+  "hubPages": {
+    "whatsappMessage": "Merhaba, transfer rezervasyonu yapmak istiyorum. Tarih: / Kalkış: / Varış: / Yolcu: / Bagaj:",
+    "howItWorksTitle": "Nasıl Çalışır?",
+    "howItWorksSubtitle": "3 kolay adımda transfer rezervasyonu",
+    "step1Title": "Rezervasyon Yapın",
+    "step1Desc": "WhatsApp veya telefon ile bilgilerinizi paylaşın",
+    "step2Title": "Onay Alın",
+    "step2Desc": "Anında onay ve şoför bilgisi alın",
+    "step3Title": "Konforla Ulaşın",
+    "step3Desc": "Zamanında ve güvenli şekilde hedefinize ulaşın",
+    "whyChooseTitle": "Neden Bizi Tercih Etmelisiniz?",
+    "whyChooseSubtitle": "Kapadokya'nın en güvenilir transfer hizmeti",
+    "benefit1Title": "7/24 Hizmet",
+    "benefit1Desc": "Gece gündüz her saat yanınızdayız",
+    "benefit2Title": "Uçuş Takibi",
+    "benefit2Desc": "Uçuşunuzu takip eder, gecikmelerde bekleriz",
+    "benefit3Title": "Sabit Fiyat",
+    "benefit3Desc": "Sürpriz ücret yok, anlaşılan fiyat",
+    "benefit4Title": "VIP Araçlar",
+    "benefit4Desc": "Klimalı, temiz ve konforlu araçlar",
+    "popularRoutesTitle": "Popüler Güzergahlar",
+    "popularRoutesSubtitle": "En çok tercih edilen transfer rotaları",
+    "faqTitle": "Sık Sorulan Sorular",
+    "ctaTitle": "Hemen Rezervasyon Yapın",
+    "ctaSubtitle": "7/24 ulaşabilir, güvenilir transfer hizmeti"
   }
 }
