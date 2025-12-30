@@ -6,13 +6,20 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import StickyCTA from '@/components/StickyCTA';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
-import { Manrope } from 'next/font/google';
+import { Manrope, Playfair_Display } from 'next/font/google';
 import '../globals.css';
 
 const manrope = Manrope({ 
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-manrope',
+});
+
+const playfair = Playfair_Display({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-playfair',
+  weight: ['400', '500', '600', '700'],
 });
 
 export function generateStaticParams() {
@@ -38,8 +45,8 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} className={manrope.variable}>
-      <body>
+    <html lang={locale} className={`${manrope.variable} ${playfair.variable}`}>
+      <body className="font-body">
         <GoogleAnalytics />
         <NextIntlClientProvider messages={messages}>
           <Header />
@@ -51,4 +58,3 @@ export default async function LocaleLayout({
     </html>
   );
 }
-

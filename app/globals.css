@@ -5,11 +5,73 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    font-family: var(--font-manrope), system-ui, sans-serif;
   }
   
   body {
-    @apply antialiased bg-warm-cream;
+    @apply antialiased bg-sand-100 text-basalt-800 font-body;
+  }
+
+  /* Typography scale */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold tracking-tight;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl leading-tight;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl leading-tight;
+  }
+
+  h3 {
+    @apply text-xl md:text-2xl;
+  }
+
+  p {
+    @apply leading-relaxed;
   }
 }
 
+@layer components {
+  /* Premium card styling */
+  .card-premium {
+    @apply bg-white rounded-2xl shadow-card border border-sand-300/50 transition-all duration-300;
+  }
+
+  .card-premium:hover {
+    @apply shadow-card-hover border-sand-400/50 -translate-y-0.5;
+  }
+
+  /* Button styles */
+  .btn-primary {
+    @apply bg-primary-700 text-white px-6 py-3 rounded-xl font-semibold 
+           shadow-button hover:shadow-button-hover hover:bg-primary-800 
+           transition-all duration-200 inline-flex items-center justify-center gap-2;
+  }
+
+  .btn-secondary {
+    @apply bg-white text-primary-700 px-6 py-3 rounded-xl font-semibold 
+           border-2 border-primary-700/20 hover:border-primary-700/40 hover:bg-sand-50
+           transition-all duration-200 inline-flex items-center justify-center gap-2;
+  }
+
+  .btn-whatsapp {
+    @apply bg-green-600 text-white px-6 py-3 rounded-xl font-semibold 
+           shadow-button hover:bg-green-700 
+           transition-all duration-200 inline-flex items-center justify-center gap-2;
+  }
+
+  /* Section spacing */
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+}
+
+@layer utilities {
+  /* Cappadocia balloon pattern - subtle decorative background */
+  .bg-balloon-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120' fill='none'%3E%3Cpath d='M60 10c-16.569 0-30 13.431-30 30 0 12.426 7.573 23.073 18.344 27.563L60 90l11.656-22.437C82.427 63.073 90 52.426 90 40c0-16.569-13.431-30-30-30z' stroke='%23d4c4a8' stroke-width='0.5' fill='none' opacity='0.3'/%3E%3Cpath d='M60 90v20' stroke='%23d4c4a8' stroke-width='0.5' opacity='0.3'/%3E%3Crect x='55' y='108' width='10' height='6' rx='1' stroke='%23d4c4a8' stroke-width='0.5' fill='none' opacity='0.3'/%3E%3C/svg%3E");
+    background-size: 120px 120px;
+  }
+}
