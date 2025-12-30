@@ -1,0 +1,75 @@
+{
+  "common": {
+    "phone": "+90 535 548 11 78",
+    "whatsapp": "+90 535 548 11 78",
+    "callNow": "今すぐ電話",
+    "whatsappButton": "WhatsApp",
+    "bookNow": "予約する",
+    "learnMore": "詳細を見る",
+    "address": "İmran Mah., Eski Sanayi Cad. No:14, 50400 Ürgüp/Nevşehir, Türkiye",
+    "open247": "24時間営業",
+    "businessName": "Kubilay Ürgüp Taksi"
+  },
+  "nav": {
+    "home": "ホーム",
+    "vipTransfer": "VIP送迎",
+    "airportTransfer": "空港送迎",
+    "locations": "エリア",
+    "pricing": "料金",
+    "booking": "予約",
+    "contact": "お問い合わせ",
+    "faq": "よくある質問"
+  },
+  "home": {
+    "title": "ウルギュップタクシー - 24時間信頼できるタクシーサービス",
+    "description": "カッパドキア地域のプロフェッショナルなタクシーおよびVIP送迎サービス。ウルギュップ、ギョレメ、ウチヒサルおよび周辺地域で24時間サービスを提供しています。",
+    "heroTitle": "カッパドキアで最も信頼できるタクシーサービス",
+    "heroSubtitle": "24時間プロフェッショナルなタクシーおよびVIP送迎サービス。今すぐお電話ください！",
+    "servicesTitle": "サービス",
+    "servicesSubtitle": "カッパドキア地域の広範なサービスネットワーク",
+    "whyUsTitle": "なぜ私たちを選ぶべきか？",
+    "whyUsSubtitle": "信頼できる、迅速でプロフェッショナルなサービス"
+  },
+  "vipTransfer": {
+    "title": "VIP送迎サービス - ラグジュアリーで快適",
+    "description": "カッパドキア地域のVIP送迎サービス。ラグジュアリー車両、プロフェッショナルなドライバー、24時間サービス。"
+  },
+  "airportTransfer": {
+    "title": "空港送迎 - ネヴシェヒルとカイセリ",
+    "description": "ネヴシェヒル・カッパドキア空港およびカイセリ・エルキレト空港からカッパドキア地域への信頼できる送迎サービス。"
+  },
+  "pricing": {
+    "title": "料金 - 透明で手頃な価格",
+    "description": "カッパドキアタクシーおよび送迎料金。詳細についてはお電話ください。"
+  },
+  "booking": {
+    "title": "予約する",
+    "description": "オンライン予約フォーム。今すぐ予約するか、お電話ください。",
+    "form": {
+      "name": "氏名",
+      "phone": "電話番号",
+      "email": "メールアドレス",
+      "date": "日付",
+      "time": "時間",
+      "from": "出発地",
+      "to": "到着地",
+      "passengers": "乗客数",
+      "submit": "予約を送信",
+      "success": "予約を受け付けました！すぐにご連絡いたします。",
+      "error": "エラーが発生しました。直接お電話ください。"
+    }
+  },
+  "contact": {
+    "title": "お問い合わせ - ご連絡ください",
+    "description": "Kubilay Ürgüp Taksi連絡先情報。24時間サービスを提供しています。",
+    "getInTouch": "ご連絡ください",
+    "addressTitle": "住所",
+    "hoursTitle": "営業時間",
+    "hours": "24時間営業"
+  },
+  "faq": {
+    "title": "よくある質問",
+    "description": "カッパドキアタクシーサービスに関するよくある質問と回答。"
+  }
+}
+

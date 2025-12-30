@@ -1,0 +1,75 @@
+{
+  "common": {
+    "phone": "+90 535 548 11 78",
+    "whatsapp": "+90 535 548 11 78",
+    "callNow": "지금 전화하기",
+    "whatsappButton": "WhatsApp",
+    "bookNow": "예약하기",
+    "learnMore": "더 알아보기",
+    "address": "İmran Mah., Eski Sanayi Cad. No:14, 50400 Ürgüp/Nevşehir, Türkiye",
+    "open247": "24시간 영업",
+    "businessName": "Kubilay Ürgüp Taksi"
+  },
+  "nav": {
+    "home": "홈",
+    "vipTransfer": "VIP 터미널",
+    "airportTransfer": "공항 터미널",
+    "locations": "지역",
+    "pricing": "요금",
+    "booking": "예약",
+    "contact": "연락처",
+    "faq": "자주 묻는 질문"
+  },
+  "home": {
+    "title": "우르귀프 택시 - 24시간 신뢰할 수 있는 택시 서비스",
+    "description": "카파도키아 지역의 전문 택시 및 VIP 터미널 서비스. 우르귀프, 괴레메, 우치히사르 및 주변 지역에서 24시간 서비스를 제공합니다.",
+    "heroTitle": "카파도키아에서 가장 신뢰할 수 있는 택시 서비스",
+    "heroSubtitle": "24시간 전문 택시 및 VIP 터미널 서비스. 지금 전화하세요!",
+    "servicesTitle": "서비스",
+    "servicesSubtitle": "카파도키아 지역의 광범위한 서비스 네트워크",
+    "whyUsTitle": "왜 저희를 선택해야 할까요?",
+    "whyUsSubtitle": "신뢰할 수 있고 빠르며 전문적인 서비스"
+  },
+  "vipTransfer": {
+    "title": "VIP 터미널 서비스 - 럭셔리하고 편안함",
+    "description": "카파도키아 지역의 VIP 터미널 서비스. 럭셔리 차량, 전문 운전사, 24시간 서비스."
+  },
+  "airportTransfer": {
+    "title": "공항 터미널 - 네브세히르 및 카이세리",
+    "description": "네브세히르 카파도키아 및 카이세리 에르킬레트 공항에서 카파도키아 지역까지 신뢰할 수 있는 터미널 서비스."
+  },
+  "pricing": {
+    "title": "요금 - 투명하고 합리적인 가격",
+    "description": "카파도키아 택시 및 터미널 요금. 자세한 정보는 전화 주세요."
+  },
+  "booking": {
+    "title": "예약하기",
+    "description": "온라인 예약 양식. 지금 예약하거나 전화 주세요.",
+    "form": {
+      "name": "성명",
+      "phone": "전화번호",
+      "email": "이메일",
+      "date": "날짜",
+      "time": "시간",
+      "from": "출발지",
+      "to": "도착지",
+      "passengers": "승객 수",
+      "submit": "예약 제출",
+      "success": "예약이 접수되었습니다! 곧 연락드리겠습니다.",
+      "error": "오류가 발생했습니다. 직접 전화 주세요."
+    }
+  },
+  "contact": {
+    "title": "연락처 - 문의하기",
+    "description": "Kubilay Ürgüp Taksi 연락처 정보. 24시간 서비스를 제공합니다.",
+    "getInTouch": "문의하기",
+    "addressTitle": "주소",
+    "hoursTitle": "영업 시간",
+    "hours": "24시간 영업"
+  },
+  "faq": {
+    "title": "자주 묻는 질문",
+    "description": "카파도키아 택시 서비스에 대한 자주 묻는 질문과 답변."
+  }
+}
+

@@ -1,0 +1,75 @@
+{
+  "common": {
+    "phone": "+90 535 548 11 78",
+    "whatsapp": "+90 535 548 11 78",
+    "callNow": "Hemen Ara",
+    "whatsappButton": "WhatsApp",
+    "bookNow": "Rezervasyon Yap",
+    "learnMore": "Daha Fazla Bilgi",
+    "address": "İmran Mah., Eski Sanayi Cad. No:14, 50400 Ürgüp/Nevşehir, Türkiye",
+    "open247": "7/24 Açık",
+    "businessName": "Kubilay Ürgüp Taksi"
+  },
+  "nav": {
+    "home": "Ana Sayfa",
+    "vipTransfer": "VIP Transfer",
+    "airportTransfer": "Havalimanı Transferi",
+    "locations": "Bölgeler",
+    "pricing": "Fiyatlar",
+    "booking": "Rezervasyon",
+    "contact": "İletişim",
+    "faq": "SSS"
+  },
+  "home": {
+    "title": "Ürgüp Taksi - 7/24 Güvenilir Taksi Hizmeti",
+    "description": "Kapadokya bölgesinde profesyonel taksi ve VIP transfer hizmeti. Ürgüp, Göreme, Uçhisar ve çevresinde 7/24 hizmetinizdeyiz.",
+    "heroTitle": "Kapadokya'nın En Güvenilir Taksi Hizmeti",
+    "heroSubtitle": "7/24 profesyonel taksi ve VIP transfer hizmeti. Hemen arayın!",
+    "servicesTitle": "Hizmetlerimiz",
+    "servicesSubtitle": "Kapadokya bölgesinde geniş hizmet ağımız",
+    "whyUsTitle": "Neden Bizi Seçmelisiniz?",
+    "whyUsSubtitle": "Güvenilir, hızlı ve profesyonel hizmet"
+  },
+  "vipTransfer": {
+    "title": "VIP Transfer Hizmeti - Lüks ve Konforlu",
+    "description": "Kapadokya bölgesinde VIP transfer hizmeti. Lüks araçlar, profesyonel şoförler, 7/24 hizmet."
+  },
+  "airportTransfer": {
+    "title": "Havalimanı Transferi - Nevşehir ve Kayseri",
+    "description": "Nevşehir Kapadokya ve Kayseri Erkilet Havalimanı'ndan Kapadokya bölgesine güvenilir transfer hizmeti."
+  },
+  "pricing": {
+    "title": "Fiyatlar - Şeffaf ve Uygun Fiyatlar",
+    "description": "Kapadokya taksi ve transfer fiyatları. Detaylı bilgi için bizi arayın."
+  },
+  "booking": {
+    "title": "Rezervasyon Yapın",
+    "description": "Online rezervasyon formu. Hemen rezervasyon yapın veya bizi arayın.",
+    "form": {
+      "name": "Ad Soyad",
+      "phone": "Telefon",
+      "email": "E-posta",
+      "date": "Tarih",
+      "time": "Saat",
+      "from": "Nereden",
+      "to": "Nereye",
+      "passengers": "Yolcu Sayısı",
+      "submit": "Rezervasyon Gönder",
+      "success": "Rezervasyonunuz alındı! En kısa sürede sizinle iletişime geçeceğiz.",
+      "error": "Bir hata oluştu. Lütfen bizi doğrudan arayın."
+    }
+  },
+  "contact": {
+    "title": "İletişim - Bize Ulaşın",
+    "description": "Kubilay Ürgüp Taksi iletişim bilgileri. 7/24 hizmetinizdeyiz.",
+    "getInTouch": "Bize Ulaşın",
+    "addressTitle": "Adres",
+    "hoursTitle": "Çalışma Saatleri",
+    "hours": "7/24 Açık"
+  },
+  "faq": {
+    "title": "Sık Sorulan Sorular",
+    "description": "Kapadokya taksi hizmeti hakkında sık sorulan sorular ve cevapları."
+  }
+}
+
