@@ -8,7 +8,17 @@
     "learnMore": "了解更多",
     "address": "İmran Mah., Eski Sanayi Cad. No:14, 50400 Ürgüp/Nevşehir, Türkiye",
     "open247": "24小时营业",
-    "businessName": "Kubilay Ürgüp Taksi"
+    "businessName": "Kubilay Ürgüp Taksi",
+    "home": "首页",
+    "duration": "时长",
+    "distance": "距离",
+    "navigation": "导航",
+    "allRightsReserved": "版权所有。",
+    "success": "成功！",
+    "orEmailUs": "或发送电子邮件",
+    "emailInstead": "改用电子邮件",
+    "bookingRequest": "预订请求",
+    "addressLabel": "地址"
   },
   "nav": {
     "home": "首页",
@@ -28,11 +38,36 @@
     "servicesTitle": "我们的服务",
     "servicesSubtitle": "卡帕多西亚地区的广泛服务网络",
     "whyUsTitle": "为什么选择我们？",
-    "whyUsSubtitle": "可靠、快速、专业的服务"
+    "whyUsSubtitle": "可靠、快速、专业的服务",
+    "premiumTitle": "机场接送服务",
+    "premiumSubtitle": "开塞利和内夫谢希尔机场接送",
+    "vipCardDescription": "豪华车辆，专业司机",
+    "airportCardDescription": "内夫谢希尔 & 开塞利机场",
+    "trustFastResponse": "快速响应",
+    "trustBestPrices": "合理价格",
+    "locationsSubtitle": "服务于尔居普、格雷梅、乌奇希萨尔及整个卡帕多西亚地区",
+    "contactCtaTitle": "准备预订接送服务吗？"
   },
   "vipTransfer": {
     "title": "VIP接送服务 - 豪华舒适",
-    "description": "卡帕多西亚地区的VIP接送服务。豪华车辆，专业司机，24小时服务。"
+    "description": "卡帕多西亚地区的VIP接送服务。豪华车辆，专业司机，24小时服务。",
+    "heroTitle": "卡帕多西亚VIP接送服务",
+    "heroSubtitle": "从机场到酒店的门到门豪华接送体验",
+    "luxuryVehicles": "豪华车辆",
+    "luxuryVehiclesDesc": "乘坐Mercedes Vito和高端车辆舒适出行",
+    "professionalDrivers": "专业司机",
+    "professionalDriversDesc": "经验丰富、友善且会说英语的司机",
+    "service247": "24小时服务",
+    "service247Desc": "全天候提供接送服务",
+    "flexibleBooking": "灵活预订",
+    "flexibleBookingDesc": "通过WhatsApp即时预订，包含航班追踪",
+    "howItWorksTitle": "使用方法",
+    "step1Title": "进行预订",
+    "step1Desc": "通过WhatsApp或电话分享您的航班信息和酒店地址",
+    "step2Title": "机场接机",
+    "step2Desc": "司机会在机场举着您姓名的牌子等候",
+    "step3Title": "舒适抵达",
+    "step3Desc": "乘坐我们配有空调的豪华车辆前往酒店或目的地"
   },
   "airportTransfer": {
     "title": "机场接送 - 内夫谢希尔和开塞利",
@@ -40,7 +75,14 @@
   },
   "pricing": {
     "title": "价格 - 透明实惠的价格",
-    "description": "卡帕多西亚出租车和接送价格。详情请致电。"
+    "description": "卡帕多西亚出租车和接送价格。详情请致电。",
+    "intro": "我们的价格透明且具有竞争力。价格可能因距离、路线和车辆类型而异。",
+    "callForPricing": "详细价格请致电。我们提供以下特价服务：",
+    "airportTransfers": "机场接送",
+    "vipTransfers": "VIP接送",
+    "longDistance": "长途旅行",
+    "groupBookings": "团体预订",
+    "callForPricingButton": "获取价格信息"
   },
   "booking": {
     "title": "进行预订",
@@ -64,12 +106,16 @@
     "description": "Kubilay Ürgüp Taksi联系方式。我们提供24小时服务。",
     "getInTouch": "联系我们",
     "addressTitle": "地址",
+    "phoneLabel": "电话",
+    "whatsappLabel": "WhatsApp",
     "hoursTitle": "营业时间",
-    "hours": "24小时营业"
+    "hours": "24小时营业",
+    "mapTitle": "位置",
+    "mapPlaceholder": "正在加载谷歌地图..."
   },
   "faq": {
     "title": "常见问题",
-    "description": "关于卡帕多西亚出租车服务的常见问题和答案。"
+    "description": "关于卡帕多西亚出租车服务的常见问题和答案。",
+    "faqTitle": "常见问题"
   }
 }
-

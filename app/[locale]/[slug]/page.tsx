@@ -23,12 +23,13 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale, slug } = await params;
   setRequestLocale(locale);
   const location = locations.find((l) => l.slug === slug);
+  const tNav = await getTranslations({ locale, namespace: 'nav' });
   
   if (!location) {
     return genMeta({
       locale: locale as Locale,
-      title: 'Location',
-      description: 'Taxi service',
+      title: tNav('locations'),
+      description: tNav('locations'),
       path: `/${slug}`,
     });
   }
@@ -46,6 +47,7 @@ export default async function LocationPage({ params }: { params: Promise<{ local
   setRequestLocale(locale);
   const location = locations.find((l) => l.slug === slug);
   const tCommon = await getTranslations({ locale, namespace: 'common' });
+  const tFaq = await getTranslations({ locale, namespace: 'faq' });
   
   if (!location) {
     notFound();
@@ -58,7 +60,7 @@ export default async function LocationPage({ params }: { params: Promise<{ local
     }))
   );
   const breadcrumbSchema = generateBreadcrumbSchema([
-    { name: 'Home', url: buildLocaleUrl(locale, '/') },
+    { name: tCommon('home'), url: buildLocaleUrl(locale, '/') },
     { name: location.name[locale as Locale], url: buildLocaleUrl(locale, `/${slug}`) },
   ]);
 
@@ -80,7 +82,7 @@ export default async function LocationPage({ params }: { params: Promise<{ local
 
           {location.faqs.length > 0 && (
             <div className="mb-12">
-              <h2 className="text-2xl font-bold mb-6 text-gray-900">Frequently Asked Questions</h2>
+              <h2 className="text-2xl font-bold mb-6 text-gray-900">{tFaq('faqTitle')}</h2>
               <FAQAccordion
                 faqs={location.faqs.map((faq) => ({
                   question: faq.question[locale as Locale],
@@ -109,4 +111,3 @@ export default async function LocationPage({ params }: { params: Promise<{ local
     </>
   );
 }
-

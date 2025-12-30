@@ -3,12 +3,22 @@
     "phone": "+90 535 548 11 78",
     "whatsapp": "+90 535 548 11 78",
     "callNow": "Hemen Ara",
-    "whatsappButton": "WhatsApp",
+    "whatsappButton": "WhatsApp ile Ulaşın",
     "bookNow": "Rezervasyon Yap",
     "learnMore": "Daha Fazla Bilgi",
     "address": "İmran Mah., Eski Sanayi Cad. No:14, 50400 Ürgüp/Nevşehir, Türkiye",
     "open247": "7/24 Açık",
-    "businessName": "Kubilay Ürgüp Taksi"
+    "businessName": "Kubilay Ürgüp Taksi",
+    "home": "Ana Sayfa",
+    "duration": "Süre",
+    "distance": "Mesafe",
+    "navigation": "Menü",
+    "allRightsReserved": "Tüm hakları saklıdır.",
+    "success": "Başarılı!",
+    "orEmailUs": "veya e-posta gönderin",
+    "emailInstead": "E-posta Gönder",
+    "bookingRequest": "Rezervasyon Talebi",
+    "addressLabel": "Adres"
   },
   "nav": {
     "home": "Ana Sayfa",
@@ -21,38 +31,68 @@
     "faq": "SSS"
   },
   "home": {
-    "title": "Ürgüp Taksi - 7/24 Güvenilir Taksi Hizmeti",
-    "description": "Kapadokya bölgesinde profesyonel taksi ve VIP transfer hizmeti. Ürgüp, Göreme, Uçhisar ve çevresinde 7/24 hizmetinizdeyiz.",
-    "heroTitle": "Kapadokya'nın En Güvenilir Taksi Hizmeti",
-    "heroSubtitle": "7/24 profesyonel taksi ve VIP transfer hizmeti. Hemen arayın!",
+    "title": "Ürgüp Taksi - Kapadokya Transfer ve Taksi Hizmeti",
+    "description": "Kapadokya bölgesinde profesyonel taksi ve VIP transfer hizmeti. Ürgüp, Göreme, Uçhisar, Nevşehir ve Kayseri havalimanı transferi. 7/24 hizmetinizdeyiz.",
+    "heroTitle": "Kapadokya'nın En Güvenilir Transfer Hizmeti",
+    "heroSubtitle": "Kayseri ve Nevşehir havalimanlarından Ürgüp, Göreme ve tüm Kapadokya'ya 7/24 VIP transfer. Hemen arayın!",
     "servicesTitle": "Hizmetlerimiz",
-    "servicesSubtitle": "Kapadokya bölgesinde geniş hizmet ağımız",
-    "whyUsTitle": "Neden Bizi Seçmelisiniz?",
-    "whyUsSubtitle": "Güvenilir, hızlı ve profesyonel hizmet",
-    "premiumTitle": "Premium Havalimanı Transferleri",
-    "premiumSubtitle": "Kapadokya havalimanlarından direkt transferler",
-    "vipCardDescription": "Lüks araçlar, profesyonel şoförler",
+    "servicesSubtitle": "Kapadokya bölgesinde kapsamlı transfer hizmetleri",
+    "whyUsTitle": "Neden Bizi Tercih Etmelisiniz?",
+    "whyUsSubtitle": "Deneyimli şoförler, konforlu araçlar, uygun fiyatlar",
+    "premiumTitle": "Havalimanı Transfer Hizmetleri",
+    "premiumSubtitle": "Kayseri Erkilet ve Nevşehir Kapadokya Havalimanı transferleri",
+    "vipCardDescription": "Lüks araçlar, deneyimli şoförler",
     "airportCardDescription": "Nevşehir ve Kayseri havalimanları",
     "trustFastResponse": "Hızlı Yanıt",
-    "trustBestPrices": "En İyi Fiyatlar",
-    "locationsSubtitle": "Kapadokya'nın tüm başlıca bölgelerinde hizmet",
-    "contactCtaTitle": "Transferinizi Ayırtmaya Hazır mısınız?"
+    "trustBestPrices": "Uygun Fiyatlar",
+    "locationsSubtitle": "Ürgüp, Göreme, Uçhisar ve tüm Kapadokya bölgesinde hizmet",
+    "contactCtaTitle": "Transfer Rezervasyonu Yapmak İster Misiniz?"
   },
   "vipTransfer": {
-    "title": "VIP Transfer Hizmeti - Lüks ve Konforlu",
-    "description": "Kapadokya bölgesinde VIP transfer hizmeti. Lüks araçlar, profesyonel şoförler, 7/24 hizmet."
+    "title": "Kapadokya VIP Transfer - Lüks Araç ile Konforlu Yolculuk",
+    "description": "Kayseri ve Nevşehir havalimanlarından Ürgüp, Göreme ve Kapadokya'ya özel VIP transfer hizmeti. Mercedes Vito ile konforlu, güvenli ulaşım.",
+    "heroTitle": "Kapadokya VIP Transfer Hizmeti",
+    "heroSubtitle": "Havalimanından otelinize kapıdan kapıya lüks transfer deneyimi",
+    "luxuryVehicles": "Lüks Araçlar",
+    "luxuryVehiclesDesc": "Mercedes Vito ve premium araçlarla konforlu yolculuk",
+    "professionalDrivers": "Profesyonel Şoförler",
+    "professionalDriversDesc": "Deneyimli, güler yüzlü ve İngilizce bilen şoförler",
+    "service247": "7/24 Hizmet",
+    "service247Desc": "Gece gündüz her saat transfer hizmeti",
+    "flexibleBooking": "Esnek Rezervasyon",
+    "flexibleBookingDesc": "WhatsApp ile anında rezervasyon, uçuş takibi dahil",
+    "flightTracking": "Uçuş Takibi",
+    "flightTrackingDesc": "Uçuşunuzu takip ediyor, gecikmelerinize göre ayarlıyoruz",
+    "doorToDoor": "Kapıdan Kapıya",
+    "doorToDoorDesc": "Havalimanından otelinizin kapısına kadar hizmet",
+    "whatsappBooking": "WhatsApp Rezervasyon",
+    "whatsappBookingDesc": "Tek mesajla hızlı ve kolay rezervasyon",
+    "howItWorksTitle": "Nasıl Çalışır?",
+    "step1Title": "Rezervasyon Yapın",
+    "step1Desc": "WhatsApp veya telefon ile uçuş bilgilerinizi ve otel adresinizi paylaşın",
+    "step2Title": "Sizi Karşılayalım",
+    "step2Desc": "Şoförümüz havalimanında isminizin yazılı olduğu tabelayla bekler",
+    "step3Title": "Konforla Ulaşın",
+    "step3Desc": "Klimalı lüks aracımızla otelinize veya istediğiniz noktaya ulaşın"
   },
   "airportTransfer": {
-    "title": "Havalimanı Transferi - Nevşehir ve Kayseri",
-    "description": "Nevşehir Kapadokya ve Kayseri Erkilet Havalimanı'ndan Kapadokya bölgesine güvenilir transfer hizmeti."
+    "title": "Kapadokya Havalimanı Transferi - Kayseri ve Nevşehir",
+    "description": "Kayseri Erkilet Havalimanı ve Nevşehir Kapadokya Havalimanı'ndan Ürgüp, Göreme, Uçhisar ve tüm Kapadokya bölgesine güvenilir transfer hizmeti."
   },
   "pricing": {
-    "title": "Fiyatlar - Şeffaf ve Uygun Fiyatlar",
-    "description": "Kapadokya taksi ve transfer fiyatları. Detaylı bilgi için bizi arayın."
+    "title": "Kapadokya Transfer Fiyatları",
+    "description": "Havalimanı transferi ve bölge içi taksi fiyatlarımız. Net fiyat garantisi, gizli ücret yok.",
+    "intro": "Fiyatlarımız şeffaf ve rekabetçidir. Mesafe, güzergah ve araç tipine göre değişiklik gösterebilir.",
+    "callForPricing": "Detaylı fiyat bilgisi için bizi arayın. Özel fiyatlar sunduğumuz hizmetler:",
+    "airportTransfers": "Havalimanı transferleri",
+    "vipTransfers": "VIP transferler",
+    "longDistance": "Şehirlerarası yolculuklar",
+    "groupBookings": "Grup rezervasyonları",
+    "callForPricingButton": "Fiyat Bilgisi Al"
   },
   "booking": {
-    "title": "Rezervasyon Yapın",
-    "description": "Online rezervasyon formu. Hemen rezervasyon yapın veya bizi arayın.",
+    "title": "Transfer Rezervasyonu",
+    "description": "Online rezervasyon formu. Bilgilerinizi girin, size hemen dönelim.",
     "form": {
       "name": "Ad Soyad",
       "phone": "Telefon",
@@ -69,15 +109,37 @@
   },
   "contact": {
     "title": "İletişim - Bize Ulaşın",
-    "description": "Kubilay Ürgüp Taksi iletişim bilgileri. 7/24 hizmetinizdeyiz.",
+    "description": "Kubilay Ürgüp Taksi iletişim bilgileri. Kapadokya transfer için 7/24 hizmetinizdeyiz.",
     "getInTouch": "Bize Ulaşın",
     "addressTitle": "Adres",
+    "phoneLabel": "Telefon",
+    "whatsappLabel": "WhatsApp",
     "hoursTitle": "Çalışma Saatleri",
-    "hours": "7/24 Açık"
+    "hours": "7/24 Açık",
+    "mapTitle": "Konum",
+    "mapPlaceholder": "Google Maps yükleniyor..."
   },
   "faq": {
     "title": "Sık Sorulan Sorular",
-    "description": "Kapadokya taksi hizmeti hakkında sık sorulan sorular ve cevapları."
+    "description": "Kapadokya transfer ve taksi hizmeti hakkında merak edilenler.",
+    "faqTitle": "Sıkça Sorulan Sorular"
+  },
+  "vipFaq": {
+    "q1": "VIP transfer ile normal transfer arasındaki fark nedir?",
+    "a1": "VIP transferde Mercedes Vito gibi lüks araçlar, kişisel karşılama, uçuş takibi ve kapıdan kapıya hizmet sunuyoruz. Araçlarımız klimalı, geniş ve konforludur.",
+    "q2": "Havalimanında nasıl karşılanacağım?",
+    "a2": "Şoförümüz varış terminalinde isminizin yazılı olduğu tabelayla sizi bekler. Uçuşunuz gecikse bile takip ediyoruz.",
+    "q3": "Kaç kişilik araçlarınız var?",
+    "a3": "1-3 kişi için sedan, 4-8 kişi için Mercedes Vito minibüs kullanıyoruz. Daha büyük gruplar için minibüs de sağlayabiliriz.",
+    "q4": "Fiyatlara bagaj dahil mi?",
+    "a4": "Evet, standart bagajlar fiyata dahildir. Ekstra büyük bagaj veya özel ekipman için önceden bilgi vermeniz yeterlidir.",
+    "q5": "Ödemeyi nasıl yapabilirim?",
+    "a5": "Nakit (TL, EUR, USD) veya kredi kartı ile ödeme yapabilirsiniz. Ödeme yolculuk sonunda araçta alınır.",
+    "q6": "Rezervasyonu nasıl iptal edebilirim?",
+    "a6": "24 saat öncesine kadar ücretsiz iptal yapabilirsiniz. WhatsApp veya telefon ile bize ulaşmanız yeterli.",
+    "q7": "Bebek koltuğu sağlıyor musunuz?",
+    "a7": "Evet, ücretsiz bebek koltuğu sağlıyoruz. Rezervasyon sırasında belirtmeniz yeterli.",
+    "q8": "Gece uçuşları için transfer var mı?",
+    "a8": "Evet, 7/24 hizmet veriyoruz. Gece 03:00'te inen uçuş için bile şoförümüz hazır bekler."
   }
 }
-

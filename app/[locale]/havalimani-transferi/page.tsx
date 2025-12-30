@@ -24,11 +24,12 @@ export default async function AirportTransferPage({ params }: { params: Promise<
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: 'airportTransfer' });
   const tCommon = await getTranslations({ locale, namespace: 'common' });
+  const tNav = await getTranslations({ locale, namespace: 'nav' });
   
   const serviceSchema = generateServiceSchema(t('title'), t('description'), locale as Locale);
   const breadcrumbSchema = generateBreadcrumbSchema([
-    { name: 'Home', url: buildLocaleUrl(locale, '/') },
-    { name: t('title'), url: buildLocaleUrl(locale, '/havalimani-transferi') },
+    { name: tCommon('home'), url: buildLocaleUrl(locale, '/') },
+    { name: tNav('airportTransfer'), url: buildLocaleUrl(locale, '/havalimani-transferi') },
   ]);
 
   return (
@@ -83,4 +84,3 @@ export default async function AirportTransferPage({ params }: { params: Promise<
     </>
   );
 }
-

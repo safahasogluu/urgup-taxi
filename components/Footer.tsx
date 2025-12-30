@@ -19,7 +19,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold mb-4">Navigation</h4>
+            <h4 className="text-lg font-semibold mb-4">{t('navigation')}</h4>
             <ul className="space-y-2">
               <li>
                 <Link href={`/${locale}`} className="text-gray-400 hover:text-white">
@@ -75,10 +75,9 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; {new Date().getFullYear()} {t('businessName')}. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} {t('businessName')}. {t('allRightsReserved')}</p>
         </div>
       </div>
     </footer>
   );
 }
-

@@ -1,12 +1,13 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { useState } from 'react';
 import { trackBookingSubmit } from '@/lib/analytics';
 
 export default function BookingPage() {
   const t = useTranslations('booking');
   const tCommon = useTranslations('common');
+  const locale = useLocale();
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState(false);
   const [formData, setFormData] = useState({
@@ -52,7 +53,7 @@ export default function BookingPage() {
           <svg className="w-16 h-16 text-green-600 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
-          <h2 className="text-2xl font-bold text-green-800 mb-4">Success!</h2>
+          <h2 className="text-2xl font-bold text-green-800 mb-4">{tCommon('success')}</h2>
           <p className="text-green-700 mb-6">{t('form.success')}</p>
           <a
             href={`tel:${tCommon('phone')}`}
@@ -65,8 +66,8 @@ export default function BookingPage() {
     );
   }
 
-  const mailtoLink = `mailto:info@urguptaxi.com?subject=Booking Request&body=${encodeURIComponent(
-    `Name: ${formData.name}\nPhone: ${formData.phone}\nEmail: ${formData.email}\nDate: ${formData.date}\nTime: ${formData.time}\nFrom: ${formData.from}\nTo: ${formData.to}\nPassengers: ${formData.passengers}`
+  const mailtoLink = `mailto:info@urguptaxi.com?subject=${encodeURIComponent(tCommon('bookingRequest'))}&body=${encodeURIComponent(
+    `${t('form.name')}: ${formData.name}\n${t('form.phone')}: ${formData.phone}\n${t('form.email')}: ${formData.email}\n${t('form.date')}: ${formData.date}\n${t('form.time')}: ${formData.time}\n${t('form.from')}: ${formData.from}\n${t('form.to')}: ${formData.to}\n${t('form.passengers')}: ${formData.passengers}`
   )}`;
 
   return (
@@ -206,7 +207,7 @@ export default function BookingPage() {
             <div className="bg-red-50 border border-red-200 rounded-lg p-4">
               <p className="text-red-700">{t('form.error')}</p>
               <a href={mailtoLink} className="text-red-600 underline mt-2 inline-block">
-                Or send us an email
+                {tCommon('orEmailUs')}
               </a>
             </div>
           )}
@@ -222,7 +223,7 @@ export default function BookingPage() {
               href={mailtoLink}
               className="flex-1 bg-gray-200 text-gray-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-300 transition-colors text-center"
             >
-              Email Instead
+              {tCommon('emailInstead')}
             </a>
           </div>
         </form>
@@ -230,4 +231,3 @@ export default function BookingPage() {
     </div>
   );
 }
-

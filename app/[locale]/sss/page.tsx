@@ -22,6 +22,8 @@ export default async function FAQPage({ params }: { params: Promise<{ locale: st
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: 'faq' });
+  const tCommon = await getTranslations({ locale, namespace: 'common' });
+  const tNav = await getTranslations({ locale, namespace: 'nav' });
   
   // General FAQs
   const faqs = [
@@ -98,8 +100,8 @@ export default async function FAQPage({ params }: { params: Promise<{ locale: st
     }))
   );
   const breadcrumbSchema = generateBreadcrumbSchema([
-    { name: 'Home', url: buildLocaleUrl(locale, '/') },
-    { name: t('title'), url: buildLocaleUrl(locale, '/sss') },
+    { name: tCommon('home'), url: buildLocaleUrl(locale, '/') },
+    { name: tNav('faq'), url: buildLocaleUrl(locale, '/sss') },
   ]);
 
   return (
@@ -129,4 +131,3 @@ export default async function FAQPage({ params }: { params: Promise<{ locale: st
     </>
   );
 }
-

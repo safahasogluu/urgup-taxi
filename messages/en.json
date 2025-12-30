@@ -3,12 +3,22 @@
     "phone": "+90 535 548 11 78",
     "whatsapp": "+90 535 548 11 78",
     "callNow": "Call Now",
-    "whatsappButton": "WhatsApp",
+    "whatsappButton": "WhatsApp Us",
     "bookNow": "Book Now",
     "learnMore": "Learn More",
-    "address": "İmran Mah., Eski Sanayi Cad. No:14, 50400 Ürgüp/Nevşehir, Türkiye",
+    "address": "İmran Mah., Eski Sanayi Cad. No:14, 50400 Ürgüp/Nevşehir, Turkey",
     "open247": "Open 24/7",
-    "businessName": "Kubilay Ürgüp Taksi"
+    "businessName": "Kubilay Ürgüp Taxi",
+    "home": "Home",
+    "duration": "Duration",
+    "distance": "Distance",
+    "navigation": "Navigation",
+    "allRightsReserved": "All rights reserved.",
+    "success": "Success!",
+    "orEmailUs": "or send us an email",
+    "emailInstead": "Email Instead",
+    "bookingRequest": "Booking Request",
+    "addressLabel": "Address"
   },
   "nav": {
     "home": "Home",
@@ -21,38 +31,68 @@
     "faq": "FAQ"
   },
   "home": {
-    "title": "Ürgüp Taxi - 24/7 Reliable Taxi Service",
-    "description": "Professional taxi and VIP transfer service in Cappadocia region. We serve 24/7 in Ürgüp, Göreme, Uçhisar and surrounding areas.",
-    "heroTitle": "Cappadocia's Most Reliable Taxi Service",
-    "heroSubtitle": "24/7 professional taxi and VIP transfer service. Call now!",
+    "title": "Ürgüp Taxi - Cappadocia Transfer & Taxi Service",
+    "description": "Professional taxi and VIP transfer service in Cappadocia region. Airport transfers from Kayseri and Nevşehir to Ürgüp, Göreme, Uçhisar. Available 24/7.",
+    "heroTitle": "Cappadocia's Most Reliable Transfer Service",
+    "heroSubtitle": "24/7 VIP transfers from Kayseri and Nevşehir airports to Ürgüp, Göreme and all of Cappadocia. Call now!",
     "servicesTitle": "Our Services",
-    "servicesSubtitle": "Our wide service network in Cappadocia region",
+    "servicesSubtitle": "Comprehensive transfer services in Cappadocia region",
     "whyUsTitle": "Why Choose Us?",
-    "whyUsSubtitle": "Reliable, fast and professional service",
-    "premiumTitle": "Premium Airport Transfers",
-    "premiumSubtitle": "Direct transfers from Cappadocia airports",
-    "vipCardDescription": "Luxury vehicles, professional drivers",
+    "whyUsSubtitle": "Experienced drivers, comfortable vehicles, fair prices",
+    "premiumTitle": "Airport Transfer Services",
+    "premiumSubtitle": "Kayseri Erkilet and Nevşehir Cappadocia Airport transfers",
+    "vipCardDescription": "Luxury vehicles, experienced drivers",
     "airportCardDescription": "Nevşehir & Kayseri airports",
     "trustFastResponse": "Fast Response",
-    "trustBestPrices": "Best Prices",
-    "locationsSubtitle": "Serving all major Cappadocia locations",
+    "trustBestPrices": "Fair Prices",
+    "locationsSubtitle": "Serving Ürgüp, Göreme, Uçhisar and all Cappadocia region",
     "contactCtaTitle": "Ready to Book Your Transfer?"
   },
   "vipTransfer": {
-    "title": "VIP Transfer Service - Luxury and Comfort",
-    "description": "VIP transfer service in Cappadocia region. Luxury vehicles, professional drivers, 24/7 service."
+    "title": "Cappadocia VIP Transfer - Luxury Vehicle Comfort",
+    "description": "Private VIP transfer service from Kayseri and Nevşehir airports to Ürgüp, Göreme and Cappadocia. Comfortable, safe travel with Mercedes Vito.",
+    "heroTitle": "Cappadocia VIP Transfer Service",
+    "heroSubtitle": "Door-to-door luxury transfer experience from airport to your hotel",
+    "luxuryVehicles": "Luxury Vehicles",
+    "luxuryVehiclesDesc": "Comfortable journeys with Mercedes Vito and premium vehicles",
+    "professionalDrivers": "Professional Drivers",
+    "professionalDriversDesc": "Experienced, friendly, English-speaking drivers",
+    "service247": "24/7 Service",
+    "service247Desc": "Transfer service available day and night",
+    "flexibleBooking": "Flexible Booking",
+    "flexibleBookingDesc": "Instant booking via WhatsApp, flight tracking included",
+    "flightTracking": "Flight Tracking",
+    "flightTrackingDesc": "We track your flight and adjust for delays",
+    "doorToDoor": "Door to Door",
+    "doorToDoorDesc": "Service from airport to your hotel doorstep",
+    "whatsappBooking": "WhatsApp Booking",
+    "whatsappBookingDesc": "Quick and easy booking with just one message",
+    "howItWorksTitle": "How It Works",
+    "step1Title": "Make a Reservation",
+    "step1Desc": "Share your flight details and hotel address via WhatsApp or phone",
+    "step2Title": "We'll Meet You",
+    "step2Desc": "Our driver waits at the airport with a sign showing your name",
+    "step3Title": "Arrive in Comfort",
+    "step3Desc": "Reach your hotel or destination in our air-conditioned luxury vehicle"
   },
   "airportTransfer": {
-    "title": "Airport Transfer - Nevşehir and Kayseri",
-    "description": "Reliable transfer service from Nevşehir Kapadokya and Kayseri Erkilet Airports to Cappadocia region."
+    "title": "Cappadocia Airport Transfer - Kayseri & Nevşehir",
+    "description": "Reliable transfer service from Kayseri Erkilet Airport and Nevşehir Cappadocia Airport to Ürgüp, Göreme, Uçhisar and all Cappadocia region."
   },
   "pricing": {
-    "title": "Pricing - Transparent and Affordable Prices",
-    "description": "Cappadocia taxi and transfer prices. Call us for detailed information."
+    "title": "Cappadocia Transfer Prices",
+    "description": "Airport transfer and local taxi prices. Fixed price guarantee, no hidden fees.",
+    "intro": "Our pricing is transparent and competitive. Prices may vary based on distance, route, and vehicle type.",
+    "callForPricing": "Call us for detailed pricing. We offer special rates for:",
+    "airportTransfers": "Airport transfers",
+    "vipTransfers": "VIP transfers",
+    "longDistance": "Long-distance trips",
+    "groupBookings": "Group bookings",
+    "callForPricingButton": "Get Pricing Info"
   },
   "booking": {
-    "title": "Make a Reservation",
-    "description": "Online booking form. Book now or call us.",
+    "title": "Transfer Reservation",
+    "description": "Online booking form. Fill in your details and we'll get back to you right away.",
     "form": {
       "name": "Full Name",
       "phone": "Phone",
@@ -68,16 +108,38 @@
     }
   },
   "contact": {
-    "title": "Contact - Get in Touch",
-    "description": "Kubilay Ürgüp Taksi contact information. We serve 24/7.",
+    "title": "Contact Us",
+    "description": "Kubilay Ürgüp Taxi contact information. Available 24/7 for Cappadocia transfers.",
     "getInTouch": "Get in Touch",
     "addressTitle": "Address",
+    "phoneLabel": "Phone",
+    "whatsappLabel": "WhatsApp",
     "hoursTitle": "Business Hours",
-    "hours": "Open 24/7"
+    "hours": "Open 24/7",
+    "mapTitle": "Location",
+    "mapPlaceholder": "Loading Google Maps..."
   },
   "faq": {
     "title": "Frequently Asked Questions",
-    "description": "Frequently asked questions and answers about Cappadocia taxi service."
+    "description": "Common questions about Cappadocia transfer and taxi service.",
+    "faqTitle": "Frequently Asked Questions"
+  },
+  "vipFaq": {
+    "q1": "What's the difference between VIP transfer and regular transfer?",
+    "a1": "VIP transfer includes luxury vehicles like Mercedes Vito, personal meet & greet, flight tracking, and door-to-door service. Our vehicles are air-conditioned, spacious, and comfortable.",
+    "q2": "How will I be met at the airport?",
+    "a2": "Our driver will wait at the arrivals terminal with a sign showing your name. We track your flight even if it's delayed.",
+    "q3": "What size vehicles do you have?",
+    "a3": "We use sedans for 1-3 passengers and Mercedes Vito minibus for 4-8 passengers. For larger groups, we can arrange minibuses.",
+    "q4": "Is luggage included in the price?",
+    "a4": "Yes, standard luggage is included. Just let us know in advance if you have extra large bags or special equipment.",
+    "q5": "How can I pay?",
+    "a5": "You can pay by cash (TRY, EUR, USD) or credit card. Payment is collected at the end of the journey in the vehicle.",
+    "q6": "How can I cancel my reservation?",
+    "a6": "Free cancellation up to 24 hours before. Just contact us via WhatsApp or phone.",
+    "q7": "Do you provide child seats?",
+    "a7": "Yes, we provide free child seats. Just mention it when booking.",
+    "q8": "Do you have transfers for night flights?",
+    "a8": "Yes, we operate 24/7. Our driver will be ready even for flights arriving at 3:00 AM."
   }
 }
-

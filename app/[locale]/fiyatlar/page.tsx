@@ -1,7 +1,6 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { generateMetadata as genMeta } from '@/lib/seo';
 import { generateBreadcrumbSchema } from '@/lib/schema';
-import Link from 'next/link';
 import { Locale } from '@/i18n';
 import { buildLocaleUrl } from '@/lib/url';
 
@@ -23,10 +22,11 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: 'pricing' });
   const tCommon = await getTranslations({ locale, namespace: 'common' });
+  const tNav = await getTranslations({ locale, namespace: 'nav' });
   
   const breadcrumbSchema = generateBreadcrumbSchema([
-    { name: 'Home', url: buildLocaleUrl(locale, '/') },
-    { name: t('title'), url: buildLocaleUrl(locale, '/fiyatlar') },
+    { name: tCommon('home'), url: buildLocaleUrl(locale, '/') },
+    { name: tNav('pricing'), url: buildLocaleUrl(locale, '/fiyatlar') },
   ]);
 
   return (
@@ -42,23 +42,23 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
 
         <div className="bg-white p-8 rounded-lg shadow-md mb-8">
           <p className="text-gray-700 mb-4">
-            Our pricing is transparent and competitive. Prices vary based on distance, route, and vehicle type.
+            {t('intro')}
           </p>
           <p className="text-gray-700 mb-4">
-            For accurate pricing, please call us or use our booking form. We offer special rates for:
+            {t('callForPricing')}
           </p>
           <ul className="list-disc list-inside space-y-2 text-gray-700 mb-6">
-            <li>Airport transfers</li>
-            <li>VIP transfers</li>
-            <li>Long-distance trips</li>
-            <li>Group bookings</li>
+            <li>{t('airportTransfers')}</li>
+            <li>{t('vipTransfers')}</li>
+            <li>{t('longDistance')}</li>
+            <li>{t('groupBookings')}</li>
           </ul>
           <div className="text-center">
             <a
               href={`tel:${tCommon('phone')}`}
               className="bg-primary-700 text-white px-8 py-4 rounded-lg font-semibold hover:bg-primary-800 transition-colors inline-block"
             >
-              {tCommon('callNow')} for Pricing
+              {t('callForPricingButton')}
             </a>
           </div>
         </div>
@@ -66,4 +66,3 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
     </>
   );
 }
-

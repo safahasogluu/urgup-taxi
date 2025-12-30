@@ -22,11 +22,12 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: 'contact' });
   const tCommon = await getTranslations({ locale, namespace: 'common' });
+  const tNav = await getTranslations({ locale, namespace: 'nav' });
   
   const localBusinessSchema = generateLocalBusinessSchema(locale as Locale);
   const breadcrumbSchema = generateBreadcrumbSchema([
-    { name: 'Home', url: buildLocaleUrl(locale, '/') },
-    { name: t('title'), url: buildLocaleUrl(locale, '/iletisim') },
+    { name: tCommon('home'), url: buildLocaleUrl(locale, '/') },
+    { name: tNav('contact'), url: buildLocaleUrl(locale, '/iletisim') },
   ]);
 
   return (
@@ -55,7 +56,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
               </div>
 
               <div>
-                <h3 className="text-lg font-semibold mb-2">Phone</h3>
+                <h3 className="text-lg font-semibold mb-2">{t('phoneLabel')}</h3>
                 <a
                   href={`tel:${tCommon('phone')}`}
                   className="text-primary-600 hover:text-primary-700"
@@ -65,7 +66,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
               </div>
 
               <div>
-                <h3 className="text-lg font-semibold mb-2">WhatsApp</h3>
+                <h3 className="text-lg font-semibold mb-2">{t('whatsappLabel')}</h3>
                 <a
                   href={`https://wa.me/${tCommon('whatsapp').replace(/[^0-9]/g, '')}`}
                   target="_blank"
@@ -84,12 +85,12 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
           </div>
 
           <div className="bg-white p-8 rounded-lg shadow-md">
-            <h2 className="text-2xl font-semibold mb-6">Map</h2>
+            <h2 className="text-2xl font-semibold mb-6">{t('mapTitle')}</h2>
             <div className="bg-gray-200 h-64 rounded-lg flex items-center justify-center">
-              <p className="text-gray-500">Map placeholder - Embed Google Maps here</p>
+              <p className="text-gray-500">{t('mapPlaceholder')}</p>
             </div>
             <p className="text-sm text-gray-500 mt-4">
-              Address: {tCommon('address')}
+              {tCommon('addressLabel')}: {tCommon('address')}
             </p>
           </div>
         </div>
@@ -97,4 +98,3 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
     </>
   );
 }
-

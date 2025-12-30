@@ -22,12 +22,13 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale, slug } = await params;
   setRequestLocale(locale);
   const route = transferRoutes.find((r) => r.slug === slug);
+  const tNav = await getTranslations({ locale, namespace: 'nav' });
   
   if (!route) {
     return genMeta({
       locale: locale as Locale,
-      title: 'Transfer',
-      description: 'Transfer service',
+      title: tNav('airportTransfer'),
+      description: tNav('airportTransfer'),
       path: `/transfer/${slug}`,
     });
   }
@@ -45,6 +46,7 @@ export default async function TransferRoutePage({ params }: { params: Promise<{ 
   setRequestLocale(locale);
   const route = transferRoutes.find((r) => r.slug === slug);
   const tCommon = await getTranslations({ locale, namespace: 'common' });
+  const tNav = await getTranslations({ locale, namespace: 'nav' });
   
   if (!route) {
     notFound();
@@ -56,8 +58,8 @@ export default async function TransferRoutePage({ params }: { params: Promise<{ 
     locale as Locale
   );
   const breadcrumbSchema = generateBreadcrumbSchema([
-    { name: 'Home', url: buildLocaleUrl(locale, '/') },
-    { name: 'Airport Transfer', url: buildLocaleUrl(locale, '/havalimani-transferi') },
+    { name: tCommon('home'), url: buildLocaleUrl(locale, '/') },
+    { name: tNav('airportTransfer'), url: buildLocaleUrl(locale, '/havalimani-transferi') },
     { name: `${route.from[locale as Locale]} → ${route.to[locale as Locale]}`, url: buildLocaleUrl(locale, `/transfer/${slug}`) },
   ]);
 
@@ -81,11 +83,11 @@ export default async function TransferRoutePage({ params }: { params: Promise<{ 
         <div className="bg-white p-8 rounded-lg shadow-md mb-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <h3 className="text-lg font-semibold mb-2">Duration</h3>
+              <h3 className="text-lg font-semibold mb-2">{tCommon('duration')}</h3>
               <p className="text-gray-600">{route.duration}</p>
             </div>
             <div>
-              <h3 className="text-lg font-semibold mb-2">Distance</h3>
+              <h3 className="text-lg font-semibold mb-2">{tCommon('distance')}</h3>
               <p className="text-gray-600">{route.distance}</p>
             </div>
           </div>
@@ -109,4 +111,3 @@ export default async function TransferRoutePage({ params }: { params: Promise<{ 
     </>
   );
 }
-
