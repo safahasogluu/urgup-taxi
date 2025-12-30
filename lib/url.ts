@@ -1,4 +1,6 @@
-const baseUrl = (process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000').replace(/\/+$/, '');
+// Prefer explicit env, default to production canonical domain (no vercel fallback).
+const envBase = process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL;
+const baseUrl = (envBase || 'https://www.urguptaxi.com').replace(/\/+$/, '');
 
 export function buildUrl(path: string): string {
   const normalizedPath = path.startsWith('/') ? path : `/${path}`;

@@ -47,7 +47,7 @@ NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX  # optional for local
 
 4. Production / Vercel:
 ```env
-NEXT_PUBLIC_SITE_URL=https://urguptaxi.com
+NEXT_PUBLIC_SITE_URL=https://www.urguptaxi.com
 NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX
 ```
 
