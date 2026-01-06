@@ -18,7 +18,8 @@
     "orEmailUs": "或发送电子邮件",
     "emailInstead": "改用电子邮件",
     "bookingRequest": "预订请求",
-    "addressLabel": "地址"
+    "addressLabel": "地址",
+    "googleReviewButton": "在Google上评价"
   },
   "nav": {
     "home": "首页",
@@ -253,5 +254,14 @@
     "faqTitle": "常见问题",
     "ctaTitle": "立即预订",
     "ctaSubtitle": "24小时可用，可靠的接送服务"
+  },
+  "googleReview": {
+    "title": "在Google上评价 - Kubilay Ürgüp Taxi",
+    "description": "请评价我们的Kubilay Ürgüp Taxi服务。您的评价对我们非常重要。",
+    "fallbackTitle": "评价链接准备中",
+    "fallbackDescription": "我们的Google评价链接即将准备好。现在请通过WhatsApp联系我们，我们可以发送评价链接给您。",
+    "whatsappMessage": "您好，我想要Google评价链接。",
+    "whatsappCta": "WhatsApp联系",
+    "backToHome": "返回首页"
   }
 }

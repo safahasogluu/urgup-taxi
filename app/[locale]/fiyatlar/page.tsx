@@ -3,6 +3,7 @@ import { generateMetadata as genMeta } from '@/lib/seo';
 import { generateBreadcrumbSchema } from '@/lib/schema';
 import { Locale } from '@/i18n';
 import { buildLocaleUrl } from '@/lib/url';
+import CallCTAButton from '@/components/CallCTAButton';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -54,12 +55,13 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
             <li>{t('groupBookings')}</li>
           </ul>
           <div className="text-center">
-            <a
-              href={`tel:${tCommon('phone')}`}
+            <CallCTAButton
+              phone={tCommon('phone')}
               className="bg-primary-700 text-white px-8 py-4 rounded-lg font-semibold hover:bg-primary-800 transition-colors inline-block"
+              ctaLocation="hero"
             >
               {t('callForPricingButton')}
-            </a>
+            </CallCTAButton>
           </div>
         </div>
       </div>

@@ -2,6 +2,7 @@
 
 import { useState, useCallback, useEffect } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
+import { usePathname } from 'next/navigation';
 import { trackWhatsApp } from '@/lib/analytics';
 import {
   WHATSAPP_NUMBER,
@@ -18,16 +19,19 @@ interface WhatsAppQuickCTAProps {
   type: 'general' | 'vip';
   className?: string;
   buttonText?: string;
+  ctaLocation?: 'header' | 'footer' | 'hero';
 }
 
 export default function WhatsAppQuickCTA({ 
   type = 'general',
   className = '',
   buttonText,
+  ctaLocation = 'hero',
 }: WhatsAppQuickCTAProps) {
   const [showModal, setShowModal] = useState(false);
   const [messageLang, setMessageLang] = useState<MessageLanguage>('tr');
   const locale = useLocale();
+  const pathname = usePathname() || '/';
   const tWa = useTranslations('whatsapp');
   const tCommon = useTranslations('common');
   
@@ -42,7 +46,11 @@ export default function WhatsAppQuickCTA({
 
   const handleSelectLanguage = useCallback((lang: MessageLanguage) => {
     storeLanguage(lang);
-    trackWhatsApp();
+    trackWhatsApp({
+      locale,
+      pagePath: pathname,
+      ctaLocation,
+    });
     
     const message = type === 'vip' 
       ? buildQuickVipMessage(lang)
@@ -51,7 +59,7 @@ export default function WhatsAppQuickCTA({
     const url = buildWhatsAppUrl(WHATSAPP_NUMBER, message);
     window.open(url, '_blank');
     setShowModal(false);
-  }, [type]);
+  }, [type, locale, pathname, ctaLocation]);
 
   const handleCloseModal = useCallback(() => {
     setShowModal(false);

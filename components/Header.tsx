@@ -3,6 +3,7 @@
 import { useTranslations, useLocale } from 'next-intl';
 import Link from 'next/link';
 import { useState } from 'react';
+import { usePathname } from 'next/navigation';
 import { trackCall, trackWhatsApp } from '@/lib/analytics';
 import LanguageSwitcher from './LanguageSwitcher';
 
@@ -10,18 +11,27 @@ export default function Header() {
   const t = useTranslations('common');
   const tNav = useTranslations('nav');
   const locale = useLocale();
+  const pathname = usePathname() || '/';
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const phone = t('phone');
   const whatsapp = t('whatsapp');
 
   const handleCall = () => {
-    trackCall();
+    trackCall({
+      locale,
+      pagePath: pathname,
+      ctaLocation: 'header',
+    });
     window.location.href = `tel:${phone}`;
   };
 
   const handleWhatsApp = () => {
-    trackWhatsApp();
+    trackWhatsApp({
+      locale,
+      pagePath: pathname,
+      ctaLocation: 'header',
+    });
     window.open(`https://wa.me/${whatsapp.replace(/[^0-9]/g, '')}`, '_blank');
   };
 

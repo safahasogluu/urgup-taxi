@@ -18,7 +18,8 @@
     "orEmailUs": "またはメールを送信",
     "emailInstead": "メールで送信",
     "bookingRequest": "予約リクエスト",
-    "addressLabel": "住所"
+    "addressLabel": "住所",
+    "googleReviewButton": "Googleでレビュー"
   },
   "nav": {
     "home": "ホーム",
@@ -253,5 +254,14 @@
     "faqTitle": "よくある質問",
     "ctaTitle": "今すぐ予約",
     "ctaSubtitle": "24時間対応、信頼できる送迎サービス"
+  },
+  "googleReview": {
+    "title": "Googleでレビュー - Kubilay Ürgüp Taxi",
+    "description": "Kubilay Ürgüp Taxiサービスを評価してください。皆様のレビューは私たちにとって非常に貴重です。",
+    "fallbackTitle": "レビューリンク準備中",
+    "fallbackDescription": "Googleレビューリンクは間もなく準備されます。今はWhatsAppでご連絡いただければ、レビューリンクをお送りします。",
+    "whatsappMessage": "こんにちは、Googleレビューリンクをお願いします。",
+    "whatsappCta": "WhatsAppで連絡",
+    "backToHome": "ホームに戻る"
   }
 }

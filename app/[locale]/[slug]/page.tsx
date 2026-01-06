@@ -12,6 +12,7 @@ import FAQAccordion from '@/components/FAQAccordion';
 import { buildLocaleUrl } from '@/lib/url';
 import PopularRoutes from '@/components/PopularRoutes';
 import WhatsAppQuickCTA from '@/components/WhatsAppQuickCTA';
+import CallCTAButton from '@/components/CallCTAButton';
 
 export async function generateStaticParams() {
   const params: Array<{ locale: string; slug: string }> = [];
@@ -138,15 +139,16 @@ async function HubPageContent({ locale, hub }: { locale: string; hub: ReturnType
             
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href={`tel:${phone}`}
+              <CallCTAButton
+                phone={phone}
                 className="btn-primary px-8 py-4 text-lg"
+                ctaLocation="hero"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
                 {tCommon('callNow')}
-              </a>
+              </CallCTAButton>
               <WhatsAppQuickCTA type="general" />
             </div>
           </div>
@@ -275,15 +277,16 @@ async function HubPageContent({ locale, hub }: { locale: string; hub: ReturnType
             <h2 className="font-display text-3xl mb-4 text-white">{tHub('ctaTitle')}</h2>
             <p className="text-xl mb-8 text-terracotta-100">{tHub('ctaSubtitle')}</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href={`tel:${phone}`}
+              <CallCTAButton
+                phone={phone}
                 className="bg-white text-terracotta-700 px-8 py-4 rounded-xl font-semibold hover:bg-sand-100 transition-all shadow-lg text-lg inline-flex items-center justify-center gap-2"
+                ctaLocation="hero"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
                 {tCommon('callNow')}
-              </a>
+              </CallCTAButton>
               <Link
                 href={`/${locale}/rezervasyon`}
                 className="bg-terracotta-800 text-white px-8 py-4 rounded-xl font-semibold hover:bg-terracotta-900 transition-all shadow-lg text-lg inline-flex items-center justify-center gap-2 border-2 border-white/20"

@@ -18,7 +18,8 @@
     "orEmailUs": "veya e-posta gönderin",
     "emailInstead": "E-posta Gönder",
     "bookingRequest": "Rezervasyon Talebi",
-    "addressLabel": "Adres"
+    "addressLabel": "Adres",
+    "googleReviewButton": "Google'da Yorum Yap"
   },
   "nav": {
     "home": "Ana Sayfa",
@@ -253,5 +254,14 @@
     "faqTitle": "Sık Sorulan Sorular",
     "ctaTitle": "Hemen Rezervasyon Yapın",
     "ctaSubtitle": "7/24 ulaşabilir, güvenilir transfer hizmeti"
+  },
+  "googleReview": {
+    "title": "Google'da Yorum Yap - Kubilay Ürgüp Taksi",
+    "description": "Kubilay Ürgüp Taksi hizmetimizi değerlendirin. Yorumlarınız bizim için çok değerli.",
+    "fallbackTitle": "Yorum Linki Hazırlanıyor",
+    "fallbackDescription": "Google yorum linkimiz çok yakında hazır olacak. Şimdilik bize WhatsApp'tan yazın, yorum linkinizi iletebiliriz.",
+    "whatsappMessage": "Merhaba, Google yorum linki istiyorum.",
+    "whatsappCta": "WhatsApp ile Yazın",
+    "backToHome": "Ana Sayfaya Dön"
   }
 }

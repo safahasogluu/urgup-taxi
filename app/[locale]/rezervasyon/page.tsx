@@ -1,13 +1,15 @@
 'use client';
 
 import { useTranslations, useLocale } from 'next-intl';
+import { usePathname } from 'next/navigation';
 import { useState } from 'react';
-import { trackBookingSubmit } from '@/lib/analytics';
+import { trackBookingSubmit, trackCall } from '@/lib/analytics';
 
 export default function BookingPage() {
   const t = useTranslations('booking');
   const tCommon = useTranslations('common');
   const locale = useLocale();
+  const pathname = usePathname() || '/';
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState(false);
   const [formData, setFormData] = useState({
@@ -25,14 +27,15 @@ export default function BookingPage() {
     e.preventDefault();
     setError(false);
     
-    // Track the booking submission
-    trackBookingSubmit();
-    
-    // For now, just show success (no backend)
-    // In production, you would send this to your API
     try {
       // Simulate API call
       await new Promise((resolve) => setTimeout(resolve, 500));
+      
+      trackBookingSubmit({
+        locale,
+        pagePath: pathname,
+        ctaLocation: 'hero',
+      });
       setSubmitted(true);
     } catch (err) {
       setError(true);
@@ -55,12 +58,20 @@ export default function BookingPage() {
           </svg>
           <h2 className="text-2xl font-bold text-green-800 mb-4">{tCommon('success')}</h2>
           <p className="text-green-700 mb-6">{t('form.success')}</p>
-          <a
-            href={`tel:${tCommon('phone')}`}
-          className="bg-primary-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-800 transition-colors inline-block"
+          <button
+            type="button"
+            onClick={() => {
+              trackCall({
+                locale,
+                pagePath: pathname,
+                ctaLocation: 'hero',
+              });
+              window.location.href = `tel:${tCommon('phone')}`;
+            }}
+            className="bg-primary-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-800 transition-colors inline-block"
           >
             {tCommon('callNow')}
-          </a>
+          </button>
         </div>
       </div>
     );

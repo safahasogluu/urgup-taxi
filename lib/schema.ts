@@ -2,27 +2,51 @@ import { Locale } from '@/i18n';
 import { getBaseUrl } from './url';
 
 const siteUrl = getBaseUrl();
-const phone = '+90 535 548 11 78';
-const address = 'İmran Mah., Eski Sanayi Cad. No:14, 50400 Ürgüp/Nevşehir, Türkiye';
+const telephone = '+90 535 548 11 78';
+
+const postalAddress = {
+  '@type': 'PostalAddress',
+  streetAddress: 'İmran Mah., Eski Sanayi Cad. No:14',
+  addressLocality: 'Ürgüp',
+  addressRegion: 'Nevşehir',
+  postalCode: '50400',
+  addressCountry: 'TR',
+};
+
+const primaryAreaServed = {
+  '@type': 'City',
+  name: 'Ürgüp',
+};
+
+const serviceAreas = [
+  primaryAreaServed,
+  {
+    '@type': 'City',
+    name: 'Göreme',
+  },
+  {
+    '@type': 'City',
+    name: 'Uçhisar',
+  },
+];
+
+const localBusinessId = `${siteUrl}/#organization`;
+const taxiServiceId = `${siteUrl}/#service`;
+const gbpProfileUrl = process.env.NEXT_PUBLIC_GBP_PROFILE_URL?.trim();
+const googleMapsUrl = process.env.NEXT_PUBLIC_GMAPS_URL?.trim();
 
 export function generateLocalBusinessSchema(locale: Locale) {
   return {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
-    '@id': `${siteUrl}/#organization`,
+    '@id': localBusinessId,
     name: 'Kubilay Ürgüp Taksi',
     alternateName: 'Ürgüp Terminal Taksi',
     image: `${siteUrl}/og-image.jpg`,
-    telephone: phone,
+    url: siteUrl,
+    telephone,
     priceRange: '$$',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: 'İmran Mah., Eski Sanayi Cad. No:14',
-      addressLocality: 'Ürgüp',
-      addressRegion: 'Nevşehir',
-      postalCode: '50400',
-      addressCountry: 'TR',
-    },
+    address: postalAddress,
     geo: {
       '@type': 'GeoCoordinates',
       latitude: '38.6292',
@@ -42,13 +66,10 @@ export function generateLocalBusinessSchema(locale: Locale) {
       opens: '00:00',
       closes: '23:59',
     },
-    areaServed: {
-      '@type': 'City',
-      name: 'Ürgüp',
-    },
+    areaServed: primaryAreaServed,
     serviceType: 'TaxiService',
-    url: siteUrl,
-    sameAs: [],
+    ...(gbpProfileUrl ? { sameAs: [gbpProfileUrl] } : {}),
+    ...(googleMapsUrl ? { hasMap: googleMapsUrl } : {}),
   };
 }
 
@@ -56,33 +77,25 @@ export function generateTaxiServiceSchema(locale: Locale) {
   return {
     '@context': 'https://schema.org',
     '@type': 'TaxiService',
-    '@id': `${siteUrl}/#service`,
+    '@id': taxiServiceId,
+    url: siteUrl,
+    telephone,
+    address: postalAddress,
+    areaServed: serviceAreas,
     provider: {
-      '@id': `${siteUrl}/#organization`,
+      '@id': localBusinessId,
     },
-    areaServed: [
-      {
-        '@type': 'City',
-        name: 'Ürgüp',
-      },
-      {
-        '@type': 'City',
-        name: 'Göreme',
-      },
-      {
-        '@type': 'City',
-        name: 'Uçhisar',
-      },
-    ],
     availableChannel: {
       '@type': 'ServiceChannel',
       servicePhone: {
         '@type': 'ContactPoint',
-        telephone: phone,
+        telephone,
         contactType: 'customer service',
         availableLanguage: ['tr', 'en', 'ko', 'ja', 'zh'],
       },
     },
+    ...(gbpProfileUrl ? { sameAs: [gbpProfileUrl] } : {}),
+    ...(googleMapsUrl ? { hasMap: googleMapsUrl } : {}),
   };
 }
 
@@ -97,7 +110,7 @@ export function generateServiceSchema(
     name,
     description,
     provider: {
-      '@id': `${siteUrl}/#organization`,
+      '@id': localBusinessId,
     },
     areaServed: {
       '@type': 'City',

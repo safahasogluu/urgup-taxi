@@ -2,6 +2,7 @@
 
 import { useState, useCallback, useEffect, FormEvent } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
+import { usePathname } from 'next/navigation';
 import { trackWhatsApp } from '@/lib/analytics';
 import {
   WHATSAPP_NUMBER,
@@ -22,6 +23,7 @@ interface WhatsAppCTAProps {
   routeType?: 'airport' | 'vip' | 'taxi';
   className?: string;
   buttonText?: string;
+  ctaLocation?: 'header' | 'footer' | 'hero';
 }
 
 export default function WhatsAppCTA({ 
@@ -30,10 +32,12 @@ export default function WhatsAppCTA({
   routeType = 'airport',
   className = '',
   buttonText,
+  ctaLocation = 'hero',
 }: WhatsAppCTAProps) {
   const [showModal, setShowModal] = useState(false);
   const [messageLang, setMessageLang] = useState<MessageLanguage>('tr');
   const locale = useLocale();
+  const pathname = usePathname() || '/';
   const t = useTranslations('common');
   const tWa = useTranslations('whatsapp');
   
@@ -80,7 +84,11 @@ export default function WhatsAppCTA({
 
   const handleSubmit = useCallback((e: FormEvent) => {
     e.preventDefault();
-    trackWhatsApp();
+    trackWhatsApp({
+      locale,
+      pagePath: pathname,
+      ctaLocation,
+    });
     
     let message: string;
     switch (routeType) {
@@ -97,7 +105,7 @@ export default function WhatsAppCTA({
     const url = buildWhatsAppUrl(WHATSAPP_NUMBER, message);
     window.open(url, '_blank');
     setShowModal(false);
-  }, [routeType, formData, messageLang]);
+  }, [routeType, formData, messageLang, locale, pathname, ctaLocation]);
 
   const handleCloseModal = useCallback(() => {
     setShowModal(false);

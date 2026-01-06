@@ -1,6 +1,7 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
+import { usePathname } from 'next/navigation';
 import { trackCall, trackWhatsApp } from '@/lib/analytics';
 
 interface StickyCTAProps {
@@ -13,16 +14,26 @@ interface StickyCTAProps {
 export default function StickyCTA({ routeInfo }: StickyCTAProps) {
   const t = useTranslations('common');
   const tHub = useTranslations('hubPages');
+  const locale = useLocale();
+  const pathname = usePathname() || '/';
   const phone = t('phone');
   const whatsapp = t('whatsapp');
 
   const handleCall = () => {
-    trackCall();
+    trackCall({
+      locale,
+      pagePath: pathname,
+      ctaLocation: 'footer',
+    });
     window.location.href = `tel:${phone}`;
   };
 
   const handleWhatsApp = () => {
-    trackWhatsApp();
+    trackWhatsApp({
+      locale,
+      pagePath: pathname,
+      ctaLocation: 'footer',
+    });
     // Build prefilled message
     let message = tHub('whatsappMessage');
     if (routeInfo?.from) {

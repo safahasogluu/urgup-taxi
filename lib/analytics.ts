@@ -12,30 +12,43 @@ declare global {
   }
 }
 
-export function trackEvent(
-  action: string,
-  category?: string,
-  label?: string,
-  value?: number
-) {
+type CtaLocation = 'header' | 'footer' | 'hero';
+
+type EventContext = {
+  pagePath?: string;
+  locale?: string;
+  ctaLocation?: CtaLocation;
+};
+
+const getDefaultPagePath = () =>
+  typeof window !== 'undefined' ? window.location.pathname : undefined;
+
+function buildEventParams(context?: EventContext) {
+  const pagePath = context?.pagePath || getDefaultPagePath();
+  const params: Record<string, string> = {};
+
+  if (pagePath) params.page_path = pagePath;
+  if (context?.locale) params.locale = context.locale;
+  if (context?.ctaLocation) params.cta_location = context.ctaLocation;
+
+  return params;
+}
+
+export function trackEvent(action: string, params?: Record<string, unknown>) {
   if (typeof window !== 'undefined' && window.gtag) {
-    window.gtag('event', action, {
-      event_category: category,
-      event_label: label,
-      value: value,
-    });
+    window.gtag('event', action, params || {});
   }
 }
 
-export function trackCall() {
-  trackEvent('click_call', 'engagement', 'phone_button');
+export function trackCall(context?: EventContext) {
+  trackEvent('tel_click', buildEventParams(context));
 }
 
-export function trackWhatsApp() {
-  trackEvent('click_whatsapp', 'engagement', 'whatsapp_button');
+export function trackWhatsApp(context?: EventContext) {
+  trackEvent('whatsapp_click', buildEventParams(context));
 }
 
-export function trackBookingSubmit() {
-  trackEvent('submit_booking', 'conversion', 'booking_form');
+export function trackBookingSubmit(context?: EventContext) {
+  trackEvent('form_submit', buildEventParams(context));
 }
 

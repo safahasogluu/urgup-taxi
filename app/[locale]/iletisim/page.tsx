@@ -3,6 +3,8 @@ import { generateMetadata as genMeta } from '@/lib/seo';
 import { generateLocalBusinessSchema, generateBreadcrumbSchema } from '@/lib/schema';
 import { Locale } from '@/i18n';
 import { buildLocaleUrl } from '@/lib/url';
+import CallCTAButton from '@/components/CallCTAButton';
+import WhatsAppLinkButton from '@/components/WhatsAppLinkButton';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -57,24 +59,24 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
 
               <div>
                 <h3 className="text-lg font-semibold mb-2">{t('phoneLabel')}</h3>
-                <a
-                  href={`tel:${tCommon('phone')}`}
+                <CallCTAButton
+                  phone={tCommon('phone')}
                   className="text-primary-600 hover:text-primary-700"
+                  ctaLocation="hero"
                 >
                   {tCommon('phone')}
-                </a>
+                </CallCTAButton>
               </div>
 
               <div>
                 <h3 className="text-lg font-semibold mb-2">{t('whatsappLabel')}</h3>
-                <a
+                <WhatsAppLinkButton
                   href={`https://wa.me/${tCommon('whatsapp').replace(/[^0-9]/g, '')}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="text-green-600 hover:text-green-700"
+                  ctaLocation="hero"
                 >
                   {tCommon('whatsapp')}
-                </a>
+                </WhatsAppLinkButton>
               </div>
 
               <div>

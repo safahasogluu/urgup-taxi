@@ -18,7 +18,8 @@
     "orEmailUs": "or send us an email",
     "emailInstead": "Email Instead",
     "bookingRequest": "Booking Request",
-    "addressLabel": "Address"
+    "addressLabel": "Address",
+    "googleReviewButton": "Review on Google"
   },
   "nav": {
     "home": "Home",
@@ -253,5 +254,14 @@
     "faqTitle": "Frequently Asked Questions",
     "ctaTitle": "Book Your Transfer Now",
     "ctaSubtitle": "24/7 available, reliable transfer service"
+  },
+  "googleReview": {
+    "title": "Review on Google - Kubilay Ürgüp Taxi",
+    "description": "Rate our Kubilay Ürgüp Taxi service. Your reviews are very valuable to us.",
+    "fallbackTitle": "Review Link Coming Soon",
+    "fallbackDescription": "Our Google review link will be ready very soon. For now, message us on WhatsApp and we can send you the review link.",
+    "whatsappMessage": "Hello, I would like the Google review link.",
+    "whatsappCta": "Message on WhatsApp",
+    "backToHome": "Back to Home"
   }
 }
