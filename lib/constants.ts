@@ -77,11 +77,25 @@ export type CtaLocation =
   | 'footer'
   | 'hero'
   | 'sticky_cta'
+  | 'floating_cta'
   | 'whatsapp_modal'
   | 'contact_page'
   | 'booking_page'
   | 'transfer_page'
   | 'location_page';
+
+// ===========================================
+// GOOGLE RATING (for badge & schema.org)
+// ===========================================
+
+export const GOOGLE_RATING = {
+  /** Rating value out of 5 */
+  value: parseFloat(process.env.NEXT_PUBLIC_GOOGLE_RATING_VALUE || '4.9'),
+  /** Total number of reviews */
+  reviewCount: parseInt(process.env.NEXT_PUBLIC_GOOGLE_REVIEW_COUNT || '120', 10),
+  /** Google Business Profile review URL */
+  reviewUrl: process.env.NEXT_PUBLIC_GOOGLE_REVIEW_URL || 'https://g.page/r/review',
+} as const;
 
 // ===========================================
 // SITE CONFIGURATION

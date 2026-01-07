@@ -19,7 +19,8 @@
     "emailInstead": "E-posta Gönder",
     "bookingRequest": "Rezervasyon Talebi",
     "addressLabel": "Adres",
-    "googleReviewButton": "Google'da Yorum Yap"
+    "googleReviewButton": "Google'da Yorum Yap",
+    "reviews": "yorum"
   },
   "nav": {
     "home": "Ana Sayfa",

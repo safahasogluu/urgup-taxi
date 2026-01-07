@@ -19,7 +19,8 @@
     "emailInstead": "Email Instead",
     "bookingRequest": "Booking Request",
     "addressLabel": "Address",
-    "googleReviewButton": "Review on Google"
+    "googleReviewButton": "Review on Google",
+    "reviews": "reviews"
   },
   "nav": {
     "home": "Home",

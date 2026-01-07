@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 import { locales, Locale } from '@/i18n';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import StickyCTA from '@/components/StickyCTA';
+import FloatingCTA from '@/components/FloatingCTA';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
 import { Manrope, Playfair_Display } from 'next/font/google';
 import '../globals.css';
@@ -50,9 +50,10 @@ export default async function LocaleLayout({
         <GoogleAnalytics />
         <NextIntlClientProvider messages={messages}>
           <Header />
-          <main className="min-h-screen">{children}</main>
+          {/* pt-20 for fixed header height (80px), pb-20 md:pb-0 for mobile bottom CTA bar */}
+          <main className="min-h-screen pt-20 pb-20 md:pb-0">{children}</main>
           <Footer />
-          <StickyCTA />
+          <FloatingCTA />
         </NextIntlClientProvider>
       </body>
     </html>

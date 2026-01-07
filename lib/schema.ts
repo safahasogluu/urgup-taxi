@@ -1,5 +1,6 @@
 import { Locale } from '@/i18n';
 import { getBaseUrl } from './url';
+import { GOOGLE_RATING } from './constants';
 
 const siteUrl = getBaseUrl();
 const telephone = '+90 535 548 11 78';
@@ -68,6 +69,13 @@ export function generateLocalBusinessSchema(locale: Locale) {
     },
     areaServed: primaryAreaServed,
     serviceType: 'TaxiService',
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: GOOGLE_RATING.value.toString(),
+      reviewCount: GOOGLE_RATING.reviewCount.toString(),
+      bestRating: '5',
+      worstRating: '1',
+    },
     ...(gbpProfileUrl ? { sameAs: [gbpProfileUrl] } : {}),
     ...(googleMapsUrl ? { hasMap: googleMapsUrl } : {}),
   };

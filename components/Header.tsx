@@ -2,7 +2,7 @@
 
 import { useTranslations, useLocale } from 'next-intl';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { usePathname } from 'next/navigation';
 import { trackCall, trackWhatsApp } from '@/lib/analytics';
 import LanguageSwitcher from './LanguageSwitcher';
@@ -13,9 +13,44 @@ export default function Header() {
   const locale = useLocale();
   const pathname = usePathname() || '/';
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const phone = t('phone');
   const whatsapp = t('whatsapp');
+
+  // Scroll handler with requestAnimationFrame throttle
+  const rafRef = useRef<number | null>(null);
+  const lastScrollY = useRef(0);
+
+  const handleScroll = useCallback(() => {
+    if (rafRef.current) return;
+
+    rafRef.current = requestAnimationFrame(() => {
+      const scrollY = window.scrollY;
+      // Only update state if threshold crossed
+      const shouldBeScrolled = scrollY > 50;
+      if (shouldBeScrolled !== isScrolled) {
+        setIsScrolled(shouldBeScrolled);
+      }
+      lastScrollY.current = scrollY;
+      rafRef.current = null;
+    });
+  }, [isScrolled]);
+
+  useEffect(() => {
+    // Check initial scroll position
+    if (window.scrollY > 50) {
+      setIsScrolled(true);
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (rafRef.current) {
+        cancelAnimationFrame(rafRef.current);
+      }
+    };
+  }, [handleScroll]);
 
   const handleCall = () => {
     trackCall({
@@ -46,21 +81,50 @@ export default function Header() {
   ];
 
   return (
-    <header className="bg-white shadow-sm sticky top-0 z-50 border-b border-warm-sandstone/20">
+    <header
+      className={`
+        fixed top-0 left-0 right-0 z-50
+        transition-all duration-300 ease-out
+        ${isScrolled
+          ? 'bg-white/90 backdrop-blur-lg shadow-md border-b border-warm-sandstone/30'
+          : 'bg-white/60 backdrop-blur-md border-b border-white/20 shadow-sm'
+        }
+      `}
+      // Fixed height to prevent CLS
+      style={{ minHeight: isScrolled ? '64px' : '80px' }}
+    >
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+        <div
+          className={`
+            flex items-center justify-between
+            transition-all duration-300 ease-out
+            ${isScrolled ? 'h-16' : 'h-20'}
+          `}
+        >
           {/* Wordmark */}
           <Link href={`/${locale}`} className="flex flex-col">
-            <span className="text-2xl font-bold text-primary-700 leading-tight">
+            <span
+              className={`
+                font-bold text-primary-700 leading-tight
+                transition-all duration-300
+                ${isScrolled ? 'text-xl' : 'text-2xl'}
+              `}
+            >
               {t('businessName')}
             </span>
-            <span className="text-xs text-gray-600 font-normal">
+            <span
+              className={`
+                text-gray-600 font-normal
+                transition-all duration-300
+                ${isScrolled ? 'text-[10px]' : 'text-xs'}
+              `}
+            >
               Göreme Taksi • {t('open247')}
             </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-6">
+          <nav className="hidden lg:flex items-center gap-5">
             {navItems.slice(0, 4).map((item) => (
               <Link
                 key={item.href}
@@ -71,10 +135,31 @@ export default function Header() {
               </Link>
             ))}
             <LanguageSwitcher />
+            {/* Primary CTA in header */}
             <button
               onClick={handleCall}
-              className="bg-primary-700 text-white px-6 py-2.5 rounded-lg hover:bg-primary-800 transition-colors font-semibold text-sm shadow-md"
+              className={`
+                bg-primary-700 text-white rounded-lg
+                hover:bg-primary-800 transition-all
+                font-semibold text-sm shadow-md
+                inline-flex items-center gap-2
+                ${isScrolled ? 'px-4 py-2' : 'px-6 py-2.5'}
+              `}
             >
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                />
+              </svg>
               {t('callNow')}
             </button>
           </nav>
@@ -115,7 +200,12 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <nav className="lg:hidden py-4 space-y-2 border-t border-warm-sandstone/20">
+          <nav
+            className={`
+              lg:hidden py-4 space-y-2 border-t
+              ${isScrolled ? 'border-warm-sandstone/30' : 'border-white/20'}
+            `}
+          >
             {navItems.map((item) => (
               <Link
                 key={item.href}

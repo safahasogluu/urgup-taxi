@@ -19,7 +19,8 @@
     "emailInstead": "改用电子邮件",
     "bookingRequest": "预订请求",
     "addressLabel": "地址",
-    "googleReviewButton": "在Google上评价"
+    "googleReviewButton": "在Google上评价",
+    "reviews": "条评论"
   },
   "nav": {
     "home": "首页",

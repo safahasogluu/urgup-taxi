@@ -19,7 +19,8 @@
     "emailInstead": "メールで送信",
     "bookingRequest": "予約リクエスト",
     "addressLabel": "住所",
-    "googleReviewButton": "Googleでレビュー"
+    "googleReviewButton": "Googleでレビュー",
+    "reviews": "レビュー"
   },
   "nav": {
     "home": "ホーム",
