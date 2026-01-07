@@ -3,9 +3,11 @@
 import Script from 'next/script';
 
 export default function GoogleAnalytics() {
-  const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+  const gaId = process.env.NEXT_PUBLIC_GA_ID;
+  const isProd = process.env.NODE_ENV === 'production';
+  const isEnabled = isProd && !!gaId && process.env.NEXT_PUBLIC_GA_ENABLED !== 'false';
 
-  if (!gaId) {
+  if (!isEnabled) {
     return null;
   }
 

@@ -15,6 +15,10 @@ declare global {
   }
 }
 
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
+const IS_PROD = process.env.NODE_ENV === 'production';
+const GA_ENABLED = Boolean(GA_ID) && IS_PROD && process.env.NEXT_PUBLIC_GA_ENABLED !== 'false';
+
 // ===========================================
 // EVENT CONTEXT
 // ===========================================
@@ -57,20 +61,33 @@ function buildEventParams(context?: EventContext): Record<string, string> {
 // CORE TRACKING FUNCTION
 // ===========================================
 
+export type TrackEventInput = {
+  action: string;
+  category?: string;
+  label?: string;
+  value?: number;
+  params?: Record<string, unknown>;
+};
+
 /**
- * Send event to GA4
- * @param action - Event name (e.g., 'tel_click')
- * @param params - Event parameters
+ * Send event to GA4 (no-op if GA disabled or not loaded)
  */
-export function trackEvent(action: string, params?: Record<string, unknown>): void {
-  if (typeof window !== 'undefined' && window.gtag) {
-    window.gtag('event', action, params || {});
-    
-    // Debug logging in development
-    if (process.env.NODE_ENV === 'development') {
-      console.log('[GA4 Event]', action, params);
-    }
-  }
+export function trackEvent({
+  action,
+  category,
+  label,
+  value,
+  params,
+}: TrackEventInput): void {
+  if (!GA_ENABLED || typeof window === 'undefined' || !window.gtag) return;
+
+  const payload: Record<string, unknown> = { ...(params || {}) };
+
+  if (category) payload.event_category = category;
+  if (label) payload.event_label = label;
+  if (typeof value === 'number') payload.value = value;
+
+  window.gtag('event', action, payload);
 }
 
 // ===========================================
@@ -79,13 +96,28 @@ export function trackEvent(action: string, params?: Record<string, unknown>): vo
 
 /**
  * Track phone call click
- * Event name: tel_click
+ * Event name: phone_click
  * 
  * @example
  * trackCall({ locale: 'tr', pagePath: '/tr', ctaLocation: 'header' });
  */
 export function trackCall(context?: EventContext): void {
-  trackEvent(GA4_EVENTS.TEL_CLICK, buildEventParams(context));
+  const params = buildEventParams(context);
+
+  trackEvent({
+    action: GA4_EVENTS.PHONE_CLICK,
+    category: 'contact',
+    params,
+  });
+
+  // Also track main hero CTA as a dedicated event
+  if (context?.ctaLocation === 'hero') {
+    trackEvent({
+      action: GA4_EVENTS.CTA_CLICK,
+      category: 'contact',
+      params: { ...params, cta_primary: true },
+    });
+  }
 }
 
 /**
@@ -96,7 +128,11 @@ export function trackCall(context?: EventContext): void {
  * trackWhatsApp({ locale: 'tr', pagePath: '/tr/vip-transfer', ctaLocation: 'hero' });
  */
 export function trackWhatsApp(context?: EventContext): void {
-  trackEvent(GA4_EVENTS.WHATSAPP_CLICK, buildEventParams(context));
+  trackEvent({
+    action: GA4_EVENTS.WHATSAPP_CLICK,
+    category: 'contact',
+    params: buildEventParams(context),
+  });
 }
 
 /**
@@ -107,7 +143,11 @@ export function trackWhatsApp(context?: EventContext): void {
  * trackBookingSubmit({ locale: 'tr', pagePath: '/tr/rezervasyon', ctaLocation: 'booking_page' });
  */
 export function trackBookingSubmit(context?: EventContext): void {
-  trackEvent(GA4_EVENTS.FORM_SUBMIT, buildEventParams(context));
+  trackEvent({
+    action: GA4_EVENTS.FORM_SUBMIT,
+    category: 'form',
+    params: buildEventParams(context),
+  });
 }
 
 // ===========================================
@@ -119,9 +159,13 @@ export function trackBookingSubmit(context?: EventContext): void {
  * Useful for tracking clicks to external sites
  */
 export function trackOutboundClick(url: string, context?: EventContext): void {
-  trackEvent('outbound_click', {
-    ...buildEventParams(context),
-    outbound_url: url,
+  trackEvent({
+    action: 'outbound_click',
+    category: 'navigation',
+    params: {
+      ...buildEventParams(context),
+      outbound_url: url,
+    },
   });
 }
 
@@ -129,9 +173,13 @@ export function trackOutboundClick(url: string, context?: EventContext): void {
  * Track language change
  */
 export function trackLanguageChange(fromLocale: string, toLocale: string): void {
-  trackEvent('language_change', {
-    from_locale: fromLocale,
-    to_locale: toLocale,
-    page_path: getDefaultPagePath(),
+  trackEvent({
+    action: 'language_change',
+    category: 'navigation',
+    params: {
+      from_locale: fromLocale,
+      to_locale: toLocale,
+      page_path: getDefaultPagePath(),
+    },
   });
 }

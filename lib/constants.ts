@@ -62,9 +62,10 @@ export function buildGbpUrl(baseUrl: string, path: string = ''): string {
 // ===========================================
 
 export const GA4_EVENTS = {
-  TEL_CLICK: 'tel_click',
+  PHONE_CLICK: 'phone_click',
   WHATSAPP_CLICK: 'whatsapp_click',
   FORM_SUBMIT: 'form_submit',
+  CTA_CLICK: 'cta_click',
 } as const;
 
 // ===========================================

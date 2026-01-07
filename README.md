@@ -42,13 +42,15 @@ npm install
 3. Create `.env.local` (local only, do not commit):
 ```env
 NEXT_PUBLIC_SITE_URL=http://localhost:3000
-NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX  # optional for local
+NEXT_PUBLIC_GA_ID=G-Q2S7SWRM0F  # optional for local; GA runs only in production
 ```
 
 4. Production / Vercel:
 ```env
 NEXT_PUBLIC_SITE_URL=https://www.urguptaxi.com
-NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX
+NEXT_PUBLIC_GA_ID=G-Q2S7SWRM0F
+# Optional: set to false to disable GA even in prod
+# NEXT_PUBLIC_GA_ENABLED=false
 ```
 
 ### Development
@@ -157,14 +159,16 @@ All pages are available in all 5 locales:
 
 Google Analytics 4 is integrated with event tracking:
 
-- `click_call` - Phone button clicks
-- `click_whatsapp` - WhatsApp button clicks
-- `submit_booking` - Booking form submissions
+- `phone_click` - Phone button clicks
+- `whatsapp_click` - WhatsApp button clicks
+- `cta_click` - Hero primary CTA (in addition to phone_click)
+- `form_submit` - Booking form submissions
 
 To enable:
 1. Get your GA4 Measurement ID
-2. Add it to `.env.local` as `NEXT_PUBLIC_GA_MEASUREMENT_ID`
-3. Deploy - analytics will automatically start tracking
+2. Add it to `.env.local` as `NEXT_PUBLIC_GA_ID=G-Q2S7SWRM0F`
+3. (Optional) To force-disable in prod, set `NEXT_PUBLIC_GA_ENABLED=false`
+4. Deploy - analytics will automatically start tracking in production only
 
 ## Adding New Content
 
@@ -224,7 +228,8 @@ npm start
 
 | Variable | Description | Required |
 |----------|-------------|----------|
-| `NEXT_PUBLIC_GA_MEASUREMENT_ID` | Google Analytics 4 ID | No |
+| `NEXT_PUBLIC_GA_ID` | Google Analytics 4 ID | No (only runs in prod if set) |
+| `NEXT_PUBLIC_GA_ENABLED` | Optional flag to disable GA even in prod (`false`) | No |
 | `NEXT_PUBLIC_SITE_URL` | Production site URL | Yes (for SEO) |
 
 ## Verification Checklist
