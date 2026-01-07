@@ -8,7 +8,7 @@
     "learnMore": "了解更多",
     "address": "İmran Mah., Eski Sanayi Cad. No:14, 50400 Ürgüp/Nevşehir, Türkiye",
     "open247": "24小时营业",
-    "businessName": "Kubilay Ürgüp Taksi",
+    "businessName": "Göreme Taksi",
     "home": "首页",
     "duration": "时长",
     "distance": "距离",
@@ -139,7 +139,7 @@
   },
   "contact": {
     "title": "联系方式 - 联系我们",
-    "description": "Kubilay Ürgüp Taksi联系方式。我们提供24小时服务。",
+    "description": "Göreme Taksi联系方式。我们提供24小时服务。",
     "getInTouch": "联系我们",
     "addressTitle": "地址",
     "phoneLabel": "电话",
@@ -256,8 +256,8 @@
     "ctaSubtitle": "24小时可用，可靠的接送服务"
   },
   "googleReview": {
-    "title": "在Google上评价 - Kubilay Ürgüp Taxi",
-    "description": "请评价我们的Kubilay Ürgüp Taxi服务。您的评价对我们非常重要。",
+    "title": "在Google上评价 - Göreme Taksi",
+    "description": "请评价我们的Göreme Taksi服务。您的评价对我们非常重要。",
     "fallbackTitle": "评价链接准备中",
     "fallbackDescription": "我们的Google评价链接即将准备好。现在请通过WhatsApp联系我们，我们可以发送评价链接给您。",
     "whatsappMessage": "您好，我想要Google评价链接。",

@@ -1,4 +1,4 @@
-# Kubilay Ürgüp Taksi - Multilingual Taxi Website
+# Göreme Taksi - Multilingual Taxi Website
 
 Production-ready multilingual taxi and VIP transfer website for Cappadocia region, built with Next.js App Router, TypeScript, and Tailwind CSS.
 

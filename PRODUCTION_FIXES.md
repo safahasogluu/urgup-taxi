@@ -53,7 +53,7 @@
 ### ✅ Conversion UX
 - **PASS** - Phone number: +90 535 548 11 78 (verified in messages and components)
 - **PASS** - Address: "İmran Mah., Eski Sanayi Cad. No:14, 50400 Ürgüp/Nevşehir, Türkiye"
-- **PASS** - Business name: "Kubilay Ürgüp Taksi"
+- **PASS** - Business name: "Göreme Taksi"
 - **PASS** - "Ürgüp Terminal Taksi" appears in JSON-LD schema as `alternateName`
 
 ## Local Preview Instructions

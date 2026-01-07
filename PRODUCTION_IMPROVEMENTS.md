@@ -61,7 +61,7 @@
 - ✅ Sandstone/cream background colors (`bg-warm-cream`, `bg-warm-gradient`)
 - ✅ Sky gradient accents
 - ✅ Premium rounded cards with subtle borders
-- ✅ Wordmark header: "Kubilay Ürgüp Taksi" with subtitle "Ürgüp Terminal Taksi • 7/24"
+- ✅ Wordmark header: "Göreme Taksi" with subtitle "Göreme Taksi • 7/24"
 - ✅ Modern typography with Manrope font
 - ✅ Improved spacing and visual hierarchy
 
