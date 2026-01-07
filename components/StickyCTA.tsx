@@ -23,7 +23,7 @@ export default function StickyCTA({ routeInfo }: StickyCTAProps) {
     trackCall({
       locale,
       pagePath: pathname,
-      ctaLocation: 'footer',
+      ctaLocation: 'sticky_cta',
     });
     window.location.href = `tel:${phone}`;
   };
@@ -32,7 +32,7 @@ export default function StickyCTA({ routeInfo }: StickyCTAProps) {
     trackWhatsApp({
       locale,
       pagePath: pathname,
-      ctaLocation: 'footer',
+      ctaLocation: 'sticky_cta',
     });
     // Build prefilled message
     let message = tHub('whatsappMessage');

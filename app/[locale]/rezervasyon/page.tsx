@@ -34,7 +34,7 @@ export default function BookingPage() {
       trackBookingSubmit({
         locale,
         pagePath: pathname,
-        ctaLocation: 'hero',
+        ctaLocation: 'booking_page',
       });
       setSubmitted(true);
     } catch (err) {
@@ -64,7 +64,7 @@ export default function BookingPage() {
               trackCall({
                 locale,
                 pagePath: pathname,
-                ctaLocation: 'hero',
+                ctaLocation: 'booking_page',
               });
               window.location.href = `tel:${tCommon('phone')}`;
             }}

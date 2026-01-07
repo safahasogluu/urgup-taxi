@@ -4,6 +4,7 @@ import { useState, useCallback, useEffect } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import { usePathname } from 'next/navigation';
 import { trackWhatsApp } from '@/lib/analytics';
+import type { CtaLocation } from '@/lib/constants';
 import {
   WHATSAPP_NUMBER,
   MessageLanguage,
@@ -19,7 +20,7 @@ interface WhatsAppQuickCTAProps {
   type: 'general' | 'vip';
   className?: string;
   buttonText?: string;
-  ctaLocation?: 'header' | 'footer' | 'hero';
+  ctaLocation?: CtaLocation;
 }
 
 export default function WhatsAppQuickCTA({ 

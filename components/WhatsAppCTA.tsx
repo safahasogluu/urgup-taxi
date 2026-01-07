@@ -4,6 +4,7 @@ import { useState, useCallback, useEffect, FormEvent } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import { usePathname } from 'next/navigation';
 import { trackWhatsApp } from '@/lib/analytics';
+import type { CtaLocation } from '@/lib/constants';
 import {
   WHATSAPP_NUMBER,
   MessageLanguage,
@@ -23,7 +24,7 @@ interface WhatsAppCTAProps {
   routeType?: 'airport' | 'vip' | 'taxi';
   className?: string;
   buttonText?: string;
-  ctaLocation?: 'header' | 'footer' | 'hero';
+  ctaLocation?: CtaLocation;
 }
 
 export default function WhatsAppCTA({ 

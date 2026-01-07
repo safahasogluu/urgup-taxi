@@ -4,8 +4,7 @@ import { ReactNode } from 'react';
 import { useLocale } from 'next-intl';
 import { usePathname } from 'next/navigation';
 import { trackCall } from '@/lib/analytics';
-
-type CtaLocation = 'header' | 'footer' | 'hero';
+import type { CtaLocation } from '@/lib/constants';
 
 type CallCTAButtonProps = {
   phone: string;
