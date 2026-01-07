@@ -55,7 +55,7 @@ export default function Header() {
               {t('businessName')}
             </span>
             <span className="text-xs text-gray-600 font-normal">
-              Ürgüp Terminal Taksi • {t('open247')}
+              Göreme Taksi • {t('open247')}
             </span>
           </Link>
 

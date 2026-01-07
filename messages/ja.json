@@ -8,7 +8,7 @@
     "learnMore": "詳細を見る",
     "address": "İmran Mah., Eski Sanayi Cad. No:14, 50400 Ürgüp/Nevşehir, Türkiye",
     "open247": "24時間営業",
-    "businessName": "Kubilay Ürgüp Taksi",
+    "businessName": "Göreme Taksi",
     "home": "ホーム",
     "duration": "所要時間",
     "distance": "距離",
@@ -32,8 +32,8 @@
     "faq": "よくある質問"
   },
   "home": {
-    "title": "ウルギュップタクシー - 24時間信頼できるタクシーサービス",
-    "description": "カッパドキア地域のプロフェッショナルなタクシーおよびVIP送迎サービス。ウルギュップ、ギョレメ、ウチヒサルおよび周辺地域で24時間サービスを提供しています。",
+    "title": "ウルギュップタクシー & カッパドキア送迎 | Göreme Taksi",
+    "description": "カッパドキア地域のプロフェッショナルなタクシーおよびVIP送迎サービス。ウルギュップ、ギョレメ、ウチヒサルおよび周辺地域でGöreme Taksiが24時間サービスを提供しています。",
     "heroTitle": "カッパドキア24時間タクシー&VIP送迎",
     "heroSubtitle": "ウルギュップ、ギョレメ、カッパドキア全域で迅速で安全な移動。今すぐお電話またはWhatsAppでご連絡ください。",
     "heroImageAlt": "カッパドキアの妖精の煙突の景色とタクシー送迎サービス",
@@ -57,7 +57,7 @@
     "contactCtaTitle": "送迎を予約しますか？"
   },
   "vipTransfer": {
-    "title": "VIP送迎サービス - 快適で安心",
+    "title": "カッパドキアVIP送迎 | Göreme Taksi",
     "description": "カッパドキア地域のVIP送迎サービス。快適な車両、経験豊富なドライバー、24時間サービス。",
     "heroTitle": "カッパドキアVIP送迎サービス",
     "heroSubtitle": "空港からホテルまでドアツードアの快適な送迎体験",
@@ -84,7 +84,7 @@
     "step3Desc": "エアコン完備の車両でホテルまたは目的地へ"
   },
   "airportTransfer": {
-    "title": "カッパドキアから空港へ - ホテルピックアップ",
+    "title": "カッパドキア→空港送迎 | Göreme Taksi",
     "description": "ウルギュップ、ギョレメ、アヴァノス、ムスタファパシャからカイセリ(ASR)・ネヴシェヒル(NAV)空港への安全な送迎。フライトに間に合います。",
     "heroTitle": "ホテルから空港への送迎",
     "heroSubtitle": "カッパドキアからカイセリ・ネヴシェヒル空港へ快適に時間通りの移動。荷物対応車両。",
@@ -110,7 +110,7 @@
     "faq5A": "WhatsAppまたは電話でご連絡ください。フライト情報、ホテル住所、乗客数をお知らせいただければすぐに確認いたします。"
   },
   "pricing": {
-    "title": "料金 - 透明で手頃な価格",
+    "title": "料金案内 | Göreme Taksi",
     "description": "カッパドキアタクシーおよび送迎料金。詳細についてはお電話ください。",
     "intro": "料金は透明で競争力があります。距離、ルート、車両タイプにより料金が異なる場合があります。",
     "callForPricing": "詳しい料金についてはお電話ください。特別料金のサービス：",
@@ -121,7 +121,7 @@
     "callForPricingButton": "料金情報を取得"
   },
   "booking": {
-    "title": "予約する",
+    "title": "予約する | Göreme Taksi",
     "description": "オンライン予約フォーム。今すぐ予約するか、お電話ください。",
     "form": {
       "name": "氏名",
@@ -138,8 +138,8 @@
     }
   },
   "contact": {
-    "title": "お問い合わせ - ご連絡ください",
-    "description": "Kubilay Ürgüp Taksi連絡先情報。24時間サービスを提供しています。",
+    "title": "お問い合わせ | Göreme Taksi",
+    "description": "Göreme Taksiの連絡先情報。カッパドキア送迎を24時間提供しています。",
     "getInTouch": "ご連絡ください",
     "addressTitle": "住所",
     "phoneLabel": "電話",
@@ -256,8 +256,8 @@
     "ctaSubtitle": "24時間対応、信頼できる送迎サービス"
   },
   "googleReview": {
-    "title": "Googleでレビュー - Kubilay Ürgüp Taxi",
-    "description": "Kubilay Ürgüp Taxiサービスを評価してください。皆様のレビューは私たちにとって非常に貴重です。",
+    "title": "Googleでレビュー - Göreme Taksi",
+    "description": "Göreme Taksiサービスを評価してください。皆様のレビューは私たちにとって非常に貴重です。",
     "fallbackTitle": "レビューリンク準備中",
     "fallbackDescription": "Googleレビューリンクは間もなく準備されます。今はWhatsAppでご連絡いただければ、レビューリンクをお送りします。",
     "whatsappMessage": "こんにちは、Googleレビューリンクをお願いします。",

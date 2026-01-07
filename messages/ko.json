@@ -8,7 +8,7 @@
     "learnMore": "더 알아보기",
     "address": "İmran Mah., Eski Sanayi Cad. No:14, 50400 Ürgüp/Nevşehir, Türkiye",
     "open247": "24시간 영업",
-    "businessName": "Kubilay Ürgüp Taksi",
+    "businessName": "Göreme Taksi",
     "home": "홈",
     "duration": "소요 시간",
     "distance": "거리",
@@ -32,8 +32,8 @@
     "faq": "자주 묻는 질문"
   },
   "home": {
-    "title": "우르귀프 택시 - 24시간 신뢰할 수 있는 택시 서비스",
-    "description": "카파도키아 지역의 전문 택시 및 VIP 터미널 서비스. 우르귀프, 괴레메, 우치히사르 및 주변 지역에서 24시간 서비스를 제공합니다.",
+    "title": "우르귀프 택시 & 카파도키아 트랜스퍼 | Göreme Taksi",
+    "description": "카파도키아 지역의 전문 택시 및 VIP 터미널 서비스. 우르귀프, 괴레메, 우치히사르 및 주변 지역에서 Göreme Taksi가 24시간 서비스를 제공합니다.",
     "heroTitle": "카파도키아 24시간 택시 & VIP 픽업",
     "heroSubtitle": "우르귀프, 괴레메 및 카파도키아 전역에서 빠르고 안전한 이동. 지금 전화하거나 WhatsApp으로 연락하세요.",
     "heroImageAlt": "카파도키아 버섯바위 풍경과 함께하는 택시 픽업 서비스",
@@ -57,7 +57,7 @@
     "contactCtaTitle": "터미널 예약을 하시겠습니까?"
   },
   "vipTransfer": {
-    "title": "VIP 터미널 서비스 - 럭셔리하고 편안함",
+    "title": "카파도키아 VIP 트랜스퍼 | Göreme Taksi",
     "description": "카파도키아 지역의 VIP 터미널 서비스. 럭셔리 차량, 전문 운전사, 24시간 서비스.",
     "heroTitle": "카파도키아 VIP 터미널 서비스",
     "heroSubtitle": "공항에서 호텔까지 도어 투 도어 럭셔리 터미널 서비스",
@@ -84,7 +84,7 @@
     "step3Desc": "에어컨이 설치된 차량으로 호텔 또는 목적지에 도착하세요"
   },
   "airportTransfer": {
-    "title": "카파도키아에서 공항까지 - 호텔 픽업",
+    "title": "카파도키아 → 공항 트랜스퍼 | Göreme Taksi",
     "description": "우르귀프, 괴레메, 아바노스, 무스타파파샤에서 카이세리(ASR) 및 네브세히르(NAV) 공항까지 안전한 픽업. 비행기에 맞춰 정시 도착.",
     "heroTitle": "호텔에서 공항까지 픽업",
     "heroSubtitle": "카파도키아에서 카이세리, 네브세히르 공항까지 편안하고 정시 이동. 수하물 친화적 차량.",
@@ -110,7 +110,7 @@
     "faq5A": "WhatsApp 또는 전화로 연락하세요. 항공편 정보, 호텔 주소, 승객 수를 알려주시면 바로 확인해 드립니다."
   },
   "pricing": {
-    "title": "요금 - 투명하고 합리적인 가격",
+    "title": "요금 안내 | Göreme Taksi",
     "description": "카파도키아 택시 및 터미널 요금. 자세한 정보는 전화 주세요.",
     "intro": "저희 요금은 투명하고 경쟁력 있습니다. 거리, 경로 및 차량 유형에 따라 요금이 달라질 수 있습니다.",
     "callForPricing": "자세한 요금은 전화 주세요. 특별 요금을 제공하는 서비스:",
@@ -121,7 +121,7 @@
     "callForPricingButton": "요금 정보 받기"
   },
   "booking": {
-    "title": "예약하기",
+    "title": "예약하기 | Göreme Taksi",
     "description": "온라인 예약 양식. 지금 예약하거나 전화 주세요.",
     "form": {
       "name": "성명",
@@ -138,8 +138,8 @@
     }
   },
   "contact": {
-    "title": "연락처 - 문의하기",
-    "description": "Kubilay Ürgüp Taksi 연락처 정보. 24시간 서비스를 제공합니다.",
+    "title": "연락처 | Göreme Taksi",
+    "description": "Göreme Taksi 연락처 정보. 24시간 카파도키아 트랜스퍼를 제공합니다.",
     "getInTouch": "문의하기",
     "addressTitle": "주소",
     "phoneLabel": "전화",
@@ -256,8 +256,8 @@
     "ctaSubtitle": "24시간 이용 가능, 신뢰할 수 있는 픽업 서비스"
   },
   "googleReview": {
-    "title": "Google 리뷰 - Kubilay Ürgüp Taxi",
-    "description": "Kubilay Ürgüp Taxi 서비스를 평가해 주세요. 여러분의 리뷰는 저희에게 매우 소중합니다.",
+    "title": "Google 리뷰 - Göreme Taksi",
+    "description": "Göreme Taksi 서비스를 평가해 주세요. 여러분의 리뷰는 저희에게 매우 소중합니다.",
     "fallbackTitle": "리뷰 링크 준비 중",
     "fallbackDescription": "Google 리뷰 링크가 곧 준비됩니다. 지금은 WhatsApp으로 연락해 주시면 리뷰 링크를 보내드리겠습니다.",
     "whatsappMessage": "안녕하세요, Google 리뷰 링크를 원합니다.",

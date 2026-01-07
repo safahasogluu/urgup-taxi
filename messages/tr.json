@@ -8,7 +8,7 @@
     "learnMore": "Daha Fazla Bilgi",
     "address": "İmran Mah., Eski Sanayi Cad. No:14, 50400 Ürgüp/Nevşehir, Türkiye",
     "open247": "7/24 Açık",
-    "businessName": "Kubilay Ürgüp Taksi",
+    "businessName": "Göreme Taksi",
     "home": "Ana Sayfa",
     "duration": "Süre",
     "distance": "Mesafe",
@@ -32,8 +32,8 @@
     "faq": "SSS"
   },
   "home": {
-    "title": "Ürgüp Taksi - Kapadokya Transfer ve Taksi Hizmeti",
-    "description": "Kapadokya bölgesinde profesyonel taksi ve VIP transfer hizmeti. Ürgüp, Göreme, Uçhisar, Nevşehir ve Kayseri havalimanı transferi. 7/24 hizmetinizdeyiz.",
+    "title": "Ürgüp Taksi & Kapadokya Transfer | Göreme Taksi",
+    "description": "Kapadokya bölgesinde profesyonel taksi ve VIP transfer hizmeti. Ürgüp, Göreme, Uçhisar, Nevşehir ve Kayseri havalimanı transferi. Göreme Taksi ekibi 7/24 hizmetinizde.",
     "heroTitle": "Kapadokya'da 7/24 Taksi & VIP Transfer",
     "heroSubtitle": "Ürgüp, Göreme ve tüm Kapadokya'da hızlı ve güvenilir ulaşım. Hemen arayın veya WhatsApp'tan yazın.",
     "heroImageAlt": "Kapadokya peri bacalari manzarasinda taksi transfer hizmeti",
@@ -57,7 +57,7 @@
     "contactCtaTitle": "Transfer Rezervasyonu Yapmak İster Misiniz?"
   },
   "vipTransfer": {
-    "title": "Kapadokya VIP Transfer - Konforlu Araçlarla Özel Hizmet",
+    "title": "Kapadokya VIP Transfer | Göreme Taksi",
     "description": "Kayseri ve Nevşehir havalimanlarından Ürgüp, Göreme ve Kapadokya'ya özel transfer hizmeti. Konforlu araçlar, güvenli ulaşım.",
     "heroTitle": "Kapadokya VIP Transfer Hizmeti",
     "heroSubtitle": "Havalimanından otelinize kapıdan kapıya konforlu transfer deneyimi",
@@ -84,7 +84,7 @@
     "step3Desc": "Klimalı aracımızla otelinize veya istediğiniz noktaya ulaşın"
   },
   "airportTransfer": {
-    "title": "Kapadokya'dan Havalimanına Transfer - Otel ve Bölge Çıkışlı",
+    "title": "Kapadokya'dan Havalimanına Transfer | Göreme Taksi",
     "description": "Ürgüp, Göreme, Avanos ve Mustafapaşa'dan Kayseri (ASR) ve Nevşehir (NAV) havalimanlarına güvenli transfer. Uçuşunuza zamanında yetişin.",
     "heroTitle": "Otelinizden Havalimanına Transfer",
     "heroSubtitle": "Kapadokya'dan Kayseri ve Nevşehir havalimanlarına konforlu, zamanında ulaşım. Bagajınıza uygun araçlar.",
@@ -110,7 +110,7 @@
     "faq5A": "WhatsApp veya telefon ile bize ulaşın. Uçuş bilginizi, otel adresinizi ve yolcu sayısını paylaşın, hemen onay verelim."
   },
   "pricing": {
-    "title": "Kapadokya Transfer Fiyatları",
+    "title": "Kapadokya Transfer Fiyatları | Göreme Taksi",
     "description": "Havalimanı transferi ve bölge içi taksi fiyatlarımız. Net fiyat garantisi, gizli ücret yok.",
     "intro": "Fiyatlarımız şeffaf ve rekabetçidir. Mesafe, güzergah ve araç tipine göre değişiklik gösterebilir.",
     "callForPricing": "Detaylı fiyat bilgisi için bizi arayın. Özel fiyatlar sunduğumuz hizmetler:",
@@ -121,7 +121,7 @@
     "callForPricingButton": "Fiyat Bilgisi Al"
   },
   "booking": {
-    "title": "Transfer Rezervasyonu",
+    "title": "Transfer Rezervasyonu | Göreme Taksi",
     "description": "Online rezervasyon formu. Bilgilerinizi girin, size hemen dönelim.",
     "form": {
       "name": "Ad Soyad",
@@ -138,8 +138,8 @@
     }
   },
   "contact": {
-    "title": "İletişim - Bize Ulaşın",
-    "description": "Kubilay Ürgüp Taksi iletişim bilgileri. Kapadokya transfer için 7/24 hizmetinizdeyiz.",
+    "title": "İletişim | Göreme Taksi",
+    "description": "Göreme Taksi iletişim bilgileri. Kapadokya transfer için 7/24 hizmetinizdeyiz.",
     "getInTouch": "Bize Ulaşın",
     "addressTitle": "Adres",
     "phoneLabel": "Telefon",
@@ -256,8 +256,8 @@
     "ctaSubtitle": "7/24 ulaşabilir, güvenilir transfer hizmeti"
   },
   "googleReview": {
-    "title": "Google'da Yorum Yap - Kubilay Ürgüp Taksi",
-    "description": "Kubilay Ürgüp Taksi hizmetimizi değerlendirin. Yorumlarınız bizim için çok değerli.",
+    "title": "Google'da Yorum Yap - Göreme Taksi",
+    "description": "Göreme Taksi hizmetimizi değerlendirin. Yorumlarınız bizim için çok değerli.",
     "fallbackTitle": "Yorum Linki Hazırlanıyor",
     "fallbackDescription": "Google yorum linkimiz çok yakında hazır olacak. Şimdilik bize WhatsApp'tan yazın, yorum linkinizi iletebiliriz.",
     "whatsappMessage": "Merhaba, Google yorum linki istiyorum.",

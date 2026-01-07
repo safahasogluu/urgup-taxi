@@ -52,7 +52,7 @@ export function generateMetadata({
       title,
       description,
       url,
-      siteName: 'Kubilay Ürgüp Taksi',
+      siteName: 'Göreme Taksi',
       locale,
       type: 'website',
       images: [
