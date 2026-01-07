@@ -2,7 +2,7 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { generateMetadata as genMeta } from '@/lib/seo';
 import { generateLocalBusinessSchema, generateTaxiServiceSchema, generateBreadcrumbSchema } from '@/lib/schema';
 import Link from 'next/link';
-import { locales, Locale } from '@/i18n';
+import { Locale } from '@/i18n';
 import { locations } from '@/data/locations';
 import { transferRoutes } from '@/data/transfers';
 import { buildLocaleUrl } from '@/lib/url';
@@ -60,11 +60,12 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         subtitle={t('heroSubtitle')}
         imageAlt={t('heroImageAlt')}
       >
-        {/* Primary CTAs */}
+        {/* Primary CTAs - Premium styling */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mb-8 md:mb-10">
+          {/* Bronze/Copper "Hemen Ara" button */}
           <CallCTAButton
             phone={phone}
-            className="bg-white text-primary-700 px-8 py-4 rounded-xl font-semibold hover:bg-sand-100 transition-all shadow-lg text-lg inline-flex items-center justify-center gap-2"
+            className="btn-primary px-8 py-4 text-lg"
             ctaLocation="hero"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -72,7 +73,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             </svg>
             {tCommon('callNow')}
           </CallCTAButton>
-          <WhatsAppQuickCTA type="general" className="shadow-lg" />
+          {/* Premium WhatsApp button */}
+          <WhatsAppQuickCTA type="general" className="btn-whatsapp px-8 py-4 text-lg" />
         </div>
 
         {/* Google Rating Badge */}
@@ -80,35 +82,35 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           <GoogleRatingBadge variant="glass" size="md" showLabel={true} />
         </div>
 
-        {/* Trust Badges - glass effect on dark background */}
+        {/* Trust Badges - premium glass pills */}
         <div className="flex flex-wrap justify-center md:justify-start gap-3 md:gap-4 text-sm">
-          <div className="flex items-center gap-2 bg-white/20 backdrop-blur-md px-4 py-2 rounded-full border border-white/30">
-            <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <div className="trust-chip">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
             </svg>
-            <span className="font-medium text-white">{tCommon('open247')}</span>
+            <span>{tCommon('open247')}</span>
           </div>
-          <div className="flex items-center gap-2 bg-white/20 backdrop-blur-md px-4 py-2 rounded-full border border-white/30">
-            <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <div className="trust-chip">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
-            <span className="font-medium text-white">{t('trustFastResponse')}</span>
+            <span>{t('trustFastResponse')}</span>
           </div>
-          <div className="flex items-center gap-2 bg-white/20 backdrop-blur-md px-4 py-2 rounded-full border border-white/30">
-            <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <div className="trust-chip">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
             </svg>
-            <span className="font-medium text-white">{t('trustBestPrices')}</span>
+            <span>{t('trustBestPrices')}</span>
           </div>
         </div>
       </HeroSection>
 
-      {/* Services Section */}
-      <section className="section-padding bg-white">
-        <div className="container mx-auto px-4">
+      {/* Services Section - Premium light background */}
+      <section className="section-padding section-premium-light relative">
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-12">
-            <h2 className="font-display mb-4 text-basalt-900">{t('servicesTitle')}</h2>
-            <p className="text-lg text-basalt-600 max-w-2xl mx-auto">{t('servicesSubtitle')}</p>
+            <h2 className="font-display mb-4 text-zinc-900">{t('servicesTitle')}</h2>
+            <p className="text-lg text-zinc-600 max-w-2xl mx-auto">{t('servicesSubtitle')}</p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -116,26 +118,26 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
               href={`/${locale}/vip-transfer`}
               className="card-premium p-8"
             >
-              <div className="w-14 h-14 bg-terracotta-100 rounded-2xl flex items-center justify-center mb-4">
-                <svg className="w-7 h-7 text-terracotta-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <div className="w-14 h-14 bg-amber-100 rounded-2xl flex items-center justify-center mb-4">
+                <svg className="w-7 h-7 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
                 </svg>
               </div>
-              <h3 className="font-display text-xl mb-2 text-basalt-900">{tNav('vipTransfer')}</h3>
-              <p className="text-basalt-600">{t('vipCardDescription')}</p>
+              <h3 className="font-display text-xl mb-2 text-zinc-900">{tNav('vipTransfer')}</h3>
+              <p className="text-zinc-600">{t('vipCardDescription')}</p>
             </Link>
             
             <Link
               href={`/${locale}/havalimani-transferi`}
               className="card-premium p-8"
             >
-              <div className="w-14 h-14 bg-sage-100 rounded-2xl flex items-center justify-center mb-4">
-                <svg className="w-7 h-7 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <div className="w-14 h-14 bg-emerald-100 rounded-2xl flex items-center justify-center mb-4">
+                <svg className="w-7 h-7 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
                 </svg>
               </div>
-              <h3 className="font-display text-xl mb-2 text-basalt-900">{tNav('airportTransfer')}</h3>
-              <p className="text-basalt-600">{t('airportCardDescription')}</p>
+              <h3 className="font-display text-xl mb-2 text-zinc-900">{tNav('airportTransfer')}</h3>
+              <p className="text-zinc-600">{t('airportCardDescription')}</p>
             </Link>
 
             {transferRoutes.slice(0, 4).map((route) => (
@@ -144,15 +146,15 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                 href={`/${locale}/transfer/${route.slug}`}
                 className="card-premium p-8"
               >
-                <div className="w-14 h-14 bg-primary-100 rounded-2xl flex items-center justify-center mb-4">
-                  <svg className="w-7 h-7 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <div className="w-14 h-14 bg-sky-100 rounded-2xl flex items-center justify-center mb-4">
+                  <svg className="w-7 h-7 text-sky-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                 </div>
-                <h3 className="font-display text-xl mb-2 text-basalt-900">
+                <h3 className="font-display text-xl mb-2 text-zinc-900">
                   {route.from[locale as Locale]} → {route.to[locale as Locale]}
                 </h3>
-                <p className="text-basalt-600">{route.description[locale as Locale]}</p>
+                <p className="text-zinc-600">{route.description[locale as Locale]}</p>
               </Link>
             ))}
           </div>
@@ -160,11 +162,11 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       </section>
 
       {/* Airport Transfers Premium Section */}
-      <section className="section-padding bg-sand-200">
-        <div className="container mx-auto px-4">
+      <section className="section-padding section-premium-warm relative">
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-12">
-            <h2 className="font-display mb-4 text-basalt-900">{t('premiumTitle')}</h2>
-            <p className="text-lg text-basalt-600">{t('premiumSubtitle')}</p>
+            <h2 className="font-display mb-4 text-zinc-900">{t('premiumTitle')}</h2>
+            <p className="text-lg text-zinc-600">{t('premiumSubtitle')}</p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
@@ -176,18 +178,18 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
               >
                 <div className="flex items-start justify-between mb-4">
                   <div>
-                    <h3 className="font-display text-xl text-basalt-900 mb-1">
+                    <h3 className="font-display text-xl text-zinc-900 mb-1">
                       {route.from[locale as Locale]} → {route.to[locale as Locale]}
                     </h3>
-                    <p className="text-basalt-600 text-sm">{route.description[locale as Locale]}</p>
+                    <p className="text-zinc-600 text-sm">{route.description[locale as Locale]}</p>
                   </div>
-                  <div className="bg-terracotta-100 rounded-xl p-2 flex-shrink-0">
-                    <svg className="w-6 h-6 text-terracotta-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <div className="bg-amber-100 rounded-xl p-2 flex-shrink-0">
+                    <svg className="w-6 h-6 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7l4-4m0 0l4 4m-4-4v18" />
                     </svg>
                   </div>
                 </div>
-                <div className="flex gap-4 text-sm text-basalt-500 pt-4 border-t border-sand-300">
+                <div className="flex gap-4 text-sm text-zinc-500 pt-4 border-t border-zinc-200/60">
                   <span className="flex items-center gap-1">
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -209,11 +211,11 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       </section>
 
       {/* Locations Section */}
-      <section className="section-padding bg-white">
-        <div className="container mx-auto px-4">
+      <section className="section-padding section-premium-light relative">
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-12">
-            <h2 className="font-display mb-4 text-basalt-900">{tNav('locations')}</h2>
-            <p className="text-lg text-basalt-600">{t('locationsSubtitle')}</p>
+            <h2 className="font-display mb-4 text-zinc-900">{tNav('locations')}</h2>
+            <p className="text-lg text-zinc-600">{t('locationsSubtitle')}</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {locations.map((location) => (
@@ -222,8 +224,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                 href={`/${locale}/${location.slug}`}
                 className="card-premium p-6"
               >
-                <h3 className="font-display text-xl mb-2 text-basalt-900">{location.name[locale as Locale]}</h3>
-                <p className="text-basalt-600">{location.description[locale as Locale]}</p>
+                <h3 className="font-display text-xl mb-2 text-zinc-900">{location.name[locale as Locale]}</h3>
+                <p className="text-zinc-600">{location.description[locale as Locale]}</p>
               </Link>
             ))}
           </div>
@@ -231,59 +233,72 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       </section>
 
       {/* Why Us Section */}
-      <section className="section-padding bg-sand-200">
-        <div className="container mx-auto px-4">
+      <section className="section-padding section-premium-warm relative">
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-12">
-            <h2 className="font-display mb-4 text-basalt-900">{t('whyUsTitle')}</h2>
-            <p className="text-lg text-basalt-600">{t('whyUsSubtitle')}</p>
+            <h2 className="font-display mb-4 text-zinc-900">{t('whyUsTitle')}</h2>
+            <p className="text-lg text-zinc-600">{t('whyUsSubtitle')}</p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             <div className="text-center card-premium p-8">
-              <div className="bg-sage-100 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <div className="bg-emerald-100 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                 </svg>
               </div>
-              <h3 className="font-display text-xl mb-2 text-basalt-900">{t('whyReliable')}</h3>
-              <p className="text-basalt-600">{t('whyReliableDesc')}</p>
+              <h3 className="font-display text-xl mb-2 text-zinc-900">{t('whyReliable')}</h3>
+              <p className="text-zinc-600">{t('whyReliableDesc')}</p>
             </div>
             
             <div className="text-center card-premium p-8">
-              <div className="bg-terracotta-100 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-terracotta-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <div className="bg-amber-100 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
-              <h3 className="font-display text-xl mb-2 text-basalt-900">{t('whyFast')}</h3>
-              <p className="text-basalt-600">{t('whyFastDesc')}</p>
+              <h3 className="font-display text-xl mb-2 text-zinc-900">{t('whyFast')}</h3>
+              <p className="text-zinc-600">{t('whyFastDesc')}</p>
             </div>
             
             <div className="text-center card-premium p-8">
-              <div className="bg-primary-100 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <div className="bg-sky-100 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-sky-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
               </div>
-              <h3 className="font-display text-xl mb-2 text-basalt-900">{t('whyProfessional')}</h3>
-              <p className="text-basalt-600">{t('whyProfessionalDesc')}</p>
+              <h3 className="font-display text-xl mb-2 text-zinc-900">{t('whyProfessional')}</h3>
+              <p className="text-zinc-600">{t('whyProfessionalDesc')}</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Contact CTA Section */}
-      <section className="section-padding bg-terracotta-gradient text-white">
-        <div className="container mx-auto px-4">
+      {/* Contact CTA Section - Premium gradient */}
+      <section 
+        className="section-padding text-white relative overflow-hidden"
+        style={{
+          background: 'linear-gradient(135deg, #92400e 0%, #b45309 30%, #d97706 70%, #b45309 100%)',
+        }}
+      >
+        {/* Subtle pattern overlay */}
+        <div 
+          className="absolute inset-0 opacity-10"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          }}
+          aria-hidden="true"
+        />
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="font-display mb-4 text-white">{t('contactCtaTitle')}</h2>
-            <p className="text-xl mb-8 text-terracotta-100">
+            <p className="text-xl mb-8 text-amber-100">
               {tCommon('address')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <CallCTAButton
                 phone={phone}
-                className="bg-white text-terracotta-700 px-8 py-4 rounded-xl font-semibold hover:bg-sand-100 transition-all shadow-lg text-lg inline-flex items-center justify-center gap-2"
+                className="bg-white text-amber-800 px-8 py-4 rounded-xl font-semibold hover:bg-amber-50 transition-all shadow-lg text-lg inline-flex items-center justify-center gap-2"
                 ctaLocation="hero"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -293,7 +308,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
               </CallCTAButton>
               <Link
                 href={`/${locale}/rezervasyon`}
-                className="bg-terracotta-800 text-white px-8 py-4 rounded-xl font-semibold hover:bg-terracotta-900 transition-all shadow-lg text-lg inline-flex items-center justify-center gap-2 border-2 border-white/20"
+                className="bg-amber-900/50 backdrop-blur-sm text-white px-8 py-4 rounded-xl font-semibold hover:bg-amber-900/70 transition-all shadow-lg text-lg inline-flex items-center justify-center gap-2 border border-white/20"
               >
                 {tCommon('bookNow')}
               </Link>

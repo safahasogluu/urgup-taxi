@@ -12,9 +12,9 @@ interface FloatingCTAProps {
 }
 
 /**
- * FloatingCTA Component
- * - Desktop: Floating phone button bottom-right
- * - Mobile: Fixed bottom bar with Call + WhatsApp
+ * FloatingCTA Component - Premium styling
+ * - Desktop: Floating phone button bottom-right (bronze/copper)
+ * - Mobile: Fixed bottom bar with Call + WhatsApp (glass effect)
  */
 export default function FloatingCTA({ routeInfo }: FloatingCTAProps) {
   const t = useTranslations('common');
@@ -63,21 +63,15 @@ export default function FloatingCTA({ routeInfo }: FloatingCTAProps) {
 
   return (
     <>
-      {/* Desktop: Floating Phone Button - Bottom Right */}
+      {/* Desktop: Floating Phone Button - Bottom Right - Premium Bronze */}
       <div className="hidden md:block fixed bottom-6 right-6 z-50">
         <button
           onClick={handleCall}
-          className="
-            group relative
-            bg-primary-700 hover:bg-primary-800
-            text-white
-            w-14 h-14 rounded-full
-            shadow-lg hover:shadow-xl
-            transition-all duration-300
-            flex items-center justify-center
-            hover:scale-110
-            ring-4 ring-primary-200/50
-          "
+          className="group relative w-14 h-14 rounded-full text-white transition-all duration-300 flex items-center justify-center hover:scale-110"
+          style={{
+            background: 'linear-gradient(135deg, #b45309 0%, #d97706 50%, #b45309 100%)',
+            boxShadow: '0 4px 16px rgba(180, 83, 9, 0.4), 0 8px 32px rgba(180, 83, 9, 0.2)',
+          }}
           aria-label={t('callNow')}
         >
           <svg
@@ -97,58 +91,51 @@ export default function FloatingCTA({ routeInfo }: FloatingCTAProps) {
 
           {/* Tooltip on hover */}
           <span
-            className="
-              absolute right-full mr-3
-              bg-basalt-900 text-white text-sm
-              px-3 py-2 rounded-lg
-              whitespace-nowrap
-              opacity-0 group-hover:opacity-100
-              transition-opacity duration-200
-              pointer-events-none
-            "
+            className="absolute right-full mr-3 bg-zinc-900 text-white text-sm px-3 py-2 rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none shadow-lg"
           >
             {t('callNow')}
           </span>
 
           {/* Pulse animation ring */}
           <span
-            className="
-              absolute inset-0
-              rounded-full
-              bg-primary-600
-              animate-ping
-              opacity-30
-            "
+            className="absolute inset-0 rounded-full animate-ping opacity-25"
+            style={{ background: 'linear-gradient(135deg, #d97706, #f59e0b)' }}
+            aria-hidden="true"
+          />
+          
+          {/* Outer glow ring */}
+          <span
+            className="absolute -inset-1 rounded-full opacity-30"
+            style={{ 
+              background: 'linear-gradient(135deg, #fbbf24, #d97706)',
+              filter: 'blur(4px)',
+            }}
             aria-hidden="true"
           />
         </button>
       </div>
 
-      {/* Mobile: Fixed Bottom Bar */}
+      {/* Mobile: Fixed Bottom Bar - Premium Glass */}
       <div className="md:hidden fixed bottom-0 left-0 right-0 z-50">
-        {/* Glass background */}
         <div
-          className="
-            bg-white/90 backdrop-blur-lg
-            border-t border-warm-sandstone/30
-            shadow-[0_-4px_20px_rgba(0,0,0,0.1)]
-          "
+          className="border-t border-black/5"
+          style={{
+            background: 'rgba(255, 255, 255, 0.85)',
+            backdropFilter: 'blur(20px)',
+            WebkitBackdropFilter: 'blur(20px)',
+            boxShadow: '0 -4px 24px rgba(0,0,0,0.08)',
+          }}
         >
           <div className="container mx-auto px-4 py-3">
-            <div className="flex gap-2">
-              {/* Call Button */}
+            <div className="flex gap-3">
+              {/* Call Button - Bronze/Copper */}
               <button
                 onClick={handleCall}
-                className="
-                  flex-1
-                  bg-primary-700 hover:bg-primary-800
-                  text-white
-                  px-4 py-3 rounded-xl
-                  font-semibold
-                  transition-colors
-                  flex items-center justify-center gap-2
-                  shadow-md
-                "
+                className="flex-1 text-white px-4 py-3.5 rounded-xl font-semibold transition-all flex items-center justify-center gap-2"
+                style={{
+                  background: 'linear-gradient(135deg, #b45309 0%, #d97706 50%, #b45309 100%)',
+                  boxShadow: '0 2px 8px rgba(180, 83, 9, 0.3)',
+                }}
               >
                 <svg
                   className="w-5 h-5"
@@ -167,19 +154,14 @@ export default function FloatingCTA({ routeInfo }: FloatingCTAProps) {
                 {t('callNow')}
               </button>
 
-              {/* WhatsApp Button */}
+              {/* WhatsApp Button - Premium Green */}
               <button
                 onClick={handleWhatsApp}
-                className="
-                  flex-1
-                  bg-green-600 hover:bg-green-700
-                  text-white
-                  px-4 py-3 rounded-xl
-                  font-semibold
-                  transition-colors
-                  flex items-center justify-center gap-2
-                  shadow-md
-                "
+                className="flex-1 text-white px-4 py-3.5 rounded-xl font-semibold transition-all flex items-center justify-center gap-2"
+                style={{
+                  background: 'linear-gradient(135deg, #15803d 0%, #16a34a 50%, #15803d 100%)',
+                  boxShadow: '0 2px 8px rgba(22, 163, 74, 0.3)',
+                }}
               >
                 <svg
                   className="w-5 h-5"

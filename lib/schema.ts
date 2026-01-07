@@ -69,13 +69,18 @@ export function generateLocalBusinessSchema(locale: Locale) {
     },
     areaServed: primaryAreaServed,
     serviceType: 'TaxiService',
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: GOOGLE_RATING.value.toString(),
-      reviewCount: GOOGLE_RATING.reviewCount.toString(),
-      bestRating: '5',
-      worstRating: '1',
-    },
+    // aggregateRating only included if explicitly enabled via NEXT_PUBLIC_ENABLE_SCHEMA_RATING=true
+    ...(GOOGLE_RATING.enableSchemaRating && GOOGLE_RATING.reviewCount
+      ? {
+          aggregateRating: {
+            '@type': 'AggregateRating',
+            ratingValue: GOOGLE_RATING.value.toString(),
+            reviewCount: GOOGLE_RATING.reviewCount.toString(),
+            bestRating: '5',
+            worstRating: '1',
+          },
+        }
+      : {}),
     ...(gbpProfileUrl ? { sameAs: [gbpProfileUrl] } : {}),
     ...(googleMapsUrl ? { hasMap: googleMapsUrl } : {}),
   };

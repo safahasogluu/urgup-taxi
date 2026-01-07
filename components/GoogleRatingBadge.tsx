@@ -16,8 +16,8 @@ interface GoogleRatingBadgeProps {
 
 /**
  * Google Rating Badge
- * Displays star rating with review count
- * Links to Google Business Profile reviews
+ * Displays star rating with optional review count (only shown if env is set)
+ * Links to Google Business Profile reviews if URL is provided
  */
 export default function GoogleRatingBadge({
   variant = 'glass',
@@ -43,24 +43,24 @@ export default function GoogleRatingBadge({
       rating: 'text-sm font-bold',
     },
     md: {
-      container: 'px-4 py-2',
+      container: 'px-4 py-2.5',
       star: 'w-4 h-4',
       text: 'text-sm',
       rating: 'text-base font-bold',
     },
     lg: {
-      container: 'px-5 py-2.5',
+      container: 'px-5 py-3',
       star: 'w-5 h-5',
       text: 'text-base',
       rating: 'text-lg font-bold',
     },
   };
 
-  // Variant classes
+  // Variant classes - enhanced for premium look
   const variantClasses = {
-    default: 'bg-white text-basalt-900 shadow-md border border-sand-200',
-    glass: 'bg-white/20 backdrop-blur-md text-white border border-white/30',
-    solid: 'bg-amber-50 text-basalt-900 border border-amber-200',
+    default: 'bg-white text-zinc-900 shadow-lg border border-zinc-200/50',
+    glass: 'bg-white/15 backdrop-blur-lg text-white border border-white/25 shadow-lg',
+    solid: 'bg-amber-50 text-zinc-900 border border-amber-200/70 shadow-md',
   };
 
   const sizes = sizeClasses[size];
@@ -109,7 +109,7 @@ export default function GoogleRatingBadge({
   const badge = (
     <div
       className={`
-        inline-flex items-center gap-2 rounded-full
+        inline-flex items-center gap-2.5 rounded-full
         ${variantClass}
         ${sizes.container}
         ${className}
@@ -150,25 +150,27 @@ export default function GoogleRatingBadge({
         ))}
       </div>
 
-      {/* Rating text */}
-      <div className="flex items-baseline gap-1">
+      {/* Rating text - review count only shown if env is set */}
+      <div className="flex items-baseline gap-1.5">
         <span className={sizes.rating}>{value.toFixed(1)}</span>
-        <span className={`${sizes.text} opacity-80`}>
-          ({reviewCount}+ {showLabel ? t('reviews') : ''})
-        </span>
+        {reviewCount !== undefined && (
+          <span className={`${sizes.text} opacity-80`}>
+            ({reviewCount}+{showLabel ? ` ${t('reviews')}` : ''})
+          </span>
+        )}
       </div>
     </div>
   );
 
   // If reviewUrl exists, wrap in link
-  if (reviewUrl && reviewUrl !== 'https://g.page/r/review') {
+  if (reviewUrl) {
     return (
       <a
         href={reviewUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-block hover:opacity-90 transition-opacity"
-        aria-label={`${value} out of 5 stars based on ${reviewCount}+ reviews`}
+        className="inline-block hover:scale-105 transition-transform duration-200"
+        aria-label={`Google rating: ${value} out of 5 stars${reviewCount ? ` based on ${reviewCount}+ reviews` : ''}`}
       >
         {badge}
       </a>

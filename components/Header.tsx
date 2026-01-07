@@ -86,8 +86,8 @@ export default function Header() {
         fixed top-0 left-0 right-0 z-50
         transition-all duration-300 ease-out
         ${isScrolled
-          ? 'bg-white/90 backdrop-blur-lg shadow-md border-b border-warm-sandstone/30'
-          : 'bg-white/60 backdrop-blur-md border-b border-white/20 shadow-sm'
+          ? 'bg-white/85 backdrop-blur-xl shadow-lg border-b border-black/5'
+          : 'bg-white/70 backdrop-blur-xl border-b border-black/5 shadow-sm'
         }
       `}
       // Fixed height to prevent CLS
@@ -105,7 +105,7 @@ export default function Header() {
           <Link href={`/${locale}`} className="flex flex-col">
             <span
               className={`
-                font-bold text-primary-700 leading-tight
+                font-bold text-zinc-900 leading-tight
                 transition-all duration-300
                 ${isScrolled ? 'text-xl' : 'text-2xl'}
               `}
@@ -114,7 +114,7 @@ export default function Header() {
             </span>
             <span
               className={`
-                text-gray-600 font-normal
+                text-zinc-600 font-normal
                 transition-all duration-300
                 ${isScrolled ? 'text-[10px]' : 'text-xs'}
               `}
@@ -129,21 +129,25 @@ export default function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-gray-700 hover:text-primary-600 transition-colors font-medium text-sm"
+                className="text-zinc-700 hover:text-primary-600 transition-colors font-medium text-sm"
               >
                 {item.label}
               </Link>
             ))}
             <LanguageSwitcher />
-            {/* Primary CTA in header */}
+            {/* Primary CTA in header - Bronze/Copper premium style */}
             <button
               onClick={handleCall}
               className={`
-                bg-primary-700 text-white rounded-lg
-                hover:bg-primary-800 transition-all
-                font-semibold text-sm shadow-md
+                bg-gradient-to-r from-amber-700 via-amber-600 to-amber-700
+                text-white rounded-xl
+                hover:from-amber-800 hover:via-amber-700 hover:to-amber-800
+                transition-all duration-200
+                font-semibold text-sm
+                shadow-md hover:shadow-lg
                 inline-flex items-center gap-2
-                ${isScrolled ? 'px-4 py-2' : 'px-6 py-2.5'}
+                border border-amber-500/30
+                ${isScrolled ? 'px-4 py-2' : 'px-5 py-2.5'}
               `}
             >
               <svg
@@ -169,7 +173,7 @@ export default function Header() {
             <LanguageSwitcher />
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="text-gray-700 p-2"
+              className="text-zinc-700 p-2"
               aria-label="Menu"
             >
               <svg
@@ -200,18 +204,13 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <nav
-            className={`
-              lg:hidden py-4 space-y-2 border-t
-              ${isScrolled ? 'border-warm-sandstone/30' : 'border-white/20'}
-            `}
-          >
+          <nav className="lg:hidden py-4 space-y-2 border-t border-black/5">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="block text-gray-700 hover:text-primary-600 py-2 font-medium"
+                className="block text-zinc-800 hover:text-primary-600 py-2 font-medium"
               >
                 {item.label}
               </Link>
@@ -219,13 +218,13 @@ export default function Header() {
             <div className="flex gap-2 pt-4">
               <button
                 onClick={handleCall}
-                className="flex-1 bg-primary-700 text-white px-4 py-3 rounded-lg hover:bg-primary-800 font-semibold"
+                className="flex-1 bg-gradient-to-r from-amber-700 via-amber-600 to-amber-700 text-white px-4 py-3 rounded-xl hover:from-amber-800 hover:via-amber-700 hover:to-amber-800 font-semibold shadow-md"
               >
                 {t('callNow')}
               </button>
               <button
                 onClick={handleWhatsApp}
-                className="flex-1 bg-green-700 text-white px-4 py-3 rounded-lg hover:bg-green-800 font-semibold"
+                className="flex-1 bg-green-600 text-white px-4 py-3 rounded-xl hover:bg-green-700 font-semibold shadow-md border border-green-500/30"
               >
                 {t('whatsappButton')}
               </button>

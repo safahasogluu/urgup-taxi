@@ -4,6 +4,7 @@
  * - No CLS: fixed min-height, absolute positioned image
  * - Art direction: <picture> with mobile/desktop sources
  * - Blur placeholder via CSS background
+ * - Premium gradient overlay for text readability
  */
 
 interface HeroSectionProps {
@@ -32,7 +33,7 @@ export default function HeroSection({
     >
       {/* Responsive Hero Image with Art Direction */}
       <picture>
-        {/* Desktop source (landscape) */}
+        {/* Desktop source (landscape) - shifted right to show landscape */}
         <source
           media="(min-width: 768px)"
           srcSet="
@@ -54,11 +55,11 @@ export default function HeroSection({
           sizes="100vw"
           type="image/webp"
         />
-        {/* Fallback img */}
+        {/* Fallback img with object-position shifted right */}
         <img
           src="/hero/hero-desktop-1200.webp"
           alt={imageAlt}
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover object-[60%_50%] md:object-[70%_50%]"
           // LCP optimization
           fetchPriority="high"
           loading="eager"
@@ -66,19 +67,34 @@ export default function HeroSection({
         />
       </picture>
 
-      {/* Dark gradient overlay for text readability */}
+      {/* Premium gradient overlay - stronger on left for text readability */}
       <div 
-        className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50"
+        className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/20"
+        aria-hidden="true"
+      />
+      
+      {/* Radial vignette for top-left focus */}
+      <div 
+        className="absolute inset-0"
+        style={{
+          background: 'radial-gradient(ellipse 80% 80% at 20% 30%, transparent 0%, rgba(0,0,0,0.3) 100%)',
+        }}
         aria-hidden="true"
       />
 
       {/* Content */}
       <div className="container mx-auto px-4 relative z-10 py-12 md:py-16 lg:py-20">
         <div className="max-w-4xl mx-auto text-center md:text-left md:mx-0">
-          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 md:mb-6 text-white drop-shadow-lg">
+          <h1 
+            className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 md:mb-6 text-white"
+            style={{ textShadow: '0 2px 8px rgba(0,0,0,0.4), 0 4px 16px rgba(0,0,0,0.2)' }}
+          >
             {title}
           </h1>
-          <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-8 md:mb-10 max-w-2xl drop-shadow-md">
+          <p 
+            className="text-lg sm:text-xl md:text-2xl text-white/95 mb-8 md:mb-10 max-w-2xl"
+            style={{ textShadow: '0 1px 4px rgba(0,0,0,0.3)' }}
+          >
             {subtitle}
           </p>
           
