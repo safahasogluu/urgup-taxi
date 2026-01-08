@@ -84,22 +84,34 @@ export default function HeroSection({
 
       {/* Content */}
       <div className="container mx-auto px-4 relative z-10 py-12 md:py-16 lg:py-20">
-        <div className="max-w-4xl mx-auto text-center md:text-left md:mx-0">
-          <h1 
-            className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 md:mb-6 text-white"
-            style={{ textShadow: '0 2px 8px rgba(0,0,0,0.4), 0 4px 16px rgba(0,0,0,0.2)' }}
-          >
-            {title}
-          </h1>
-          <p 
-            className="text-lg sm:text-xl md:text-2xl text-white/95 mb-8 md:mb-10 max-w-2xl"
-            style={{ textShadow: '0 1px 4px rgba(0,0,0,0.3)' }}
-          >
-            {subtitle}
-          </p>
-          
-          {/* CTAs and badges passed as children */}
-          {children}
+        {/* Glass card wrapper for premium effect */}
+        <div 
+          className="max-w-4xl mx-auto md:mx-0 p-6 md:p-8 lg:p-10 rounded-2xl md:rounded-3xl"
+          style={{
+            background: 'rgba(255, 255, 255, 0.08)',
+            backdropFilter: 'blur(12px)',
+            WebkitBackdropFilter: 'blur(12px)',
+            border: '1px solid rgba(255, 255, 255, 0.12)',
+            boxShadow: '0 8px 32px rgba(0, 0, 0, 0.12)',
+          }}
+        >
+          <div className="text-center md:text-left">
+            <h1 
+              className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 md:mb-6 text-white leading-tight"
+              style={{ textShadow: '0 2px 8px rgba(0,0,0,0.4), 0 4px 16px rgba(0,0,0,0.2)' }}
+            >
+              {title}
+            </h1>
+            <p 
+              className="text-lg sm:text-xl md:text-2xl text-white/90 mb-8 md:mb-10 max-w-2xl"
+              style={{ textShadow: '0 1px 4px rgba(0,0,0,0.3)' }}
+            >
+              {subtitle}
+            </p>
+            
+            {/* CTAs and badges passed as children */}
+            {children}
+          </div>
         </div>
       </div>
     </section>

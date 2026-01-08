@@ -2,13 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Premium Kapadokya Theme Tokens */
+:root {
+  --bg-sand: #FAF7F2;
+  --bg-stone: #F0E6D8;
+  --accent-bronze: #b45309;
+  --accent-gold: #d97706;
+  --text-ink: #1c1917;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
   }
   
   body {
-    @apply antialiased bg-sand-100 text-basalt-800 font-body;
+    @apply antialiased text-basalt-800 font-body;
+    background: linear-gradient(180deg, var(--bg-sand) 0%, #ffffff 40%, var(--bg-stone) 100%);
+    background-attachment: fixed;
   }
 
   /* Typography scale */
@@ -94,13 +105,38 @@
     @apply py-16 md:py-24;
   }
 
-  /* Premium section backgrounds */
+  /* Premium section backgrounds with subtle glow */
   .section-premium-light {
     background: linear-gradient(180deg, #F9F5EE 0%, #ffffff 50%, #F2E7D6 100%);
+    position: relative;
+  }
+
+  .section-premium-light::before {
+    content: '';
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 50%;
+    background: radial-gradient(ellipse, rgba(217, 119, 6, 0.03) 0%, transparent 70%);
+    pointer-events: none;
   }
 
   .section-premium-warm {
     background: linear-gradient(180deg, #F5EDE0 0%, #FAF7F2 50%, #F0E4D3 100%);
+    position: relative;
+  }
+
+  .section-premium-warm::before {
+    content: '';
+    position: absolute;
+    top: 30%;
+    right: 10%;
+    width: 50%;
+    height: 40%;
+    background: radial-gradient(ellipse, rgba(180, 83, 9, 0.02) 0%, transparent 70%);
+    pointer-events: none;
   }
 
   /* Premium trust chip */

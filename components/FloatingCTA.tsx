@@ -115,15 +115,16 @@ export default function FloatingCTA({ routeInfo }: FloatingCTAProps) {
         </button>
       </div>
 
-      {/* Mobile: Fixed Bottom Bar - Premium Glass */}
+      {/* Mobile: Fixed Bottom Bar - Premium Glass with safe-area support */}
       <div className="md:hidden fixed bottom-0 left-0 right-0 z-50">
         <div
           className="border-t border-black/5"
           style={{
-            background: 'rgba(255, 255, 255, 0.85)',
-            backdropFilter: 'blur(20px)',
-            WebkitBackdropFilter: 'blur(20px)',
+            background: 'rgba(255, 255, 255, 0.88)',
+            backdropFilter: 'blur(24px)',
+            WebkitBackdropFilter: 'blur(24px)',
             boxShadow: '0 -4px 24px rgba(0,0,0,0.08)',
+            paddingBottom: 'env(safe-area-inset-bottom, 0px)',
           }}
         >
           <div className="container mx-auto px-4 py-3">

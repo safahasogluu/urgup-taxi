@@ -99,6 +99,29 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         </div>
       </HeroSection>
 
+      {/* Service Regions Quick Links */}
+      <section className="py-8 md:py-10 border-b border-zinc-200/50">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-wrap justify-center gap-2 md:gap-3">
+            {locations.slice(0, 6).map((location) => (
+              <Link
+                key={location.id}
+                href={`/${locale}/${location.slug}`}
+                className="px-4 py-2 text-sm font-medium text-zinc-700 bg-white/80 hover:bg-white border border-zinc-200/60 rounded-full transition-all hover:border-zinc-300 hover:shadow-sm"
+              >
+                {location.name[locale as Locale]}
+              </Link>
+            ))}
+            <Link
+              href={`/${locale}/havalimani-transferi`}
+              className="px-4 py-2 text-sm font-medium text-amber-800 bg-amber-50/80 hover:bg-amber-50 border border-amber-200/60 rounded-full transition-all hover:border-amber-300 hover:shadow-sm"
+            >
+              ✈️ {tNav('airportTransfer')}
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Services Section - Premium light background */}
       <section className="section-padding section-premium-light relative">
         <div className="container mx-auto px-4 relative z-10">
