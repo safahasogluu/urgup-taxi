@@ -2,6 +2,7 @@
 
 import { useTranslations, useLocale } from 'next-intl';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { usePathname } from 'next/navigation';
 import { trackCall, trackWhatsApp } from '@/lib/analytics';
@@ -86,12 +87,19 @@ export default function Header() {
         fixed top-0 left-0 right-0 z-50
         transition-all duration-300 ease-out
         ${isScrolled
-          ? 'bg-white/85 backdrop-blur-xl shadow-lg border-b border-black/5'
-          : 'bg-white/70 backdrop-blur-xl border-b border-black/5 shadow-sm'
+          ? 'bg-white/90 backdrop-blur-xl shadow-lg'
+          : 'bg-white/75 backdrop-blur-xl shadow-sm'
         }
       `}
-      // Fixed height to prevent CLS
-      style={{ minHeight: isScrolled ? '64px' : '80px' }}
+      style={{ 
+        minHeight: isScrolled ? '64px' : '80px',
+        borderBottom: isScrolled 
+          ? '1px solid rgba(0, 0, 0, 0.08)' 
+          : '1px solid rgba(0, 0, 0, 0.05)',
+        boxShadow: isScrolled
+          ? '0 4px 24px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.04)'
+          : '0 2px 8px rgba(0, 0, 0, 0.04)',
+      }}
     >
       <div className="container mx-auto px-4">
         <div
@@ -101,26 +109,36 @@ export default function Header() {
             ${isScrolled ? 'h-16' : 'h-20'}
           `}
         >
-          {/* Wordmark */}
-          <Link href={`/${locale}`} className="flex flex-col">
-            <span
-              className={`
-                font-bold text-zinc-900 leading-tight
-                transition-all duration-300
-                ${isScrolled ? 'text-xl' : 'text-2xl'}
-              `}
-            >
-              {t('businessName')}
-            </span>
-            <span
-              className={`
-                text-zinc-600 font-normal
-                transition-all duration-300
-                ${isScrolled ? 'text-[10px]' : 'text-xs'}
-              `}
-            >
-              Göreme Taksi • {t('open247')}
-            </span>
+          {/* Logo */}
+          <Link 
+            href={`/${locale}`} 
+            className="flex items-center transition-all duration-300 hover:opacity-90"
+            aria-label="Göreme Taksi - Ana Sayfa"
+          >
+            {/* Desktop: Full logo */}
+            <div className="hidden sm:block relative" style={{ width: isScrolled ? '192px' : '240px', height: isScrolled ? '48px' : '56px' }}>
+              <Image
+                src="/brand/logo-240.webp"
+                alt="Göreme Taksi"
+                width={240}
+                height={60}
+                priority
+                className="object-contain transition-all duration-300"
+                style={{ width: '100%', height: '100%' }}
+              />
+            </div>
+            {/* Mobile: Logo mark */}
+            <div className="sm:hidden relative" style={{ width: isScrolled ? '40px' : '48px', height: isScrolled ? '40px' : '48px' }}>
+              <Image
+                src="/brand/logo-mark-96.webp"
+                alt="Göreme Taksi"
+                width={96}
+                height={96}
+                priority
+                className="object-contain transition-all duration-300"
+                style={{ width: '100%', height: '100%' }}
+              />
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
@@ -129,9 +147,13 @@ export default function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-zinc-700 hover:text-primary-600 transition-colors font-medium text-sm"
+                className="text-zinc-800 hover:text-amber-700 transition-colors font-semibold text-sm relative group"
+                style={{ 
+                  textShadow: isScrolled ? 'none' : '0 1px 2px rgba(255, 255, 255, 0.8)',
+                }}
               >
                 {item.label}
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-amber-700 transition-all duration-200 group-hover:w-full" />
               </Link>
             ))}
             <LanguageSwitcher />
@@ -173,8 +195,11 @@ export default function Header() {
             <LanguageSwitcher />
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="text-zinc-700 p-2"
+              className="text-zinc-800 p-2 hover:text-amber-700 transition-colors"
               aria-label="Menu"
+              style={{ 
+                textShadow: isScrolled ? 'none' : '0 1px 2px rgba(255, 255, 255, 0.8)',
+              }}
             >
               <svg
                 className="w-6 h-6"
@@ -204,13 +229,13 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <nav className="lg:hidden py-4 space-y-2 border-t border-black/5">
+          <nav className="lg:hidden py-4 space-y-2 border-t border-zinc-200/60">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="block text-zinc-800 hover:text-primary-600 py-2 font-medium"
+                className="block text-zinc-800 hover:text-amber-700 py-2 font-semibold transition-colors"
               >
                 {item.label}
               </Link>

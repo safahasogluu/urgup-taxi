@@ -67,17 +67,17 @@ export default function HeroSection({
         />
       </picture>
 
-      {/* Premium gradient overlay - stronger on left for text readability */}
+      {/* Global dark overlay */}
       <div 
-        className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/20"
+        className="absolute inset-0 bg-black/40"
         aria-hidden="true"
       />
       
-      {/* Radial vignette for top-left focus */}
+      {/* Left-focused gradient overlay for text readability */}
       <div 
         className="absolute inset-0"
         style={{
-          background: 'radial-gradient(ellipse 80% 80% at 20% 30%, transparent 0%, rgba(0,0,0,0.3) 100%)',
+          background: 'linear-gradient(90deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.25) 55%, rgba(0,0,0,0.05) 100%)',
         }}
         aria-hidden="true"
       />
@@ -88,23 +88,53 @@ export default function HeroSection({
         <div 
           className="max-w-4xl mx-auto md:mx-0 p-6 md:p-8 lg:p-10 rounded-2xl md:rounded-3xl"
           style={{
-            background: 'rgba(255, 255, 255, 0.08)',
+            background: 'rgba(20, 20, 20, 0.5)',
             backdropFilter: 'blur(12px)',
             WebkitBackdropFilter: 'blur(12px)',
             border: '1px solid rgba(255, 255, 255, 0.12)',
-            boxShadow: '0 8px 32px rgba(0, 0, 0, 0.12)',
+            boxShadow: '0 8px 32px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.05)',
           }}
         >
           <div className="text-center md:text-left">
             <h1 
-              className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 md:mb-6 text-white leading-tight"
-              style={{ textShadow: '0 2px 8px rgba(0,0,0,0.4), 0 4px 16px rgba(0,0,0,0.2)' }}
+              className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 md:mb-6 leading-tight"
+              style={{ 
+                color: '#F7F3EE',
+                textShadow: '0 2px 12px rgba(0,0,0,0.6), 0 4px 20px rgba(0,0,0,0.4), 0 1px 3px rgba(0,0,0,0.5)',
+              }}
             >
-              {title}
+              {typeof title === 'string' ? (
+                title.split(/(7\/24|VIP)/gi).map((part, index) => {
+                  const isKeyword = /^(7\/24|VIP)$/i.test(part);
+                  return isKeyword ? (
+                    <span
+                      key={index}
+                      className="inline-block"
+                      style={{
+                        background: 'linear-gradient(135deg, #f59e0b 0%, #d97706 50%, #f59e0b 100%)',
+                        WebkitBackgroundClip: 'text',
+                        WebkitTextFillColor: 'transparent',
+                        backgroundClip: 'text',
+                        textShadow: '0 2px 8px rgba(217, 119, 6, 0.4)',
+                        fontWeight: '700',
+                      }}
+                    >
+                      {part}
+                    </span>
+                  ) : (
+                    part
+                  );
+                })
+              ) : (
+                title
+              )}
             </h1>
             <p 
-              className="text-lg sm:text-xl md:text-2xl text-white/90 mb-8 md:mb-10 max-w-2xl"
-              style={{ textShadow: '0 1px 4px rgba(0,0,0,0.3)' }}
+              className="text-lg sm:text-xl md:text-2xl mb-8 md:mb-10 max-w-2xl"
+              style={{ 
+                color: 'rgba(247, 243, 238, 0.95)',
+                textShadow: '0 1px 6px rgba(0,0,0,0.5), 0 2px 12px rgba(0,0,0,0.3)',
+              }}
             >
               {subtitle}
             </p>
