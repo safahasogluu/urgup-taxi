@@ -9,7 +9,6 @@ import { buildLocaleUrl } from '@/lib/url';
 import HeroSection from '@/components/HeroSection';
 import WhatsAppQuickCTA from '@/components/WhatsAppQuickCTA';
 import CallCTAButton from '@/components/CallCTAButton';
-import GoogleRatingBadge from '@/components/GoogleRatingBadge';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -75,11 +74,6 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           </CallCTAButton>
           {/* Premium WhatsApp button */}
           <WhatsAppQuickCTA type="general" className="btn-whatsapp px-8 py-4 text-lg" />
-        </div>
-
-        {/* Google Rating Badge */}
-        <div className="mb-6">
-          <GoogleRatingBadge variant="glass" size="md" showLabel={true} />
         </div>
 
         {/* Trust Badges - premium glass pills */}

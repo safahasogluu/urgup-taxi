@@ -19,8 +19,7 @@
     "emailInstead": "이메일 보내기",
     "bookingRequest": "예약 요청",
     "addressLabel": "주소",
-    "googleReviewButton": "Google 리뷰 남기기",
-    "reviews": "리뷰"
+    "googleReviewButton": "Google 리뷰 남기기"
   },
   "nav": {
     "home": "홈",

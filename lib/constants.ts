@@ -85,23 +85,6 @@ export type CtaLocation =
   | 'location_page';
 
 // ===========================================
-// GOOGLE RATING (for badge & schema.org)
-// ===========================================
-
-const reviewCountEnv = process.env.NEXT_PUBLIC_GOOGLE_REVIEWS_COUNT?.trim();
-
-export const GOOGLE_RATING = {
-  /** Rating value out of 5 */
-  value: parseFloat(process.env.NEXT_PUBLIC_GOOGLE_RATING || '4.9'),
-  /** Total number of reviews - undefined if not set in env */
-  reviewCount: reviewCountEnv ? parseInt(reviewCountEnv, 10) : undefined,
-  /** Google Business Profile review URL */
-  reviewUrl: process.env.NEXT_PUBLIC_GOOGLE_REVIEWS_URL?.trim() || undefined,
-  /** Feature flag: Enable aggregateRating in schema.org (default: false for safety) */
-  enableSchemaRating: process.env.NEXT_PUBLIC_ENABLE_SCHEMA_RATING === 'true',
-} as const;
-
-// ===========================================
 // SITE CONFIGURATION
 // ===========================================
 
