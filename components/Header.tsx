@@ -106,33 +106,29 @@ export default function Header() {
         <div className="flex items-center justify-between w-full">
           {/* Logo */}
           <Link 
-            href={`/${locale}`} 
-            aria-label="Göreme Taksi ana sayfa" 
-            className="flex items-center gap-3 shrink-0"
+            href={`/${locale}`}
+            aria-label="Göreme Taksi ana sayfa"
+            className="inline-flex items-center h-full py-2 shrink-0 min-w-[40px] md:min-w-0"
           >
             {/* Mobile: mark */}
-            <span className="relative block md:hidden h-10 w-10">
-              <Image
-                src="/brand/logo-mark-96.webp"
-                alt="Göreme Taksi"
-                width={40}
-                height={40}
-                priority
-                className="h-full w-full object-contain"
-              />
-            </span>
+            <Image
+              src="/brand/logo-mark-96.webp"
+              alt="Göreme Taksi"
+              width={96}
+              height={96}
+              priority
+              className="block md:hidden h-10 w-10 object-contain"
+            />
 
             {/* Desktop: wordmark */}
-            <span className="relative hidden md:block h-10 w-[200px]">
-              <Image
-                src="/brand/logo-240.webp"
-                alt="Göreme Taksi"
-                width={200}
-                height={40}
-                priority
-                className="h-full w-auto object-contain"
-              />
-            </span>
+            <Image
+              src="/brand/logo-240.webp"
+              alt="Göreme Taksi"
+              width={240}
+              height={60}
+              priority
+              className="hidden md:block h-9 w-auto object-contain"
+            />
           </Link>
 
           {/* Desktop Navigation */}
