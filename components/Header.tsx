@@ -85,9 +85,10 @@ export default function Header() {
     <header
       className={`
         fixed top-0 left-0 right-0 z-50
-        h-16 md:h-[72px]
+        min-h-[64px] h-16 md:h-[72px]
         flex items-center
         transition-all duration-300 ease-out
+        overflow-visible
         ${isScrolled
           ? 'bg-white/90 backdrop-blur-xl shadow-lg'
           : 'bg-white/75 backdrop-blur-xl shadow-sm'
@@ -102,32 +103,32 @@ export default function Header() {
           : '0 2px 8px rgba(0, 0, 0, 0.04)',
       }}
     >
-      <div className="container mx-auto px-4 w-full">
+      <div className="container mx-auto px-4 w-full overflow-visible">
         <div className="flex items-center justify-between w-full">
-          {/* Logo */}
+          {/* Logo - Brand wrapper */}
           <Link 
             href={`/${locale}`}
             aria-label="Göreme Taksi ana sayfa"
-            className="inline-flex items-center h-full py-2 shrink-0 min-w-[40px] md:min-w-0"
+            className="flex items-center gap-2 shrink-0 overflow-visible"
           >
-            {/* Mobile: mark */}
+            {/* Mobile: mark icon */}
             <Image
               src="/brand/logo-mark-96.webp"
               alt="Göreme Taksi"
-              width={96}
-              height={96}
+              width={48}
+              height={48}
               priority
-              className="block md:hidden h-10 w-10 object-contain"
+              className="block md:hidden h-8 w-8 object-contain"
             />
 
-            {/* Desktop: wordmark */}
+            {/* Desktop: wordmark logo */}
             <Image
-              src="/brand/logo-240.webp"
+              src="/brand/logo-320.webp"
               alt="Göreme Taksi"
-              width={240}
-              height={60}
+              width={160}
+              height={48}
               priority
-              className="hidden md:block h-9 w-auto object-contain"
+              className="hidden md:block h-8 w-auto object-contain"
             />
           </Link>
 
