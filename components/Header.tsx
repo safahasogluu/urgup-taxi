@@ -85,6 +85,8 @@ export default function Header() {
     <header
       className={`
         fixed top-0 left-0 right-0 z-50
+        h-16 md:h-[72px]
+        flex items-center
         transition-all duration-300 ease-out
         ${isScrolled
           ? 'bg-white/90 backdrop-blur-xl shadow-lg'
@@ -92,7 +94,6 @@ export default function Header() {
         }
       `}
       style={{ 
-        minHeight: isScrolled ? '64px' : '80px',
         borderBottom: isScrolled 
           ? '1px solid rgba(0, 0, 0, 0.08)' 
           : '1px solid rgba(0, 0, 0, 0.05)',
@@ -101,44 +102,37 @@ export default function Header() {
           : '0 2px 8px rgba(0, 0, 0, 0.04)',
       }}
     >
-      <div className="container mx-auto px-4">
-        <div
-          className={`
-            flex items-center justify-between
-            transition-all duration-300 ease-out
-            ${isScrolled ? 'h-16' : 'h-20'}
-          `}
-        >
+      <div className="container mx-auto px-4 w-full">
+        <div className="flex items-center justify-between w-full">
           {/* Logo */}
           <Link 
             href={`/${locale}`} 
-            className="flex items-center transition-all duration-300 hover:opacity-90"
-            aria-label="Göreme Taksi - Ana Sayfa"
+            aria-label="Göreme Taksi ana sayfa" 
+            className="flex items-center gap-3 shrink-0"
           >
-            {/* Desktop: Full logo */}
-            <div className="hidden sm:block relative" style={{ width: isScrolled ? '192px' : '240px', height: isScrolled ? '48px' : '56px' }}>
-              <Image
-                src="/brand/logo-240.webp"
-                alt="Göreme Taksi"
-                width={240}
-                height={60}
-                priority
-                className="object-contain transition-all duration-300"
-                style={{ width: '100%', height: '100%' }}
-              />
-            </div>
-            {/* Mobile: Logo mark */}
-            <div className="sm:hidden relative" style={{ width: isScrolled ? '40px' : '48px', height: isScrolled ? '40px' : '48px' }}>
+            {/* Mobile: mark */}
+            <span className="relative block md:hidden h-10 w-10">
               <Image
                 src="/brand/logo-mark-96.webp"
                 alt="Göreme Taksi"
-                width={96}
-                height={96}
+                width={40}
+                height={40}
                 priority
-                className="object-contain transition-all duration-300"
-                style={{ width: '100%', height: '100%' }}
+                className="h-full w-full object-contain"
               />
-            </div>
+            </span>
+
+            {/* Desktop: wordmark */}
+            <span className="relative hidden md:block h-10 w-[200px]">
+              <Image
+                src="/brand/logo-240.webp"
+                alt="Göreme Taksi"
+                width={200}
+                height={40}
+                priority
+                className="h-full w-auto object-contain"
+              />
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
