@@ -11,7 +11,7 @@ export const CONTACT = {
   phone: '+90 535 548 11 78',
   phoneRaw: '905355481178',
   email: 'info@urguptaxi.com',
-  address: 'İmran Mah., Eski Sanayi Cad. No:14, 50400 Ürgüp/Nevşehir',
+  address: 'FATİH MAH. 328. SK. NO: 2 İÇ KAPI NO: 3, ÜRGÜP / NEVŞEHİR, TÜRKİYE',
 } as const;
 
 // ===========================================

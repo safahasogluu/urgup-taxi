@@ -3,13 +3,13 @@ import { getBaseUrl } from './url';
 
 const siteUrl = getBaseUrl();
 const telephone = '+90 535 548 11 78';
+const businessUrl = 'https://www.urguptaxi.com/tr';
 
 const postalAddress = {
   '@type': 'PostalAddress',
-  streetAddress: 'İmran Mah., Eski Sanayi Cad. No:14',
+  streetAddress: 'FATİH MAH. 328. SK. NO: 2 İÇ KAPI NO: 3',
   addressLocality: 'Ürgüp',
   addressRegion: 'Nevşehir',
-  postalCode: '50400',
   addressCountry: 'TR',
 };
 
@@ -43,7 +43,7 @@ export function generateLocalBusinessSchema(locale: Locale) {
     name: 'Göreme Taksi',
     alternateName: 'Ürgüp Taksi & Kapadokya Transfer',
     image: `${siteUrl}/og-image.jpg`,
-    url: siteUrl,
+    url: businessUrl,
     telephone,
     priceRange: '$$',
     address: postalAddress,
@@ -78,7 +78,7 @@ export function generateTaxiServiceSchema(locale: Locale) {
     '@context': 'https://schema.org',
     '@type': 'TaxiService',
     '@id': taxiServiceId,
-    url: siteUrl,
+    url: businessUrl,
     telephone,
     address: postalAddress,
     areaServed: serviceAreas,
