@@ -99,6 +99,25 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         </div>
       </HeroSection>
 
+      {/* Ürgüp Taksi Quick Link - Hero Altı */}
+      {(locale === 'tr' || locale === 'en') && (
+        <section className="py-4 border-b border-zinc-200/50 bg-white/50">
+          <div className="container mx-auto px-4">
+            <div className="text-center">
+              <Link
+                href={`/${locale}/urgup-taksi`}
+                className="text-sm font-semibold text-amber-700 hover:text-amber-800 transition-colors inline-flex items-center gap-1"
+              >
+                <span>Ürgüp Taksi</span>
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Service Regions Quick Links */}
       <section className="py-8 md:py-10 border-b border-zinc-200/50">
         <div className="container mx-auto px-4">

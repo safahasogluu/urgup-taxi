@@ -52,7 +52,7 @@
 
 ### ✅ Conversion UX
 - **PASS** - Phone number: +90 535 548 11 78 (verified in messages and components)
-- **PASS** - Address: "İmran Mah., Eski Sanayi Cad. No:14, 50400 Ürgüp/Nevşehir, Türkiye"
+- **PASS** - Address: "FATİH MAH. 328. SK. NO: 2 İÇ KAPI NO: 3, ÜRGÜP / NEVŞEHİR, TÜRKİYE"
 - **PASS** - Business name: "Göreme Taksi"
 - **PASS** - "Ürgüp Terminal Taksi" appears in JSON-LD schema as `alternateName`
 

@@ -30,7 +30,7 @@ export default function Footer() {
   return (
     <footer className="bg-gray-900 text-white mt-20">
       <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className={`grid grid-cols-1 gap-8 ${locale === 'tr' || locale === 'en' ? 'md:grid-cols-4' : 'md:grid-cols-3'}`}>
           <div>
             <h3 className="text-xl font-bold mb-4">{t('businessName')}</h3>
             <p className="text-gray-400 mb-4">{t('address')}</p>
@@ -72,6 +72,19 @@ export default function Footer() {
               </li>
             </ul>
           </div>
+
+          {(locale === 'tr' || locale === 'en') && (
+            <div>
+              <h4 className="text-lg font-semibold mb-4">Hızlı Linkler</h4>
+              <ul className="space-y-2">
+                <li>
+                  <Link href={`/${locale}/urgup-taksi`} className="text-gray-400 hover:text-white">
+                    Ürgüp Taksi
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          )}
 
           <div>
             <h4 className="text-lg font-semibold mb-4">{tNav('contact')}</h4>

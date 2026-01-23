@@ -6,7 +6,7 @@
     "whatsappButton": "WhatsApp Us",
     "bookNow": "Book Now",
     "learnMore": "Learn More",
-    "address": "FATIH MAH. 328. SK. NO: 2, IC KAPI NO: 3, URGUP / NEVSEHIR, TURKEY",
+    "address": "FATIH MAH. 328. SK. NO: 2 IC KAPI NO: 3, URGUP / NEVSEHIR, TURKEY",
     "open247": "Open 24/7",
     "businessName": "Göreme Taksi",
     "home": "Home",
@@ -263,5 +263,28 @@
     "whatsappMessage": "Hello, I would like the Google review link.",
     "whatsappCta": "Message on WhatsApp",
     "backToHome": "Back to Home"
+  },
+  "urgupTaksi": {
+    "title": "Ürgüp Taxi | 24/7 Taxi & Transfer – Göreme Taksi",
+    "description": "24/7 taxi and transfer service in Ürgüp. Hotel, terminal, airport transfers. Fast, reliable and professional taxi service.",
+    "h1": "Ürgüp Taxi",
+    "intro": "We provide 24/7 uninterrupted taxi and transfer service in Ürgüp. We ensure safe and comfortable transportation from your hotels to airports, from terminal points to all parts of Cappadocia. We are at your service at every point in Ürgüp with our experienced drivers and modern vehicle fleet.",
+    "content": "Ürgüp is one of the most important tourism centers of Cappadocia and hosts thousands of visitors throughout the year. Therefore, reliable transportation service is of great importance. As Göreme Taksi, we provide 24/7 taxi service in Ürgüp. We provide fast and safe transfers from your hotels to airports, from terminal points to all points within the region.\n\nTo get taxi service in Ürgüp, you can contact us via WhatsApp or phone. Our drivers pick you up from your hotel door and take you to your desired point on time. We offer ideal solutions especially for airport transfers in the early morning hours or late at night.\n\nWe offer fixed price guarantee for transfers from Ürgüp Terminal or your hotels to Nevşehir Cappadocia Airport (NAV) and Kayseri Erkilet Airport (ASR). No extra charges for traffic or waiting times. Our vehicles are air-conditioned, clean and comfortable. We safely transport all your belongings with our vehicles with large luggage capacity.\n\nOur regional taxi services extend from Ürgüp center to all Cappadocia region such as Göreme, Uçhisar, Avanos, Mustafapaşa and Ortahisar. You can get a fixed price quote regardless of short or long distance. No surprise fees, agreed price guarantee.\n\nThe most important point to pay attention to when getting taxi service in Ürgüp is reliability and timely service. As Göreme Taksi, we are confident in this regard. All our drivers are experienced, friendly and professional. You can easily communicate via WhatsApp and make your reservation instantly.",
+    "faq1Q": "Is taxi service available 24/7 in Ürgüp?",
+    "faq1A": "Yes, we provide 24/7 uninterrupted taxi service in Ürgüp. We are always at your service regardless of midnight, early morning hours or weekends. We especially serve airport transfers in the early hours or late at night.",
+    "faq2Q": "How long does it take to transfer from Ürgüp Terminal to the airport?",
+    "faq2A": "It takes approximately 30-40 minutes from Ürgüp Terminal to Nevşehir Cappadocia Airport (NAV), and approximately 60-70 minutes to Kayseri Erkilet Airport (ASR). These times may vary depending on traffic conditions, but our drivers pick you up on time according to your flight times.",
+    "faq3Q": "How are taxi fares determined in Ürgüp?",
+    "faq3A": "Taxi fares in Ürgüp are determined according to distance and route. We offer fixed price guarantee for airport transfers. Starting fare applies for short distances within the region. You can contact us via WhatsApp or phone for detailed pricing information.",
+    "faq4Q": "Do you pick up from Ürgüp hotels?",
+    "faq4A": "Yes, we provide door-to-door pickup service from all hotels in Ürgüp. Just specify your hotel address and meeting point. For hotels on narrow streets, pickup is made from the nearest access point.",
+    "faq5Q": "How long does it take by taxi from Ürgüp to Göreme?",
+    "faq5A": "It takes approximately 10-15 minutes by taxi from Ürgüp to Göreme. The distance is approximately 5-6 kilometers. You can contact us for a fixed price quote.",
+    "faq6Q": "What is the luggage capacity?",
+    "faq6A": "Our standard vehicles can carry 2-3 large suitcases + carry-on luggage. If you have more luggage, let us know in advance and we will arrange a suitable vehicle. All our vehicles have a spacious luggage compartment.",
+    "faq7Q": "How can I make a reservation?",
+    "faq7A": "Contact us via WhatsApp or phone. Specify pickup location, destination, date, time and number of passengers. We confirm immediately and share driver information. No advance payment is required for reservation.",
+    "faq8Q": "How is payment made?",
+    "faq8A": "Payment is collected at the start or end of the journey. You can pay by cash (TRY, EUR, USD) or credit card. There are no extra fees or hidden costs. We offer agreed price guarantee."
   }
 }
