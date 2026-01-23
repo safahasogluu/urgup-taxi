@@ -159,3 +159,42 @@ export function generateBreadcrumbSchema(
   };
 }
 
+// Generate TaxiService schema for specific pages (with custom URL)
+export function generateTaxiServiceSchemaForPage(url: string) {
+  const expandedServiceAreas = [
+    ...serviceAreas,
+    {
+      '@type': 'City',
+      name: 'Avanos',
+    },
+    {
+      '@type': 'City',
+      name: 'Nevşehir',
+    },
+  ];
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'TaxiService',
+    url,
+    telephone,
+    address: postalAddress,
+    areaServed: expandedServiceAreas,
+    provider: {
+      '@id': localBusinessId,
+    },
+    openingHours: 'Mo-Su 00:00-23:59',
+    availableChannel: {
+      '@type': 'ServiceChannel',
+      servicePhone: {
+        '@type': 'ContactPoint',
+        telephone,
+        contactType: 'customer service',
+        availableLanguage: ['tr', 'en', 'ko', 'ja', 'zh'],
+      },
+    },
+    ...(gbpProfileUrl ? { sameAs: [gbpProfileUrl] } : {}),
+    ...(googleMapsUrl ? { hasMap: googleMapsUrl } : {}),
+  };
+}
+

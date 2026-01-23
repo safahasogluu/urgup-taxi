@@ -4,6 +4,7 @@ import { generateBreadcrumbSchema } from '@/lib/schema';
 import { Locale } from '@/i18n';
 import { buildLocaleUrl } from '@/lib/url';
 import CallCTAButton from '@/components/CallCTAButton';
+import Link from 'next/link';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -64,6 +65,45 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
             </CallCTAButton>
           </div>
         </div>
+        
+        {/* Internal Links - TR Only */}
+        {locale === 'tr' && (
+          <div className="bg-white p-8 rounded-lg shadow-md">
+            <h2 className="text-2xl font-semibold mb-4">İlgili Hizmetler</h2>
+            <div className="flex flex-wrap gap-3">
+              <Link
+                href="/tr/urgup-taksi"
+                className="px-4 py-2 bg-amber-50 text-amber-800 rounded-lg hover:bg-amber-100 transition-colors font-medium"
+              >
+                Ürgüp Taksi
+              </Link>
+              <Link
+                href="/tr/urgup-taksi-numarasi"
+                className="px-4 py-2 bg-amber-50 text-amber-800 rounded-lg hover:bg-amber-100 transition-colors font-medium"
+              >
+                Ürgüp Taksi Numarası
+              </Link>
+              <Link
+                href="/tr/nevsehir-havalimani-transfer"
+                className="px-4 py-2 bg-amber-50 text-amber-800 rounded-lg hover:bg-amber-100 transition-colors font-medium"
+              >
+                Nevşehir Havalimanı Transfer
+              </Link>
+              <Link
+                href="/tr/kayseri-havalimani-transfer"
+                className="px-4 py-2 bg-amber-50 text-amber-800 rounded-lg hover:bg-amber-100 transition-colors font-medium"
+              >
+                Kayseri Havalimanı Transfer
+              </Link>
+              <Link
+                href="/tr/iletisim"
+                className="px-4 py-2 bg-amber-50 text-amber-800 rounded-lg hover:bg-amber-100 transition-colors font-medium"
+              >
+                İletişim
+              </Link>
+            </div>
+          </div>
+        )}
       </div>
     </>
   );

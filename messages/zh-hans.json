@@ -286,5 +286,47 @@
     "faq7A": "请通过WhatsApp或电话联系我们。请指定接客地点、目的地、日期、时间和乘客人数。",
     "faq8Q": "如何付款？",
     "faq8A": "付款在行程开始或结束时收取。您可以用现金(TRY、EUR、USD)或信用卡支付。"
+  },
+  "urgupTaksiNumarasi": {
+    "title": "Not Found", "description": "Page not found", "h1": "Not Found", "intro": "", "content": "",
+    "quickReservationTitle": "", "quickReservationText": "",
+    "faq1Q": "", "faq1A": "", "faq2Q": "", "faq2A": "", "faq3Q": "", "faq3A": "", "faq4Q": "", "faq4A": "",
+    "faq5Q": "", "faq5A": "", "faq6Q": "", "faq6A": "", "faq7Q": "", "faq7A": "", "faq8Q": "", "faq8A": ""
+  },
+  "urgupTerminalTaksi": {
+    "title": "Not Found", "description": "Page not found", "h1": "Not Found", "intro": "", "content": "",
+    "quickReservationTitle": "", "quickReservationText": "",
+    "faq1Q": "", "faq1A": "", "faq2Q": "", "faq2A": "", "faq3Q": "", "faq3A": "", "faq4Q": "", "faq4A": "",
+    "faq5Q": "", "faq5A": "", "faq6Q": "", "faq6A": "", "faq7Q": "", "faq7A": "", "faq8Q": "", "faq8A": ""
+  },
+  "urgupTaksiDuraklari": {
+    "title": "Not Found", "description": "Page not found", "h1": "Not Found", "intro": "", "content": "",
+    "quickReservationTitle": "", "quickReservationText": "",
+    "faq1Q": "", "faq1A": "", "faq2Q": "", "faq2A": "", "faq3Q": "", "faq3A": "", "faq4Q": "", "faq4A": "",
+    "faq5Q": "", "faq5A": "", "faq6Q": "", "faq6A": "", "faq7Q": "", "faq7A": "", "faq8Q": "", "faq8A": ""
+  },
+  "nevsehirHavalimaniTransfer": {
+    "title": "Not Found", "description": "Page not found", "h1": "Not Found", "intro": "", "content": "",
+    "quickReservationTitle": "", "quickReservationText": "",
+    "faq1Q": "", "faq1A": "", "faq2Q": "", "faq2A": "", "faq3Q": "", "faq3A": "", "faq4Q": "", "faq4A": "",
+    "faq5Q": "", "faq5A": "", "faq6Q": "", "faq6A": "", "faq7Q": "", "faq7A": "", "faq8Q": "", "faq8A": ""
+  },
+  "kayseriHavalimaniTransfer": {
+    "title": "Not Found", "description": "Page not found", "h1": "Not Found", "intro": "", "content": "",
+    "quickReservationTitle": "", "quickReservationText": "",
+    "faq1Q": "", "faq1A": "", "faq2Q": "", "faq2A": "", "faq3Q": "", "faq3A": "", "faq4Q": "", "faq4A": "",
+    "faq5Q": "", "faq5A": "", "faq6Q": "", "faq6A": "", "faq7Q": "", "faq7A": "", "faq8Q": "", "faq8A": ""
+  },
+  "kapadokyaTaksi": {
+    "title": "Not Found", "description": "Page not found", "h1": "Not Found", "intro": "", "content": "",
+    "quickReservationTitle": "", "quickReservationText": "",
+    "faq1Q": "", "faq1A": "", "faq2Q": "", "faq2A": "", "faq3Q": "", "faq3A": "", "faq4Q": "", "faq4A": "",
+    "faq5Q": "", "faq5A": "", "faq6Q": "", "faq6A": "", "faq7Q": "", "faq7A": "", "faq8Q": "", "faq8A": ""
+  },
+  "nevsehirTaksi": {
+    "title": "Not Found", "description": "Page not found", "h1": "Not Found", "intro": "", "content": "",
+    "quickReservationTitle": "", "quickReservationText": "",
+    "faq1Q": "", "faq1A": "", "faq2Q": "", "faq2A": "", "faq3Q": "", "faq3A": "", "faq4Q": "", "faq4A": "",
+    "faq5Q": "", "faq5A": "", "faq6Q": "", "faq6A": "", "faq7Q": "", "faq7A": "", "faq8Q": "", "faq8A": ""
   }
 }

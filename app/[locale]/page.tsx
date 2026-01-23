@@ -147,14 +147,64 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                 </Link>
               </div>
               <div className="text-center mt-4">
+                <div className="flex flex-wrap justify-center gap-3">
+                  <Link
+                    href={`/${locale}/urgup-taksi`}
+                    className="text-amber-700 hover:text-amber-800 font-semibold inline-flex items-center gap-1 transition-colors"
+                  >
+                    <span>Ürgüp Taksi</span>
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </Link>
+                  <span className="text-zinc-400">•</span>
+                  <Link
+                    href={`/${locale}/urgup-terminal-taksi`}
+                    className="text-amber-700 hover:text-amber-800 font-medium inline-flex items-center gap-1 transition-colors"
+                  >
+                    Terminal Taksi
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+      
+      {/* Kapadokya & Nevşehir Taksi Section - TR Only */}
+      {locale === 'tr' && (
+        <section className="py-8 md:py-10 border-b border-zinc-200/50 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="font-display text-2xl md:text-3xl mb-6 text-zinc-900 text-center">
+                Kapadokya & Nevşehir Taksi Hizmetleri
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <Link
-                  href={`/${locale}/urgup-taksi`}
-                  className="text-amber-700 hover:text-amber-800 font-semibold inline-flex items-center gap-1 transition-colors"
+                  href="/tr/kapadokya-taksi"
+                  className="p-6 bg-amber-50 rounded-xl border-2 border-amber-200 hover:border-amber-300 transition-all"
                 >
-                  <span>Ürgüp Taksi</span>
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
+                  <h3 className="font-display text-xl mb-2 text-zinc-900">Kapadokya Taksi</h3>
+                  <p className="text-zinc-600 text-sm mb-4">Ürgüp, Göreme, Uçhisar, Avanos ve tüm Kapadokya bölgesinde 7/24 taksi hizmeti.</p>
+                  <span className="text-amber-700 font-semibold inline-flex items-center gap-1">
+                    Detaylar
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </span>
+                </Link>
+                <Link
+                  href="/tr/nevsehir-taksi"
+                  className="p-6 bg-amber-50 rounded-xl border-2 border-amber-200 hover:border-amber-300 transition-all"
+                >
+                  <h3 className="font-display text-xl mb-2 text-zinc-900">Nevşehir Taksi</h3>
+                  <p className="text-zinc-600 text-sm mb-4">Nevşehir ve Kapadokya bölgesinde 7/24 taksi hizmeti. Ürgüp, Göreme, Uçhisar transferleri.</p>
+                  <span className="text-amber-700 font-semibold inline-flex items-center gap-1">
+                    Detaylar
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </span>
                 </Link>
               </div>
             </div>

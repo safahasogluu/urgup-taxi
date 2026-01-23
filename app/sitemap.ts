@@ -49,6 +49,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
   });
 
+  // New TR-only SEO pages for high-intent queries
+  const trOnlyPages = [
+    'urgup-terminal-taksi',
+    'urgup-taksi-duraklari',
+    'nevsehir-havalimani-transfer',
+    'kayseri-havalimani-transfer',
+    'kapadokya-taksi',
+    'nevsehir-taksi',
+  ];
+  
+  trOnlyPages.forEach((page) => {
+    routes.push({
+      url: buildLocaleUrl('tr', `/${page}`),
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.8, // High priority for SEO pages
+    });
+  });
+  
+  // Note: urgup-taksi-numarasi is redirected to urgup-taksi, so NOT in sitemap
+
   // Hub pages (airport hubs, taxi hubs, hotel transfer)
   hubPages.forEach((hub) => {
     locales.forEach((locale) => {

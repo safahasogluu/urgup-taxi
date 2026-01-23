@@ -1,6 +1,6 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { generateMetadata as genMeta } from '@/lib/seo';
-import { generateFAQPageSchema, generateBreadcrumbSchema } from '@/lib/schema';
+import { generateFAQPageSchema, generateBreadcrumbSchema, generateTaxiServiceSchemaForPage } from '@/lib/schema';
 import { Locale } from '@/i18n';
 import { buildLocaleUrl } from '@/lib/url';
 import { notFound } from 'next/navigation';
@@ -12,32 +12,42 @@ import Link from 'next/link';
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const t = await getTranslations({ locale, namespace: 'urgupTaksi' });
+  
+  if (locale !== 'tr') {
+    return genMeta({
+      locale: locale as Locale,
+      title: 'Not Found',
+      description: 'Page not found',
+      path: '/kayseri-havalimani-transfer',
+      noindex: true,
+    });
+  }
+  
+  const t = await getTranslations({ locale, namespace: 'kayseriHavalimaniTransfer' });
   
   return genMeta({
     locale: locale as Locale,
     title: t('title'),
     description: t('description'),
-    path: '/urgup-taksi',
+    path: '/kayseri-havalimani-transfer',
   });
 }
 
-export default async function UrgupTaksiPage({ params }: { params: Promise<{ locale: string }> }) {
+export default async function KayseriHavalimaniTransferPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
   
-  // Only show for TR and EN - use notFound() to avoid soft-404
-  if (locale !== 'tr' && locale !== 'en') {
+  if (locale !== 'tr') {
     notFound();
   }
   
-  const t = await getTranslations({ locale, namespace: 'urgupTaksi' });
+  const t = await getTranslations({ locale, namespace: 'kayseriHavalimaniTransfer' });
   const tCommon = await getTranslations({ locale, namespace: 'common' });
   const tFaq = await getTranslations({ locale, namespace: 'faq' });
   
   const phone = tCommon('phone');
+  const canonicalUrl = buildLocaleUrl('tr', '/kayseri-havalimani-transfer');
   
-  // Generate FAQ schema with 8 FAQs
   const faqs = [
     { question: t('faq1Q'), answer: t('faq1A') },
     { question: t('faq2Q'), answer: t('faq2A') },
@@ -49,15 +59,12 @@ export default async function UrgupTaksiPage({ params }: { params: Promise<{ loc
     { question: t('faq8Q'), answer: t('faq8A') },
   ];
   
-  // Generate FAQ schema with canonical URL for TR locale
-  const canonicalUrl = locale === 'tr' 
-    ? buildLocaleUrl('tr', '/urgup-taksi')
-    : undefined;
   const faqSchema = generateFAQPageSchema(faqs, canonicalUrl);
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: tCommon('home'), url: buildLocaleUrl(locale, '/') },
-    { name: t('h1'), url: buildLocaleUrl(locale, '/urgup-taksi') },
+    { name: t('h1'), url: canonicalUrl },
   ]);
+  const taxiServiceSchema = generateTaxiServiceSchemaForPage(canonicalUrl);
 
   return (
     <>
@@ -69,8 +76,11 @@ export default async function UrgupTaksiPage({ params }: { params: Promise<{ loc
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(taxiServiceSchema) }}
+      />
 
-      {/* Hero Section */}
       <section className="bg-hero-gradient section-padding">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
@@ -81,8 +91,8 @@ export default async function UrgupTaksiPage({ params }: { params: Promise<{ loc
               {t('intro')}
             </p>
             
-            {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <WhatsAppQuickCTA type="general" className="btn-whatsapp px-8 py-4 text-lg" />
               <CallCTAButton
                 phone={phone}
                 className="btn-primary px-8 py-4 text-lg"
@@ -93,13 +103,33 @@ export default async function UrgupTaksiPage({ params }: { params: Promise<{ loc
                 </svg>
                 {tCommon('callNow')}
               </CallCTAButton>
-              <WhatsAppQuickCTA type="general" className="btn-whatsapp px-8 py-4 text-lg" />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Main Content Section */}
+      <section className="section-padding bg-amber-50 border-y border-amber-200">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="font-display text-2xl mb-4 text-basalt-900">{t('quickReservationTitle')}</h2>
+            <p className="text-lg text-basalt-600 mb-6">{t('quickReservationText')}</p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <WhatsAppQuickCTA type="general" className="btn-whatsapp px-6 py-3 text-base" />
+              <CallCTAButton
+                phone={phone}
+                className="btn-primary px-6 py-3 text-base"
+                ctaLocation="hero"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+                {tCommon('callNow')}
+              </CallCTAButton>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="section-padding bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
@@ -109,61 +139,45 @@ export default async function UrgupTaksiPage({ params }: { params: Promise<{ loc
               </div>
             </div>
             
-            {/* Sık Arananlar - TR Only */}
-            {locale === 'tr' && (
-              <div className="mt-8 pt-8 border-t border-zinc-200">
-                <h3 className="font-display text-xl mb-4 text-basalt-900">Sık Arananlar</h3>
-                <div className="flex flex-wrap gap-3">
-                  <Link
-                    href="/tr/kapadokya-taksi"
-                    className="px-4 py-2 bg-amber-50 text-amber-800 rounded-lg hover:bg-amber-100 transition-colors font-medium"
-                  >
-                    Kapadokya Taksi
-                  </Link>
-                  <Link
-                    href="/tr/nevsehir-taksi"
-                    className="px-4 py-2 bg-amber-50 text-amber-800 rounded-lg hover:bg-amber-100 transition-colors font-medium"
-                  >
-                    Nevşehir Taksi
-                  </Link>
-                  <Link
-                    href="/tr/urgup-terminal-taksi"
-                    className="px-4 py-2 bg-amber-50 text-amber-800 rounded-lg hover:bg-amber-100 transition-colors font-medium"
-                  >
-                    Ürgüp Terminal Taksi
-                  </Link>
-                  <Link
-                    href="/tr/urgup-taksi-duraklari"
-                    className="px-4 py-2 bg-amber-50 text-amber-800 rounded-lg hover:bg-amber-100 transition-colors font-medium"
-                  >
-                    Ürgüp Taksi Durakları
-                  </Link>
-                  <Link
-                    href="/tr/goreme-taksi"
-                    className="px-4 py-2 bg-amber-50 text-amber-800 rounded-lg hover:bg-amber-100 transition-colors font-medium"
-                  >
-                    Göreme Taksi
-                  </Link>
-                  <Link
-                    href="/tr/avanos-taksi"
-                    className="px-4 py-2 bg-amber-50 text-amber-800 rounded-lg hover:bg-amber-100 transition-colors font-medium"
-                  >
-                    Avanos Taksi
-                  </Link>
-                  <Link
-                    href="/tr/mustafapasa-taksi"
-                    className="px-4 py-2 bg-amber-50 text-amber-800 rounded-lg hover:bg-amber-100 transition-colors font-medium"
-                  >
-                    Mustafapaşa Taksi
-                  </Link>
-                </div>
+            <div className="mt-8 pt-8 border-t border-zinc-200">
+              <h3 className="font-display text-xl mb-4 text-basalt-900">İlgili Sayfalar</h3>
+              <div className="flex flex-wrap gap-3">
+                <Link
+                  href="/tr/transfer/urgup-asr-transfer"
+                  className="px-4 py-2 bg-amber-50 text-amber-800 rounded-lg hover:bg-amber-100 transition-colors font-medium"
+                >
+                  Ürgüp ASR Transfer
+                </Link>
+                <Link
+                  href="/tr/transfer/goreme-asr-transfer"
+                  className="px-4 py-2 bg-amber-50 text-amber-800 rounded-lg hover:bg-amber-100 transition-colors font-medium"
+                >
+                  Göreme ASR Transfer
+                </Link>
+                <Link
+                  href="/tr/havalimani-transferi"
+                  className="px-4 py-2 bg-amber-50 text-amber-800 rounded-lg hover:bg-amber-100 transition-colors font-medium"
+                >
+                  Havalimanı Transferi
+                </Link>
+                <Link
+                  href="/tr/fiyatlar"
+                  className="px-4 py-2 bg-amber-50 text-amber-800 rounded-lg hover:bg-amber-100 transition-colors font-medium"
+                >
+                  Fiyatlar
+                </Link>
+                <Link
+                  href="/tr/iletisim"
+                  className="px-4 py-2 bg-amber-50 text-amber-800 rounded-lg hover:bg-amber-100 transition-colors font-medium"
+                >
+                  İletişim
+                </Link>
               </div>
-            )}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* FAQ Section */}
       <section className="section-padding bg-sand-200">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
@@ -173,7 +187,6 @@ export default async function UrgupTaksiPage({ params }: { params: Promise<{ loc
         </div>
       </section>
 
-      {/* Final CTA Section */}
       <section className="section-padding bg-terracotta-gradient text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
@@ -182,9 +195,10 @@ export default async function UrgupTaksiPage({ params }: { params: Promise<{ loc
               {tCommon('open247')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <WhatsAppQuickCTA type="general" className="bg-white text-terracotta-700 px-8 py-4 rounded-xl font-semibold hover:bg-sand-100 transition-all shadow-lg text-lg inline-flex items-center justify-center gap-2" />
               <CallCTAButton
                 phone={phone}
-                className="bg-white text-terracotta-700 px-8 py-4 rounded-xl font-semibold hover:bg-sand-100 transition-all shadow-lg text-lg inline-flex items-center justify-center gap-2"
+                className="bg-terracotta-800 text-white px-8 py-4 rounded-xl font-semibold hover:bg-terracotta-900 transition-all shadow-lg text-lg inline-flex items-center justify-center gap-2 border-2 border-white/20"
                 ctaLocation="hero"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -192,12 +206,6 @@ export default async function UrgupTaksiPage({ params }: { params: Promise<{ loc
                 </svg>
                 {tCommon('callNow')}
               </CallCTAButton>
-              <Link
-                href={`/${locale}/rezervasyon`}
-                className="bg-terracotta-800 text-white px-8 py-4 rounded-xl font-semibold hover:bg-terracotta-900 transition-all shadow-lg text-lg inline-flex items-center justify-center gap-2 border-2 border-white/20"
-              >
-                {tCommon('bookNow')}
-              </Link>
             </div>
           </div>
         </div>

@@ -57,6 +57,15 @@ const nextConfig = {
       permanent: true,
     });
     
+    // Redirect urgup-taksi-numarasi to urgup-taksi (avoid cannibalization)
+    locales.forEach((locale) => {
+      redirects.push({
+        source: `/${locale}/urgup-taksi-numarasi`,
+        destination: `/${locale}/urgup-taksi`,
+        permanent: true,
+      });
+    });
+    
     return redirects;
   },
 };
