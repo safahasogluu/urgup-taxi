@@ -3,6 +3,7 @@ import { generateMetadata as genMeta } from '@/lib/seo';
 import { generateFAQPageSchema, generateBreadcrumbSchema } from '@/lib/schema';
 import { Locale } from '@/i18n';
 import { buildLocaleUrl } from '@/lib/url';
+import { notFound } from 'next/navigation';
 import FAQAccordion from '@/components/FAQAccordion';
 import CallCTAButton from '@/components/CallCTAButton';
 import WhatsAppQuickCTA from '@/components/WhatsAppQuickCTA';
@@ -25,9 +26,9 @@ export default async function UrgupTaksiPage({ params }: { params: Promise<{ loc
   const { locale } = await params;
   setRequestLocale(locale);
   
-  // Only show for TR and EN
+  // Only show for TR and EN - use notFound() to avoid soft-404
   if (locale !== 'tr' && locale !== 'en') {
-    return null;
+    notFound();
   }
   
   const t = await getTranslations({ locale, namespace: 'urgupTaksi' });

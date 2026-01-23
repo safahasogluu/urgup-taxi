@@ -39,6 +39,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
   });
 
+  // Urgup Taksi landing page (only TR and EN)
+  ['tr', 'en'].forEach((locale) => {
+    routes.push({
+      url: buildLocaleUrl(locale, '/urgup-taksi'),
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9, // High priority for SEO landing page
+    });
+  });
+
   // Hub pages (airport hubs, taxi hubs, hotel transfer)
   hubPages.forEach((hub) => {
     locales.forEach((locale) => {
