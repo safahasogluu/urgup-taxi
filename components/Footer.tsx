@@ -30,7 +30,7 @@ export default function Footer() {
   return (
     <footer className="bg-gray-900 text-white mt-20">
       <div className="container mx-auto px-4 py-12">
-        <div className={`grid grid-cols-1 gap-8 ${locale === 'tr' || locale === 'en' ? 'md:grid-cols-4' : 'md:grid-cols-3'}`}>
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           <div>
             <h3 className="text-xl font-bold mb-4">{t('businessName')}</h3>
             <p className="text-gray-400 mb-4">{t('address')}</p>
@@ -73,18 +73,28 @@ export default function Footer() {
             </ul>
           </div>
 
-          {(locale === 'tr' || locale === 'en') && (
-            <div>
-              <h4 className="text-lg font-semibold mb-4">Hızlı Linkler</h4>
-              <ul className="space-y-2">
-                <li>
-                  <Link href={`/${locale}/urgup-taksi`} className="text-gray-400 hover:text-white">
-                    Ürgüp Taksi
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          )}
+          <div>
+            <h4 className="text-lg font-semibold mb-4">
+              {locale === 'tr' ? 'Hızlı Linkler' : locale === 'en' ? 'Quick Links' : locale === 'ko' ? '빠른 링크' : locale === 'ja' ? 'クイックリンク' : '快速链接'}
+            </h4>
+            <ul className="space-y-2">
+              <li>
+                <Link href={`/${locale}/urgup-taksi`} className="text-gray-400 hover:text-white">
+                  {locale === 'tr' ? 'Ürgüp Taksi' : locale === 'en' ? 'Ürgüp Taxi' : locale === 'ko' ? '우르귀프 택시' : locale === 'ja' ? 'ウルギュップタクシー' : '于尔居普出租车'}
+                </Link>
+              </li>
+              <li>
+                <Link href={`/${locale}/uchisar-taksi`} className="text-gray-400 hover:text-white">
+                  {locale === 'tr' ? 'Uçhisar Taksi' : locale === 'en' ? 'Uçhisar Taxi' : locale === 'ko' ? '우치히사르 택시' : locale === 'ja' ? 'ウチヒサルタクシー' : '乌奇希萨尔出租车'}
+                </Link>
+              </li>
+              <li>
+                <Link href={`/${locale}/transfer/urgup-nav-transfer`} className="text-gray-400 hover:text-white">
+                  {locale === 'tr' ? 'Ürgüp NAV Transfer' : locale === 'en' ? 'Ürgüp NAV Transfer' : locale === 'ko' ? '우르귀프 NAV 픽업' : locale === 'ja' ? 'ウルギュップNAV送迎' : '于尔居普NAV接送'}
+                </Link>
+              </li>
+            </ul>
+          </div>
 
           <div>
             <h4 className="text-lg font-semibold mb-4">{tNav('contact')}</h4>

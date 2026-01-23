@@ -11,6 +11,20 @@ const intlMiddleware = createMiddleware({
 export default function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
   
+  // Canonical host/protocol enforcement: redirect to https://www.urguptaxi.com
+  const hostname = request.headers.get('host') || '';
+  const protocol = request.headers.get('x-forwarded-proto') || (request.nextUrl.protocol === 'https:' ? 'https' : 'http');
+  const canonicalHost = 'www.urguptaxi.com';
+  const canonicalProtocol = 'https';
+  
+  // Check if we need to redirect to canonical host/protocol
+  if (hostname !== canonicalHost || protocol !== canonicalProtocol) {
+    const url = request.nextUrl.clone();
+    // Construct canonical URL
+    const canonicalUrl = `${canonicalProtocol}://${canonicalHost}${url.pathname}${url.search}`;
+    return NextResponse.redirect(canonicalUrl, 301);
+  }
+  
   // Only handle root "/" for smart locale detection
   if (pathname === '/') {
     // Check for locale cookie first

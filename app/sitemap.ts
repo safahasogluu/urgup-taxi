@@ -85,5 +85,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
   });
 
-  return routes;
+  // Filter out noindex pages and ensure canonical URLs only
+  // Exclude google-yorum (has noindex: true)
+  const filteredRoutes = routes
+    .map((route) => {
+      const urlObj = new URL(route.url);
+      // Ensure URL is canonical (https://www.urguptaxi.com)
+      if (urlObj.hostname !== 'www.urguptaxi.com' || urlObj.protocol !== 'https:') {
+        urlObj.hostname = 'www.urguptaxi.com';
+        urlObj.protocol = 'https:';
+        return { ...route, url: urlObj.toString() };
+      }
+      return route;
+    })
+    .filter((route) => {
+      const path = new URL(route.url).pathname;
+      // Exclude google-yorum pages (they have noindex: true)
+      return !path.includes('/google-yorum');
+    });
+
+  return filteredRoutes;
 }
