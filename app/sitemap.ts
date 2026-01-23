@@ -7,15 +7,56 @@ import { buildLocaleUrl } from '@/lib/url';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes: MetadataRoute.Sitemap = [];
+  const seenUrls = new Set<string>(); // Track unique URLs to prevent duplicates
+
+  // TR-only pages (these pages return notFound() for non-TR locales)
+  const trOnlyPages = [
+    'urgup-terminal-taksi',
+    'urgup-taksi-duraklari',
+    'nevsehir-havalimani-transfer',
+    'kayseri-havalimani-transfer',
+    'kapadokya-taksi',
+    'nevsehir-taksi',
+  ];
+
+  // Redirect-only URLs (these should NOT be in sitemap)
+  const redirectOnlyUrls = new Set<string>();
+  locales.forEach((locale) => {
+    redirectOnlyUrls.add(buildLocaleUrl(locale, '/urgup-taksi-numarasi'));
+  });
+
+  // Helper function to add route if not duplicate and not a redirect
+  const addRoute = (url: string, lastModified: Date, changeFrequency: 'always' | 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly' | 'never', priority: number) => {
+    // Normalize URL to canonical form
+    const urlObj = new URL(url);
+    if (urlObj.hostname !== 'www.urguptaxi.com' || urlObj.protocol !== 'https:') {
+      urlObj.hostname = 'www.urguptaxi.com';
+      urlObj.protocol = 'https:';
+    }
+    const canonicalUrl = urlObj.toString();
+    
+    // Skip redirect-only URLs
+    if (redirectOnlyUrls.has(canonicalUrl)) {
+      return;
+    }
+    
+    // Skip if already seen (duplicate)
+    if (seenUrls.has(canonicalUrl)) {
+      return;
+    }
+    
+    seenUrls.add(canonicalUrl);
+    routes.push({
+      url: canonicalUrl,
+      lastModified,
+      changeFrequency,
+      priority,
+    });
+  };
 
   // Homepage for each locale
   locales.forEach((locale) => {
-    routes.push({
-      url: buildLocaleUrl(locale, '/'),
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 1,
-    });
+    addRoute(buildLocaleUrl(locale, '/'), new Date(), 'daily', 1);
   });
 
   // Static pages for each locale
@@ -30,42 +71,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   staticPages.forEach((page) => {
     locales.forEach((locale) => {
-      routes.push({
-        url: buildLocaleUrl(locale, `/${page}`),
-        lastModified: new Date(),
-        changeFrequency: 'weekly',
-        priority: 0.8,
-      });
+      addRoute(buildLocaleUrl(locale, `/${page}`), new Date(), 'weekly', 0.8);
     });
   });
 
   // Urgup Taksi landing page (only TR and EN)
   ['tr', 'en'].forEach((locale) => {
-    routes.push({
-      url: buildLocaleUrl(locale, '/urgup-taksi'),
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9, // High priority for SEO landing page
-    });
+    addRoute(buildLocaleUrl(locale, '/urgup-taksi'), new Date(), 'weekly', 0.9);
   });
 
-  // New TR-only SEO pages for high-intent queries
-  const trOnlyPages = [
-    'urgup-terminal-taksi',
-    'urgup-taksi-duraklari',
-    'nevsehir-havalimani-transfer',
-    'kayseri-havalimani-transfer',
-    'kapadokya-taksi',
-    'nevsehir-taksi',
-  ];
-  
+  // TR-only SEO pages (only /tr variant)
   trOnlyPages.forEach((page) => {
-    routes.push({
-      url: buildLocaleUrl('tr', `/${page}`),
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8, // High priority for SEO pages
-    });
+    addRoute(buildLocaleUrl('tr', `/${page}`), new Date(), 'weekly', 0.8);
   });
   
   // Note: urgup-taksi-numarasi is redirected to urgup-taksi, so NOT in sitemap
@@ -73,57 +90,35 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Hub pages (airport hubs, taxi hubs, hotel transfer)
   hubPages.forEach((hub) => {
     locales.forEach((locale) => {
-      routes.push({
-        url: buildLocaleUrl(locale, `/${hub.slug}`),
-        lastModified: new Date(),
-        changeFrequency: 'weekly',
-        priority: 0.9, // High priority for hub pages
-      });
+      addRoute(buildLocaleUrl(locale, `/${hub.slug}`), new Date(), 'weekly', 0.9);
     });
   });
 
   // Location pages (local taxi)
+  // Exclude 'urgup-taksi' from locations since it's already added above (TR+EN only)
   locations.forEach((location) => {
+    // Skip urgup-taksi if it exists in locations (already handled above)
+    if (location.slug === 'urgup-taksi') {
+      return; // Skip to avoid duplicate
+    }
+    
     locales.forEach((locale) => {
-      routes.push({
-        url: buildLocaleUrl(locale, `/${location.slug}`),
-        lastModified: new Date(),
-        changeFrequency: 'weekly',
-        priority: 0.7,
-      });
+      addRoute(buildLocaleUrl(locale, `/${location.slug}`), new Date(), 'weekly', 0.7);
     });
   });
 
   // Transfer route pages
   transferRoutes.forEach((route) => {
     locales.forEach((locale) => {
-      routes.push({
-        url: buildLocaleUrl(locale, `/transfer/${route.slug}`),
-        lastModified: new Date(),
-        changeFrequency: 'weekly',
-        priority: 0.7,
-      });
+      addRoute(buildLocaleUrl(locale, `/transfer/${route.slug}`), new Date(), 'weekly', 0.7);
     });
   });
 
-  // Filter out noindex pages and ensure canonical URLs only
-  // Exclude google-yorum (has noindex: true)
-  const filteredRoutes = routes
-    .map((route) => {
-      const urlObj = new URL(route.url);
-      // Ensure URL is canonical (https://www.urguptaxi.com)
-      if (urlObj.hostname !== 'www.urguptaxi.com' || urlObj.protocol !== 'https:') {
-        urlObj.hostname = 'www.urguptaxi.com';
-        urlObj.protocol = 'https:';
-        return { ...route, url: urlObj.toString() };
-      }
-      return route;
-    })
-    .filter((route) => {
-      const path = new URL(route.url).pathname;
-      // Exclude google-yorum pages (they have noindex: true)
-      return !path.includes('/google-yorum');
-    });
+  // Final filter: exclude google-yorum pages (they have noindex: true)
+  const filteredRoutes = routes.filter((route) => {
+    const path = new URL(route.url).pathname;
+    return !path.includes('/google-yorum');
+  });
 
   return filteredRoutes;
 }

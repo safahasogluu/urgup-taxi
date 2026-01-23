@@ -149,10 +149,10 @@ export default async function UrgupTerminalTaksiPage({ params }: { params: Promi
                   Ürgüp Taksi
                 </Link>
                 <Link
-                  href="/tr/urgup-taksi-numarasi"
+                  href="/tr/urgup-taksi-duraklari"
                   className="px-4 py-2 bg-amber-50 text-amber-800 rounded-lg hover:bg-amber-100 transition-colors font-medium"
                 >
-                  Ürgüp Taksi Numarası
+                  Ürgüp Taksi Durakları
                 </Link>
                 <Link
                   href="/tr/fiyatlar"

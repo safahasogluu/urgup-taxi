@@ -109,6 +109,63 @@ export default async function UrgupTaksiPage({ params }: { params: Promise<{ loc
               </div>
             </div>
             
+            {/* Topical Cluster - TR Only */}
+            {locale === 'tr' && (
+              <div className="mt-12 pt-8 border-t border-zinc-200">
+                <h2 className="font-display text-2xl mb-6 text-basalt-900">Ürgüp Otogar Taksi</h2>
+                <p className="text-basalt-700 mb-4 leading-relaxed">
+                  Ürgüp otogarından ve terminal noktasından 7/24 taksi hizmeti sunuyoruz. Otobüs terminalinden indikten sonra otelinize, havalimanına veya istediğiniz noktaya hızlı ve güvenli transfer sağlıyoruz. Terminal çıkışında buluşma noktası belirleyebilir, bagajlarınızla birlikte konforlu bir şekilde yolculuğunuza devam edebilirsiniz.
+                </p>
+                <Link
+                  href="/tr/urgup-terminal-taksi"
+                  className="inline-block px-4 py-2 bg-amber-50 text-amber-800 rounded-lg hover:bg-amber-100 transition-colors font-medium mb-8"
+                >
+                  Ürgüp Terminal Taksi Detayları →
+                </Link>
+
+                <h2 className="font-display text-2xl mb-6 text-basalt-900 mt-8">Ürgüp Terminal Taksi</h2>
+                <p className="text-basalt-700 mb-4 leading-relaxed">
+                  Ürgüp Terminal ve otogardan profesyonel taksi hizmeti. Terminal çıkışında buluşma noktası, otel alımı, havalimanı transferleri ve bölge içi tüm noktalara 7/24 hizmet. Gece geç saatlerde veya sabah erken saatlerde terminal&apos;den alım için önceden rezervasyon yapabilirsiniz.
+                </p>
+                <Link
+                  href="/tr/urgup-terminal-taksi"
+                  className="inline-block px-4 py-2 bg-amber-50 text-amber-800 rounded-lg hover:bg-amber-100 transition-colors font-medium mb-8"
+                >
+                  Terminal Taksi Hizmeti →
+                </Link>
+
+                <h2 className="font-display text-2xl mb-6 text-basalt-900 mt-8">Ürgüp Taksi Durakları</h2>
+                <p className="text-basalt-700 mb-4 leading-relaxed">
+                  Ürgüp&apos;te taksi duraklarından veya doğrudan WhatsApp veya telefon ile taksi çağırabilirsiniz. En hızlı ve güvenilir yöntem doğrudan çağırmaktır. Otellerinizden, terminal&apos;den veya istediğiniz noktadan alım yapıyoruz. 7/24 hizmet, sabit fiyat garantisi.
+                </p>
+                <Link
+                  href="/tr/urgup-taksi-duraklari"
+                  className="inline-block px-4 py-2 bg-amber-50 text-amber-800 rounded-lg hover:bg-amber-100 transition-colors font-medium mb-8"
+                >
+                  Taksi Durakları ve Çağırma Hizmeti →
+                </Link>
+
+                <h2 className="font-display text-2xl mb-6 text-basalt-900 mt-8">Kapadokya & Nevşehir Taksi</h2>
+                <p className="text-basalt-700 mb-4 leading-relaxed">
+                  Kapadokya bölgesinin tüm noktalarında ve Nevşehir&apos;den 7/24 taksi hizmeti sunuyoruz. Ürgüp, Göreme, Uçhisar, Avanos, Mustafapaşa ve Ortahisar&apos;a transfer hizmeti veriyoruz. Bölge içi taksi hizmetleri ve havalimanı transferleri için sabit fiyat garantisi.
+                </p>
+                <div className="flex flex-wrap gap-3 mt-4">
+                  <Link
+                    href="/tr/kapadokya-taksi"
+                    className="px-4 py-2 bg-amber-50 text-amber-800 rounded-lg hover:bg-amber-100 transition-colors font-medium"
+                  >
+                    Kapadokya Taksi →
+                  </Link>
+                  <Link
+                    href="/tr/nevsehir-taksi"
+                    className="px-4 py-2 bg-amber-50 text-amber-800 rounded-lg hover:bg-amber-100 transition-colors font-medium"
+                  >
+                    Nevşehir Taksi →
+                  </Link>
+                </div>
+              </div>
+            )}
+
             {/* Sık Arananlar - TR Only */}
             {locale === 'tr' && (
               <div className="mt-8 pt-8 border-t border-zinc-200">
