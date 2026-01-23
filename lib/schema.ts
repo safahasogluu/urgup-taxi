@@ -120,9 +120,10 @@ export function generateServiceSchema(
 }
 
 export function generateFAQPageSchema(
-  faqs: Array<{ question: string; answer: string }>
+  faqs: Array<{ question: string; answer: string }>,
+  url?: string
 ) {
-  return {
+  const schema: any = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
     mainEntity: faqs.map((faq) => ({
@@ -134,6 +135,13 @@ export function generateFAQPageSchema(
       },
     })),
   };
+  
+  // Add canonical URL if provided (for /tr/urgup-taksi)
+  if (url) {
+    schema.url = url;
+  }
+  
+  return schema;
 }
 
 export function generateBreadcrumbSchema(

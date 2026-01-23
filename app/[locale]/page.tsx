@@ -99,8 +99,71 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         </div>
       </HeroSection>
 
-      {/* Ürgüp Taksi Quick Link - Hero Altı */}
-      {(locale === 'tr' || locale === 'en') && (
+      {/* Ürgüp Taksi Section - TR Only */}
+      {locale === 'tr' && (
+        <section className="py-8 md:py-10 border-b border-zinc-200/50 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="font-display text-2xl md:text-3xl mb-4 text-zinc-900 text-center">
+                Ürgüp Taksi – 7/24 Hızlı Ulaşım
+              </h2>
+              <ul className="space-y-2 mb-6 text-zinc-700 text-center max-w-2xl mx-auto">
+                <li className="flex items-center justify-center gap-2">
+                  <svg className="w-5 h-5 text-amber-700 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Ürgüp, Göreme, Uçhisar bölgesinde 7/24 profesyonel taksi hizmeti</span>
+                </li>
+                <li className="flex items-center justify-center gap-2">
+                  <svg className="w-5 h-5 text-amber-700 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Nevşehir NAV ve Kayseri ASR havalimanı transferleri – sabit fiyat garantisi</span>
+                </li>
+                <li className="flex items-center justify-center gap-2">
+                  <svg className="w-5 h-5 text-amber-700 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>WhatsApp ile anında rezervasyon – hızlı yanıt garantisi</span>
+                </li>
+              </ul>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <CallCTAButton
+                  phone={phone}
+                  className="btn-primary px-6 py-3 text-base"
+                  ctaLocation="hero"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
+                  {tCommon('callNow')}
+                </CallCTAButton>
+                <WhatsAppQuickCTA type="general" className="btn-whatsapp px-6 py-3 text-base" />
+                <Link
+                  href={`/${locale}/fiyatlar`}
+                  className="px-6 py-3 bg-white border-2 border-amber-700 text-amber-700 rounded-xl font-semibold hover:bg-amber-50 transition-all text-base inline-flex items-center justify-center gap-2"
+                >
+                  Fiyat Al
+                </Link>
+              </div>
+              <div className="text-center mt-4">
+                <Link
+                  href={`/${locale}/urgup-taksi`}
+                  className="text-amber-700 hover:text-amber-800 font-semibold inline-flex items-center gap-1 transition-colors"
+                >
+                  <span>Ürgüp Taksi</span>
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+      
+      {/* Ürgüp Taksi Quick Link - EN Only */}
+      {locale === 'en' && (
         <section className="py-4 border-b border-zinc-200/50 bg-white/50">
           <div className="container mx-auto px-4">
             <div className="text-center">

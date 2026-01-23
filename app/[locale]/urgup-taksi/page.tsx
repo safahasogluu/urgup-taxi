@@ -49,7 +49,11 @@ export default async function UrgupTaksiPage({ params }: { params: Promise<{ loc
     { question: t('faq8Q'), answer: t('faq8A') },
   ];
   
-  const faqSchema = generateFAQPageSchema(faqs);
+  // Generate FAQ schema with canonical URL for TR locale
+  const canonicalUrl = locale === 'tr' 
+    ? buildLocaleUrl('tr', '/urgup-taksi')
+    : undefined;
+  const faqSchema = generateFAQPageSchema(faqs, canonicalUrl);
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: tCommon('home'), url: buildLocaleUrl(locale, '/') },
     { name: t('h1'), url: buildLocaleUrl(locale, '/urgup-taksi') },
