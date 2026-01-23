@@ -147,7 +147,16 @@
     "hoursTitle": "영업 시간",
     "hours": "24시간 영업",
     "mapTitle": "위치",
-    "mapPlaceholder": "Google 지도 로딩 중..."
+    "mapPlaceholder": "Google 지도 로딩 중...",
+    "trustModuleTitle": "작동 방식",
+    "trustModule247": "24/7 서비스",
+    "trustModule247Desc": "밤낮 모든 시간에 함께합니다. 공항 터미널, 터미널 픽업 및 지역 내 모든 지점에 서비스를 제공합니다.",
+    "trustModuleWhatsApp": "WhatsApp을 통한 빠른 응답",
+    "trustModuleWhatsAppDesc": "WhatsApp 메시지에 보통 5-10분 이내에 응답합니다. 전화 통화에는 즉시 응답합니다.",
+    "trustModulePickup": "픽업 지점",
+    "trustModulePickupDesc": "터미널, 버스 정류장, 호텔 및 공항에서 픽업을 제공합니다. 좁은 거리의 호텔의 경우 가장 가까운 접근 지점에서 픽업을 제공합니다.",
+    "trustModulePayment": "결제 및 수하물",
+    "trustModulePaymentDesc": "결제는 여정 종료 시 현금(TL, EUR, USD) 또는 신용카드로 이루어집니다. 표준 차량은 대형 가방 2-3개 + 기내용 가방을 수용할 수 있습니다."
   },
   "faq": {
     "title": "자주 묻는 질문",
@@ -285,7 +294,16 @@
     "faq7Q": "예약은 어떻게 하나요?",
     "faq7A": "WhatsApp 또는 전화로 연락하세요. 픽업 장소, 목적지, 날짜, 시간 및 승객 수를 지정하세요.",
     "faq8Q": "결제는 어떻게 이루어집니까?",
-    "faq8A": "결제는 여정 시작 또는 종료 시 받습니다. 현금(TRY, EUR, USD) 또는 신용카드로 결제할 수 있습니다."
+    "faq8A": "결제는 여정 시작 또는 종료 시 받습니다. 현금(TRY, EUR, USD) 또는 신용카드로 결제할 수 있습니다.",
+    "trustModuleTitle": "작동 방식",
+    "trustModule247": "24/7 서비스",
+    "trustModule247Desc": "밤낮 모든 시간에 함께합니다. 공항 터미널, 터미널 픽업 및 지역 내 모든 지점에 서비스를 제공합니다.",
+    "trustModuleWhatsApp": "WhatsApp을 통한 빠른 응답",
+    "trustModuleWhatsAppDesc": "WhatsApp 메시지에 보통 5-10분 이내에 응답합니다. 전화 통화에는 즉시 응답합니다.",
+    "trustModulePickup": "픽업 지점",
+    "trustModulePickupDesc": "터미널, 버스 정류장, 호텔 및 공항에서 픽업을 제공합니다. 좁은 거리의 호텔의 경우 가장 가까운 접근 지점에서 픽업을 제공합니다.",
+    "trustModulePayment": "결제 및 수하물",
+    "trustModulePaymentDesc": "결제는 여정 종료 시 현금(TL, EUR, USD) 또는 신용카드로 이루어집니다. 표준 차량은 대형 가방 2-3개 + 기내용 가방을 수용할 수 있습니다."
   },
   "urgupTaksiNumarasi": {
     "title": "Not Found", "description": "Page not found", "h1": "Not Found", "intro": "", "content": "",

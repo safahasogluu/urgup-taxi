@@ -220,6 +220,35 @@ export default async function UrgupTaksiPage({ params }: { params: Promise<{ loc
         </div>
       </section>
 
+      {/* E-E-A-T Trust Module - TR Only */}
+      {locale === 'tr' && (
+        <section className="section-padding bg-amber-50 border-y border-amber-200">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="font-display text-2xl mb-8 text-center text-basalt-900">{t('trustModuleTitle')}</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="bg-white p-6 rounded-lg shadow-sm">
+                  <h3 className="font-display text-lg mb-2 text-basalt-900">{t('trustModule247')}</h3>
+                  <p className="text-basalt-600 text-sm">{t('trustModule247Desc')}</p>
+                </div>
+                <div className="bg-white p-6 rounded-lg shadow-sm">
+                  <h3 className="font-display text-lg mb-2 text-basalt-900">{t('trustModuleWhatsApp')}</h3>
+                  <p className="text-basalt-600 text-sm">{t('trustModuleWhatsAppDesc')}</p>
+                </div>
+                <div className="bg-white p-6 rounded-lg shadow-sm">
+                  <h3 className="font-display text-lg mb-2 text-basalt-900">{t('trustModulePickup')}</h3>
+                  <p className="text-basalt-600 text-sm">{t('trustModulePickupDesc')}</p>
+                </div>
+                <div className="bg-white p-6 rounded-lg shadow-sm">
+                  <h3 className="font-display text-lg mb-2 text-basalt-900">{t('trustModulePayment')}</h3>
+                  <p className="text-basalt-600 text-sm">{t('trustModulePaymentDesc')}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* FAQ Section */}
       <section className="section-padding bg-sand-200">
         <div className="container mx-auto px-4">

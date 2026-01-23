@@ -147,7 +147,16 @@
     "hoursTitle": "営業時間",
     "hours": "24時間営業",
     "mapTitle": "場所",
-    "mapPlaceholder": "Googleマップを読み込み中..."
+    "mapPlaceholder": "Googleマップを読み込み中...",
+    "trustModuleTitle": "ご利用方法",
+    "trustModule247": "24時間サービス",
+    "trustModule247Desc": "昼夜を問わず、いつでもご利用いただけます。空港送迎、ターミナルピックアップ、地域内のすべての地点にサービスを提供しています。",
+    "trustModuleWhatsApp": "WhatsAppでの迅速な対応",
+    "trustModuleWhatsAppDesc": "WhatsAppメッセージには通常5-10分以内に返信します。電話には即座に対応します。",
+    "trustModulePickup": "ピックアップ地点",
+    "trustModulePickupDesc": "ターミナル、バス停、ホテル、空港からピックアップを提供します。狭い道路のホテルの場合は、最寄りのアクセスポイントからピックアップを提供します。",
+    "trustModulePayment": "支払いと荷物",
+    "trustModulePaymentDesc": "支払いは旅程終了時に現金(TL、EUR、USD)またはクレジットカードで行われます。標準車両は大型スーツケース2-3個+機内持ち込みを収容できます。"
   },
   "faq": {
     "title": "よくある質問",
@@ -285,7 +294,16 @@
     "faq7Q": "予約はどのようにしますか？",
     "faq7A": "WhatsAppまたは電話でご連絡ください。ピックアップ場所、目的地、日付、時間、乗客数を指定してください。",
     "faq8Q": "支払いはどのように行われますか？",
-    "faq8A": "支払いは乗車開始時または終了時に行われます。現金(TRY、EUR、USD)またはクレジットカードでお支払いいただけます。"
+    "faq8A": "支払いは乗車開始時または終了時に行われます。現金(TRY、EUR、USD)またはクレジットカードでお支払いいただけます。",
+    "trustModuleTitle": "ご利用方法",
+    "trustModule247": "24時間サービス",
+    "trustModule247Desc": "昼夜を問わず、いつでもご利用いただけます。空港送迎、ターミナルピックアップ、地域内のすべての地点にサービスを提供しています。",
+    "trustModuleWhatsApp": "WhatsAppでの迅速な対応",
+    "trustModuleWhatsAppDesc": "WhatsAppメッセージには通常5-10分以内に返信します。電話には即座に対応します。",
+    "trustModulePickup": "ピックアップ地点",
+    "trustModulePickupDesc": "ターミナル、バス停、ホテル、空港からピックアップを提供します。狭い道路のホテルの場合は、最寄りのアクセスポイントからピックアップを提供します。",
+    "trustModulePayment": "支払いと荷物",
+    "trustModulePaymentDesc": "支払いは旅程終了時に現金(TL、EUR、USD)またはクレジットカードで行われます。標準車両は大型スーツケース2-3個+機内持ち込みを収容できます。"
   },
   "urgupTaksiNumarasi": {
     "title": "Not Found", "description": "Page not found", "h1": "Not Found", "intro": "", "content": "",

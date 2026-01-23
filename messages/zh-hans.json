@@ -147,7 +147,16 @@
     "hoursTitle": "营业时间",
     "hours": "24小时营业",
     "mapTitle": "位置",
-    "mapPlaceholder": "正在加载谷歌地图..."
+    "mapPlaceholder": "正在加载谷歌地图...",
+    "trustModuleTitle": "我们的工作方式",
+    "trustModule247": "24小时服务",
+    "trustModule247Desc": "我们全天候为您服务。我们提供机场接送、航站楼接客和区域内所有地点的服务。",
+    "trustModuleWhatsApp": "WhatsApp快速响应",
+    "trustModuleWhatsAppDesc": "我们通常在5-10分钟内回复WhatsApp消息。我们立即回复电话。",
+    "trustModulePickup": "接客地点",
+    "trustModulePickupDesc": "我们提供从航站楼、公交站、酒店和机场的接客服务。对于狭窄街道上的酒店，我们从最近的接入点提供接客服务。",
+    "trustModulePayment": "付款和行李",
+    "trustModulePaymentDesc": "付款在行程结束时以现金(TL、EUR、USD)或信用卡进行。我们的标准车辆可容纳2-3个大行李箱加随身行李。"
   },
   "faq": {
     "title": "常见问题",
@@ -285,7 +294,16 @@
     "faq7Q": "如何预订？",
     "faq7A": "请通过WhatsApp或电话联系我们。请指定接客地点、目的地、日期、时间和乘客人数。",
     "faq8Q": "如何付款？",
-    "faq8A": "付款在行程开始或结束时收取。您可以用现金(TRY、EUR、USD)或信用卡支付。"
+    "faq8A": "付款在行程开始或结束时收取。您可以用现金(TRY、EUR、USD)或信用卡支付。",
+    "trustModuleTitle": "我们的工作方式",
+    "trustModule247": "24小时服务",
+    "trustModule247Desc": "我们全天候为您服务。我们提供机场接送、航站楼接客和区域内所有地点的服务。",
+    "trustModuleWhatsApp": "WhatsApp快速响应",
+    "trustModuleWhatsAppDesc": "我们通常在5-10分钟内回复WhatsApp消息。我们立即回复电话。",
+    "trustModulePickup": "接客地点",
+    "trustModulePickupDesc": "我们提供从航站楼、公交站、酒店和机场的接客服务。对于狭窄街道上的酒店，我们从最近的接入点提供接客服务。",
+    "trustModulePayment": "付款和行李",
+    "trustModulePaymentDesc": "付款在行程结束时以现金(TL、EUR、USD)或信用卡进行。我们的标准车辆可容纳2-3个大行李箱加随身行李。"
   },
   "urgupTaksiNumarasi": {
     "title": "Not Found", "description": "Page not found", "h1": "Not Found", "intro": "", "content": "",

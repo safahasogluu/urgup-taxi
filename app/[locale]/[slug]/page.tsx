@@ -336,6 +336,23 @@ async function LocationPageContent({ locale, slug }: { locale: string; slug: str
           <h1 className="font-display text-4xl md:text-5xl mb-6 text-basalt-900">{loc.name[locale as Locale]}</h1>
           <p className="text-xl text-basalt-600 mb-12">{loc.description[locale as Locale]}</p>
 
+          {/* Contextual Internal Links - TR Only for specific locations */}
+          {locale === 'tr' && ['goreme-taksi', 'avanos-taksi', 'mustafapasa-taksi'].includes(slug) && (
+            <div className="mb-8 p-6 bg-amber-50 rounded-lg border border-amber-200">
+              <p className="text-basalt-700 leading-relaxed">
+                {slug === 'goreme-taksi' && (
+                  <>Göreme&apos;den taksi hizmeti için <Link href="/tr/urgup-taksi" className="text-amber-700 hover:text-amber-800 font-medium underline">Ürgüp taksi</Link> ve <Link href="/tr/urgup-taksi-duraklari" className="text-amber-700 hover:text-amber-800 font-medium underline">Ürgüp taksi durakları</Link> hizmetlerimizden yararlanabilirsiniz.</>
+                )}
+                {slug === 'avanos-taksi' && (
+                  <>Avanos&apos;tan taksi hizmeti için <Link href="/tr/urgup-taksi" className="text-amber-700 hover:text-amber-800 font-medium underline">Ürgüp taksi numarası</Link> ile bize ulaşabilir, <Link href="/tr/urgup-taksi-duraklari" className="text-amber-700 hover:text-amber-800 font-medium underline">Ürgüp taksi durakları</Link> hizmetimizden yararlanabilirsiniz.</>
+                )}
+                {slug === 'mustafapasa-taksi' && (
+                  <>Mustafapaşa&apos;dan taksi hizmeti için <Link href="/tr/urgup-taksi" className="text-amber-700 hover:text-amber-800 font-medium underline">Ürgüp otogar taksi</Link> ve <Link href="/tr/urgup-taksi-duraklari" className="text-amber-700 hover:text-amber-800 font-medium underline">Ürgüp taksi durakları</Link> hizmetlerimizden yararlanabilirsiniz.</>
+                )}
+              </p>
+            </div>
+          )}
+
           {loc.faqs.length > 0 && (
             <div className="mb-12">
               <h2 className="font-display text-2xl mb-6 text-basalt-900">{tFaq('faqTitle')}</h2>

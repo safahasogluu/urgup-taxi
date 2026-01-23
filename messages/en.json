@@ -147,7 +147,16 @@
     "hoursTitle": "Business Hours",
     "hours": "Open 24/7",
     "mapTitle": "Location",
-    "mapPlaceholder": "Loading Google Maps..."
+    "mapPlaceholder": "Loading Google Maps...",
+    "trustModuleTitle": "How We Work",
+    "trustModule247": "24/7 Service",
+    "trustModule247Desc": "We are with you at all hours, day and night. We serve airport transfers, terminal pickup and all points within the region.",
+    "trustModuleWhatsApp": "Fast Response via WhatsApp",
+    "trustModuleWhatsAppDesc": "We usually respond to WhatsApp messages within 5-10 minutes. We respond immediately to phone calls.",
+    "trustModulePickup": "Pickup Points",
+    "trustModulePickupDesc": "We provide pickup from terminal, bus station, hotel and airport. For hotels in narrow streets, we provide pickup from the nearest access point.",
+    "trustModulePayment": "Payment and Luggage",
+    "trustModulePaymentDesc": "Payment is made at the end of the journey in cash (TL, EUR, USD) or by credit card. Our standard vehicles can carry 2-3 large suitcases + hand luggage."
   },
   "faq": {
     "title": "Frequently Asked Questions",
@@ -285,7 +294,16 @@
     "faq7Q": "How can I make a reservation?",
     "faq7A": "Contact us via WhatsApp or phone. Specify pickup location, destination, date, time and number of passengers. We confirm immediately and share driver information. No advance payment is required for reservation.",
     "faq8Q": "How is payment made?",
-    "faq8A": "Payment is collected at the start or end of the journey. You can pay by cash (TRY, EUR, USD) or credit card. There are no extra fees or hidden costs. We offer agreed price guarantee."
+    "faq8A": "Payment is collected at the start or end of the journey. You can pay by cash (TRY, EUR, USD) or credit card. There are no extra fees or hidden costs. We offer agreed price guarantee.",
+    "trustModuleTitle": "How We Work",
+    "trustModule247": "24/7 Service",
+    "trustModule247Desc": "We are with you at all hours, day and night. We serve airport transfers, terminal pickup and all points within the region.",
+    "trustModuleWhatsApp": "Fast Response via WhatsApp",
+    "trustModuleWhatsAppDesc": "We usually respond to WhatsApp messages within 5-10 minutes. We respond immediately to phone calls.",
+    "trustModulePickup": "Pickup Points",
+    "trustModulePickupDesc": "We provide pickup from terminal, bus station, hotel and airport. For hotels in narrow streets, we provide pickup from the nearest access point.",
+    "trustModulePayment": "Payment and Luggage",
+    "trustModulePaymentDesc": "Payment is made at the end of the journey in cash (TL, EUR, USD) or by credit card. Our standard vehicles can carry 2-3 large suitcases + hand luggage."
   },
   "urgupTaksiNumarasi": {
     "title": "Not Found",

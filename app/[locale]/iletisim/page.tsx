@@ -98,6 +98,31 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
           </div>
         </div>
         
+        {/* E-E-A-T Trust Module - TR Only */}
+        {locale === 'tr' && (
+          <div className="bg-amber-50 p-8 rounded-lg shadow-md mt-8 border border-amber-200">
+            <h2 className="text-2xl font-semibold mb-6 text-center">{t('trustModuleTitle')}</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="bg-white p-6 rounded-lg shadow-sm">
+                <h3 className="font-semibold mb-2 text-lg">{t('trustModule247')}</h3>
+                <p className="text-gray-600 text-sm">{t('trustModule247Desc')}</p>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow-sm">
+                <h3 className="font-semibold mb-2 text-lg">{t('trustModuleWhatsApp')}</h3>
+                <p className="text-gray-600 text-sm">{t('trustModuleWhatsAppDesc')}</p>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow-sm">
+                <h3 className="font-semibold mb-2 text-lg">{t('trustModulePickup')}</h3>
+                <p className="text-gray-600 text-sm">{t('trustModulePickupDesc')}</p>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow-sm">
+                <h3 className="font-semibold mb-2 text-lg">{t('trustModulePayment')}</h3>
+                <p className="text-gray-600 text-sm">{t('trustModulePaymentDesc')}</p>
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* Internal Links - TR Only */}
         {locale === 'tr' && (
           <div className="bg-white p-8 rounded-lg shadow-md mt-8">
@@ -110,10 +135,10 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
                 Ürgüp Taksi
               </Link>
               <Link
-                href="/tr/urgup-taksi-numarasi"
+                href="/tr/urgup-taksi"
                 className="px-4 py-2 bg-amber-50 text-amber-800 rounded-lg hover:bg-amber-100 transition-colors font-medium"
               >
-                Ürgüp Taksi Numarası
+                Ürgüp Taksi
               </Link>
               <Link
                 href="/tr/fiyatlar"

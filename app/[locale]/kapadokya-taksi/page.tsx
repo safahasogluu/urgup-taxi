@@ -139,6 +139,15 @@ export default async function KapadokyaTaksiPage({ params }: { params: Promise<{
               </div>
             </div>
             
+            {/* Contextual Internal Links - TR Only */}
+            {locale === 'tr' && (
+              <div className="mt-8 pt-8 border-t border-zinc-200">
+                <p className="text-basalt-700 leading-relaxed mb-4">
+                  Kapadokya bölgesinde taksi hizmeti için <Link href="/tr/urgup-taksi" className="text-amber-700 hover:text-amber-800 font-medium underline">Ürgüp taksi numarası</Link> ile bize ulaşabilirsiniz. Ayrıca <Link href="/tr/urgup-terminal-taksi" className="text-amber-700 hover:text-amber-800 font-medium underline">Ürgüp terminal taksi</Link> hizmetimizle otogardan alım yapabilirsiniz.
+                </p>
+              </div>
+            )}
+            
             <div className="mt-8 pt-8 border-t border-zinc-200">
               <h3 className="font-display text-xl mb-4 text-basalt-900">Kapadokya Bölgeleri</h3>
               <div className="flex flex-wrap gap-3">

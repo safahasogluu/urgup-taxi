@@ -201,6 +201,19 @@ export default async function TransferRoutePage({ params }: { params: Promise<{ 
         </div>
       </section>
 
+      {/* Contextual Internal Links - TR Only for NAV/ASR routes */}
+      {locale === 'tr' && (route.airport === 'NAV' || route.airport === 'ASR') && (
+        <section className="section-padding bg-white">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <p className="text-basalt-700 leading-relaxed text-center">
+                Havalimanı transferleri için <Link href="/tr/urgup-terminal-taksi" className="text-amber-700 hover:text-amber-800 font-medium underline">Ürgüp terminal taksi</Link> hizmetimizle otogardan alım yapabilir, <Link href="/tr/urgup-taksi" className="text-amber-700 hover:text-amber-800 font-medium underline">Ürgüp taksi</Link> numarası ile bize ulaşabilirsiniz.
+              </p>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Info Sections */}
       <section className="section-padding bg-sand-200">
         <div className="container mx-auto px-4">
